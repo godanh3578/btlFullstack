@@ -12,7 +12,7 @@ import {
 } from '../utils/customerStorage'
 import router from '../router/index.js'
 
-// ─── Constants ────────────────────────────────────────────────────────────────
+// --- Constants ----------------------------------------------------------------
 
 export const pagePaths = {
   shop: '/',
@@ -33,66 +33,66 @@ export const pagePaths = {
 export const staffPages = ['dashboard', 'orders', 'customers', 'suppliers', 'payments', 'debts', 'returns', 'invoices', 'integration', 'warehouse']
 
 export const staffPageTitles = {
-  dashboard: 'Tổng quan bán hàng',
-  orders: 'Quản lý đơn hàng',
-  customers: 'Quản lý khách hàng',
-  suppliers: 'Quản lý nhà cung cấp',
-  payments: 'Thanh toán',
-  debts: 'Công nợ',
-  returns: 'Hoàn hàng',
-  invoices: 'Hóa đơn',
-  integration: 'Đồng bộ kho'
+  dashboard: 'T?ng quan b�n h�ng',
+  orders: 'Qu?n l� don h�ng',
+  customers: 'Qu?n l� kh�ch h�ng',
+  suppliers: 'Qu?n l� nh� cung c?p',
+  payments: 'Thanh to�n',
+  debts: 'C�ng n?',
+  returns: 'Ho�n h�ng',
+  invoices: 'H�a don',
+  integration: '�?ng b? kho'
 }
 
 export const paymentMethods = [
-  { value: 'Cash', label: 'Tiền mặt khi nhận hàng', note: 'Khách trả trực tiếp khi nhận hàng, đơn tạm ghi còn phải thu.' },
-  { value: 'BankTransfer', label: 'Chuyển khoản ngân hàng', note: 'Xác nhận thanh toán đủ khi tạo đơn.' },
-  { value: 'QR', label: 'Thanh toán QR', note: 'Thanh toán đủ qua mã QR của cửa hàng.' },
-  { value: 'Wallet', label: 'Ví RetailERP', note: 'Trừ số dư ví, thiếu bao nhiêu sẽ ghi công nợ.' },
-  { value: 'Deposit', label: 'Ứng cọc giữ đơn', note: 'Khách trả trước một phần để giữ hàng.' }
+  { value: 'Cash', label: 'Ti?n m?t khi nh?n h�ng', note: 'Kh�ch tr? tr?c ti?p khi nh?n h�ng, don t?m ghi c�n ph?i thu.' },
+  { value: 'BankTransfer', label: 'Chuy?n kho?n ng�n h�ng', note: 'X�c nh?n thanh to�n d? khi t?o don.' },
+  { value: 'QR', label: 'Thanh to�n QR', note: 'Thanh to�n d? qua m� QR c?a c?a h�ng.' },
+  { value: 'Wallet', label: 'V� RetailERP', note: 'Tr? s? du v�, thi?u bao nhi�u s? ghi c�ng n?.' },
+  { value: 'Deposit', label: '?ng c?c gi? don', note: 'Kh�ch tr? tru?c m?t ph?n d? gi? h�ng.' }
 ]
 
 export const memberTiers = [
-  { code: 'DEFAULT', name: 'Thường', minSpent: 0, rate: 0, className: 'basic', badge: 'TH' },
-  { code: 'SILVER', name: 'Bạc', minSpent: 2000000, rate: 2, className: 'silver', badge: 'B' },
-  { code: 'GOLD', name: 'Vàng', minSpent: 5000000, rate: 5, className: 'gold', badge: 'V' },
-  { code: 'PLATINUM', name: 'Bạch Kim', minSpent: 8000000, rate: 7, className: 'platinum', badge: 'BK' },
-  { code: 'DIAMOND', name: 'Kim Cương', minSpent: 10000000, rate: 10, className: 'diamond', badge: 'KC' }
+  { code: 'DEFAULT', name: 'Thu?ng', minSpent: 0, rate: 0, className: 'basic', badge: 'TH' },
+  { code: 'SILVER', name: 'B?c', minSpent: 2000000, rate: 2, className: 'silver', badge: 'B' },
+  { code: 'GOLD', name: 'V�ng', minSpent: 5000000, rate: 5, className: 'gold', badge: 'V' },
+  { code: 'PLATINUM', name: 'B?ch Kim', minSpent: 8000000, rate: 7, className: 'platinum', badge: 'BK' },
+  { code: 'DIAMOND', name: 'Kim Cuong', minSpent: 10000000, rate: 10, className: 'diamond', badge: 'KC' }
 ]
 
 export const vouchers = [
-  { code: 'NONE', label: 'Không dùng mã', type: 'none', value: 0, description: 'Thanh toán theo giá niêm yết.' },
-  { code: 'NEW10', label: 'NEW10 - khách mới giảm 10%', type: 'percent', value: 10, max: 150000, description: 'Ưu đãi cho khách hàng mới.' },
-  { code: 'SALE50', label: 'SALE50 - giảm 50.000đ', type: 'fixed', value: 50000, minAmount: 300000, description: 'Áp dụng cho đơn từ 300.000đ.' },
-  { code: 'VIP5', label: 'VIP5 - hạng Vàng/Kim cương', type: 'percent', value: 5, minTier: 'Vàng', description: 'Mã riêng cho khách hàng thân thiết.' }
+  { code: 'NONE', label: 'Kh�ng d�ng m�', type: 'none', value: 0, description: 'Thanh to�n theo gi� ni�m y?t.' },
+  { code: 'NEW10', label: 'NEW10 - kh�ch m?i gi?m 10%', type: 'percent', value: 10, max: 150000, description: 'Uu d�i cho kh�ch h�ng m?i.' },
+  { code: 'SALE50', label: 'SALE50 - gi?m 50.000d', type: 'fixed', value: 50000, minAmount: 300000, description: '�p d?ng cho don t? 300.000d.' },
+  { code: 'VIP5', label: 'VIP5 - h?ng V�ng/Kim cuong', type: 'percent', value: 5, minTier: 'V�ng', description: 'M� ri�ng cho kh�ch h�ng th�n thi?t.' }
 ]
 
 export const demoProducts = [
-  { productId: 1, productCode: 'GD001', productName: 'Nồi cơm điện Sunhouse 1.8L', categoryName: 'Gia dụng', sellingPrice: 650000, quantityAvailable: 12, stockStatus: 'InStock', manufacturerName: 'Sunhouse' },
-  { productId: 2, productCode: 'GD002', productName: 'Máy xay sinh tố Philips', categoryName: 'Gia dụng', sellingPrice: 890000, quantityAvailable: 8, stockStatus: 'InStock', manufacturerName: 'Philips' },
-  { productId: 3, productCode: 'GD003', productName: 'Quạt điện Panasonic', categoryName: 'Gia dụng', sellingPrice: 780000, quantityAvailable: 0, stockStatus: 'OutOfStock', manufacturerName: 'Panasonic' },
-  { productId: 4, productCode: 'DT001', productName: 'Chuột Logitech M331', categoryName: 'Điện tử', sellingPrice: 320000, quantityAvailable: 30, stockStatus: 'InStock', manufacturerName: 'Logitech' },
-  { productId: 5, productCode: 'DT002', productName: 'Bàn phím cơ AKKO', categoryName: 'Điện tử', sellingPrice: 1290000, quantityAvailable: 9, stockStatus: 'InStock', manufacturerName: 'AKKO' },
-  { productId: 6, productCode: 'TP001', productName: 'Gạo ST25 túi 5kg', categoryName: 'Thực phẩm', sellingPrice: 185000, quantityAvailable: 25, stockStatus: 'InStock', manufacturerName: 'ST25' },
-  { productId: 7, productCode: 'TT001', productName: 'Áo thun cotton nam', categoryName: 'Thời trang', sellingPrice: 150000, quantityAvailable: 18, stockStatus: 'InStock', manufacturerName: 'Đối tác Thời trang' },
-  { productId: 8, productCode: 'VP001', productName: 'Bút bi Thiên Long hộp 20 cây', categoryName: 'Văn phòng phẩm', sellingPrice: 65000, quantityAvailable: 50, stockStatus: 'InStock', manufacturerName: 'Thiên Long' }
+  { productId: 1, productCode: 'GD001', productName: 'N?i com di?n Sunhouse 1.8L', categoryName: 'Gia d?ng', sellingPrice: 650000, quantityAvailable: 12, stockStatus: 'InStock', manufacturerName: 'Sunhouse' },
+  { productId: 2, productCode: 'GD002', productName: 'M�y xay sinh t? Philips', categoryName: 'Gia d?ng', sellingPrice: 890000, quantityAvailable: 8, stockStatus: 'InStock', manufacturerName: 'Philips' },
+  { productId: 3, productCode: 'GD003', productName: 'Qu?t di?n Panasonic', categoryName: 'Gia d?ng', sellingPrice: 780000, quantityAvailable: 0, stockStatus: 'OutOfStock', manufacturerName: 'Panasonic' },
+  { productId: 4, productCode: 'DT001', productName: 'Chu?t Logitech M331', categoryName: '�i?n t?', sellingPrice: 320000, quantityAvailable: 30, stockStatus: 'InStock', manufacturerName: 'Logitech' },
+  { productId: 5, productCode: 'DT002', productName: 'B�n ph�m co AKKO', categoryName: '�i?n t?', sellingPrice: 1290000, quantityAvailable: 9, stockStatus: 'InStock', manufacturerName: 'AKKO' },
+  { productId: 6, productCode: 'TP001', productName: 'G?o ST25 t�i 5kg', categoryName: 'Th?c ph?m', sellingPrice: 185000, quantityAvailable: 25, stockStatus: 'InStock', manufacturerName: 'ST25' },
+  { productId: 7, productCode: 'TT001', productName: '�o thun cotton nam', categoryName: 'Th?i trang', sellingPrice: 150000, quantityAvailable: 18, stockStatus: 'InStock', manufacturerName: '�?i t�c Th?i trang' },
+  { productId: 8, productCode: 'VP001', productName: 'B�t bi Thi�n Long h?p 20 c�y', categoryName: 'Van ph�ng ph?m', sellingPrice: 65000, quantityAvailable: 50, stockStatus: 'InStock', manufacturerName: 'Thi�n Long' }
 ]
 
 export const LOOKUP_STATUS_FILTERS = [
-  { value: 'WaitingPayment', label: 'Chờ thanh toán' },
-  { value: 'Pending', label: 'Chờ xác nhận' },
-  { value: 'Processing', label: 'Đang xử lý' },
-  { value: 'Shipping', label: 'Vận chuyển' },
-  { value: 'WaitingDelivery', label: 'Chờ giao hàng' },
-  { value: 'Completed', label: 'Hoàn thành' },
-  { value: 'Cancelled', label: 'Đã hủy' },
+  { value: 'WaitingPayment', label: 'Ch? thanh to�n' },
+  { value: 'Pending', label: 'Ch? x�c nh?n' },
+  { value: 'Processing', label: '�ang x? l�' },
+  { value: 'Shipping', label: 'V?n chuy?n' },
+  { value: 'WaitingDelivery', label: 'Ch? giao h�ng' },
+  { value: 'Completed', label: 'Ho�n th�nh' },
+  { value: 'Cancelled', label: '�� h?y' },
 ]
 
 export const MY_ORDERS_TABS = [
-  { key: 'all', label: 'Tất cả' },
-  { key: 'pending', label: 'Chờ xử lý' },
-  { key: 'completed', label: 'Hoàn thành' },
-  { key: 'cancelled', label: 'Đã hủy' },
+  { key: 'all', label: 'T?t c?' },
+  { key: 'pending', label: 'Ch? x? l�' },
+  { key: 'completed', label: 'Ho�n th�nh' },
+  { key: 'cancelled', label: '�� h?y' },
 ]
 
 export const myOrdersTab = ref('all')
@@ -128,7 +128,7 @@ const API_ASSET_BASE = API_BASE || ''
 const USER_SERVICE_API_BASE = (import.meta.env.VITE_USER_API_URL || 'http://127.0.0.1:8083/api').replace(/\/$/, '')
 let demoIdCounter = -1
 
-// ─── Module-level singleton state ─────────────────────────────────────────────
+// --- Module-level singleton state ---------------------------------------------
 
 export const products = ref([])
 export const productLoading = ref(false)
@@ -199,7 +199,7 @@ export const avatarUrl = ref('')
 export const showAddressModal = ref(false)
 export const editingAddressIndex = ref(-1)
 export const addressForm = ref({
-  fullName: '', phone: '', province: '', street: '', type: 'Nhà Riêng', isDefault: false
+  fullName: '', phone: '', province: '', street: '', type: 'Nh� Ri�ng', isDefault: false
 })
 
 export const staffData = ref({
@@ -223,7 +223,7 @@ export const passwordMessage = ref({ type: '', text: '' })
 
 export const selectedCartItems = ref(new Set(loadCustomerCart().map(i => i.productId)))
 
-// ─── Reactive computed (using router.currentRoute for route access) ───────────
+// --- Reactive computed (using router.currentRoute for route access) -----------
 
 export const activePage = computed(() => router.currentRoute.value.meta?.page || 'shop')
 export const isStaffPage = computed(() => staffPages.includes(activePage.value))
@@ -254,7 +254,7 @@ export const parsedAddresses = computed(() => {
     if (Array.isArray(arr)) return arr
     return []
   } catch {
-    return [{ fullName: accountForm.value.fullName, phone: accountForm.value.phone, province: '', street: accountForm.value.address, type: 'Nhà Riêng', isDefault: true }]
+    return [{ fullName: accountForm.value.fullName, phone: accountForm.value.phone, province: '', street: accountForm.value.address, type: 'Nh� Ri�ng', isDefault: true }]
   }
 })
 
@@ -426,12 +426,12 @@ export const filteredInvoices = computed(() => {
   return list
 })
 
-// ─── Pure helper functions ────────────────────────────────────────────────────
+// --- Pure helper functions ----------------------------------------------------
 
 export function productId(p) { return Number(p.productId || p.id || p.productStockCacheId) }
-export function productName(p) { return p.productName || p.name || 'Sản phẩm' }
+export function productName(p) { return p.productName || p.name || 'S?n ph?m' }
 export function productCode(p) { return p.productCode || `SP${String(productId(p)).padStart(3, '0')}` }
-export function productCategory(p) { return p.categoryName || p.category || 'Khác' }
+export function productCategory(p) { return p.categoryName || p.category || 'Kh�c' }
 export function productPrice(p) { return Number(p.sellingPrice ?? p.price ?? p.unitPrice ?? 0) }
 export function productRawStock(p) { return Math.max(0, Number(p.sourceQuantityAvailable ?? p.quantityAvailable ?? p.stock ?? p.availableStock ?? 0)) }
 export function productBaseStock(p) { return Math.max(0, Number(p.quantityAvailable ?? p.stock ?? p.availableStock ?? 0)) }
@@ -452,7 +452,7 @@ export function cartQuantityFor(p) {
 }
 
 export function customerId(c) { return Number(c?.customerId || c?.id || 0) }
-export function customerName(c) { return c?.fullName || c?.name || 'Khách hàng' }
+export function customerName(c) { return c?.fullName || c?.name || 'Kh�ch h�ng' }
 export function memberTierFor(totalSpent) {
   return [...memberTiers].reverse().find(t => Number(totalSpent || 0) >= t.minSpent) || memberTiers[0]
 }
@@ -472,11 +472,11 @@ export function voucherAvailable(voucher) {
 }
 
 export function paymentMethodLabel(method) {
-  return paymentMethods.find(m => m.value === method)?.label || method || 'Tiền mặt khi nhận hàng'
+  return paymentMethods.find(m => m.value === method)?.label || method || 'Ti?n m?t khi nh?n h�ng'
 }
 export function topUpPaymentMethodLabel(method) {
-  if (method === 'BankTransfer') return 'Chuyển khoản'
-  return method || 'Chuyển khoản'
+  if (method === 'BankTransfer') return 'Chuy?n kho?n'
+  return method || 'Chuy?n kho?n'
 }
 export function backendPaymentMethod(method) {
   if (method === 'EWallet') return 'Wallet'
@@ -503,18 +503,18 @@ export function orderDebt(order) { return Math.max(0, Number(order?.debtAmount ?
 export function topCustomerName(orders) {
   const map = new Map()
   for (const o of orders) {
-    const name = o.customerName || o.customerId || 'Khách lẻ'
+    const name = o.customerName || o.customerId || 'Kh�ch l?'
     map.set(name, (map.get(name) || 0) + orderTotal(o))
   }
-  return [...map.entries()].sort((a, b) => b[1] - a[1])[0]?.[0] || 'Chưa có'
+  return [...map.entries()].sort((a, b) => b[1] - a[1])[0]?.[0] || 'Chua c�'
 }
 
-export function formatMoney(value) { return Number(value || 0).toLocaleString('vi-VN') + 'đ' }
+export function formatMoney(value) { return Number(value || 0).toLocaleString('vi-VN') + 'd' }
 export function formatDateTime(value) { if (!value) return ''; return new Date(value).toLocaleString('vi-VN') }
 
 export function maskMiddle(value, separator = '') {
   const text = String(value || '').trim()
-  if (!text) return 'Chưa cập nhật'
+  if (!text) return 'Chua c?p nh?t'
   if (separator && text.includes(separator)) {
     const [first, ...rest] = text.split(separator)
     const domain = rest.join(separator)
@@ -526,7 +526,7 @@ export function maskMiddle(value, separator = '') {
 }
 export function maskTail(value) {
   const text = String(value || '').trim()
-  if (!text) return 'Chưa cập nhật'
+  if (!text) return 'Chua c?p nh?t'
   if (text.length <= 4) return `${text[0] || ''}***`
   return `${'*'.repeat(Math.max(6, text.length - 2))}${text.slice(-2)}`
 }
@@ -541,29 +541,29 @@ export function statusLabel(status) {
   const v = String(status || '').toLowerCase()
   const labels = {
     // order statuses
-    waitingpayment: 'Chờ xử lý',
-    awaitingpaymentconfirmation: 'Chờ xác nhận TT',
-    awaitingconfirmation: 'Chờ xử lý',
-    processing: 'Chờ xử lý',
-    shipping: 'Chờ xử lý',
-    waitingdelivery: 'Chờ xử lý',
-    completed: 'Hoàn thành',
-    cancelled: 'Đã hủy',
-    returned: 'Đã hủy',
+    waitingpayment: 'Ch? x? l�',
+    awaitingpaymentconfirmation: 'Ch? x�c nh?n TT',
+    awaitingconfirmation: 'Ch? x? l�',
+    processing: 'Ch? x? l�',
+    shipping: 'Ch? x? l�',
+    waitingdelivery: 'Ch? x? l�',
+    completed: 'Ho�n th�nh',
+    cancelled: '�� h?y',
+    returned: '�� h?y',
     // payment statuses
-    pendingpayment: 'Chưa thanh toán',
-    unpaid: 'Chưa thanh toán',
-    partiallypaid: 'Thanh toán một phần',
-    paid: 'Đã thanh toán',
-    refunded: 'Đã hoàn tiền',
+    pendingpayment: 'Chua thanh to�n',
+    unpaid: 'Chua thanh to�n',
+    partiallypaid: 'Thanh to�n m?t ph?n',
+    paid: '�� thanh to�n',
+    refunded: '�� ho�n ti?n',
     // misc
-    pending: 'Chờ xử lý', confirmed: 'Chờ xử lý',
-    partial: 'Thanh toán một phần', debt: 'Còn công nợ',
-    failed: 'Thất bại', active: 'Đang hoạt động',
-    inactive: 'Ngừng hoạt động', outofstock: 'Hết hàng',
-    depositpending: 'Chờ xác nhận cọc',
+    pending: 'Ch? x? l�', confirmed: 'Ch? x? l�',
+    partial: 'Thanh to�n m?t ph?n', debt: 'C�n c�ng n?',
+    failed: 'Th?t b?i', active: '�ang ho?t d?ng',
+    inactive: 'Ng?ng ho?t d?ng', outofstock: 'H?t h�ng',
+    depositpending: 'Ch? x�c nh?n c?c',
   }
-  return labels[v] || status || 'Không xác định'
+  return labels[v] || status || 'Kh�ng x�c d?nh'
 }
 export function statusClass(status) {
   const v = String(status || '').toLowerCase()
@@ -582,7 +582,7 @@ export function showNotice(message, type = 'ok') {
   }, 3200)
 }
 
-// ─── Navigation ───────────────────────────────────────────────────────────────
+// --- Navigation ---------------------------------------------------------------
 
 export function openPage(page, tab) {
   if (['cart', 'myOrders', 'account'].includes(page) && !currentUser.value && page !== 'cart') {
@@ -602,7 +602,7 @@ export function scrollToCatalog() {
   document.getElementById('catalog')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
 }
 
-// ─── localStorage helpers ─────────────────────────────────────────────────────
+// --- localStorage helpers -----------------------------------------------------
 
 export function readJsonStorage(key, fallback) {
   try { const raw = localStorage.getItem(key); return raw ? JSON.parse(raw) : fallback } catch { return fallback }
@@ -642,7 +642,7 @@ export function adjustLocalStockReserves(items = [], direction = 1) {
   refreshProductsFromLocalReserves()
 }
 
-// ─── Wallet helpers ───────────────────────────────────────────────────────────
+// --- Wallet helpers -----------------------------------------------------------
 
 export function walletKeyFor(user = currentUser.value) { return String(user?.customerId || user?.phone || 'guest') }
 
@@ -651,14 +651,14 @@ export function loadWalletState(user = currentUser.value) {
   const states = readJsonStorage(WALLET_STATE_KEY, {})
   const key = walletKeyFor(user)
   const state = states[key] || {}
-  // Balance luôn lấy từ server (user.walletBalance) — không override bằng localStorage
+  // Balance lu�n l?y t? server (user.walletBalance) � kh�ng override b?ng localStorage
   walletTransactions.value = state.transactions || []
 }
 
 export function saveWalletState() {
   if (!currentUser.value) return
   const states = readJsonStorage(WALLET_STATE_KEY, {})
-  // Chỉ lưu transactions — balance lấy từ DB khi login
+  // Ch? luu transactions � balance l?y t? DB khi login
   states[walletKeyFor()] = { transactions: walletTransactions.value }
   writeJsonStorage(WALLET_STATE_KEY, states)
   saveCustomerUser(currentUser.value)
@@ -679,14 +679,14 @@ export function addWalletTransaction(type, amount, note, orderCode = '') {
 export function addActivityLog(action, note, orderCode = '') {
   activityLogs.value.unshift({
     id: Date.now(), action, note, orderCode,
-    actor: staffUser.value?.username || currentUser.value?.fullName || 'Khách hàng',
+    actor: staffUser.value?.username || currentUser.value?.fullName || 'Kh�ch h�ng',
     createdAt: new Date().toISOString()
   })
   activityLogs.value = activityLogs.value.slice(0, 20)
   writeJsonStorage(ACTIVITY_LOG_KEY, activityLogs.value)
 }
 
-// ─── Product helpers ──────────────────────────────────────────────────────────
+// --- Product helpers ----------------------------------------------------------
 
 function responseList(data) {
   if (Array.isArray(data)) return data
@@ -709,7 +709,7 @@ export function normalizeProduct(p) {
     ...p, productId: id, productCode: productCode(p), productName: productName(p),
     categoryName: productCategory(p), sellingPrice: productPrice(p),
     sourceQuantityAvailable: rawStock, quantityAvailable: stock,
-    manufacturerName: p.manufacturerName || p.supplierName || 'Nhóm kho',
+    manufacturerName: p.manufacturerName || p.supplierName || 'Nh�m kho',
     stockStatus: stock <= 0 ? 'OutOfStock' : stock <= 5 ? 'LowStock' : 'InStock'
   }
 }
@@ -755,7 +755,7 @@ export async function loadProducts() {
     products.value = (list.length ? list : demoProducts).map(normalizeProduct)
   } catch {
     products.value = demoProducts.map(normalizeProduct)
-    productError.value = 'Chưa kết nối được Inventory Service, đang dùng dữ liệu demo.'
+    productError.value = 'Chua k?t n?i du?c Inventory Service, dang d�ng d? li?u demo.'
   } finally {
     syncCartStock()
     productLoading.value = false
@@ -790,13 +790,13 @@ export function syncCartStock() {
 
 export function addToCart(p, qty = 1) {
   const stock = productStock(p)
-  if (stock <= 0) { showNotice('Sản phẩm này đã hết hàng trong kho.', 'bad'); return }
+  if (stock <= 0) { showNotice('S?n ph?m n�y d� h?t h�ng trong kho.', 'bad'); return }
   const addQty = Math.max(1, Math.min(Number(qty) || 1, stock))
   const id = productId(p)
   const existing = cart.value.find(item => Number(item.productId) === id)
   if (existing) {
     const next = existing.quantity + addQty
-    if (next > productBaseStock(p)) { showNotice('Số lượng mua không được vượt quá tồn kho.', 'bad'); return }
+    if (next > productBaseStock(p)) { showNotice('S? lu?ng mua kh�ng du?c vu?t qu� t?n kho.', 'bad'); return }
     existing.quantity = next
   } else {
     cart.value.push({
@@ -809,14 +809,14 @@ export function addToCart(p, qty = 1) {
     selectedCartItems.value = s
   }
   saveCustomerCart(cart.value)
-  showNotice(`Đã thêm ${addQty} sản phẩm vào giỏ hàng.`)
+  showNotice(`�� th�m ${addQty} s?n ph?m v�o gi? h�ng.`)
 }
 
 export function updateCartQuantity(item, value) {
   const qty = Math.floor(Number(value || 1))
   const p = products.value.find(p => productId(p) === Number(item.productId))
   const limit = p ? productBaseStock(p) : Number(item.stock || 1)
-  if (qty > limit) { item.quantity = limit; showNotice('Số lượng mua không được vượt quá tồn kho.', 'bad') }
+  if (qty > limit) { item.quantity = limit; showNotice('S? lu?ng mua kh�ng du?c vu?t qu� t?n kho.', 'bad') }
   else item.quantity = Math.max(1, qty)
   saveCustomerCart(cart.value)
 }
@@ -876,7 +876,7 @@ export function isWishlisted(product) { return wishlist.value.includes(productId
 
 export function reorderItems(order) {
   const items = orderItems(order)
-  if (!items.length) { showNotice('Đơn hàng không có sản phẩm.', 'bad'); return }
+  if (!items.length) { showNotice('�on h�ng kh�ng c� s?n ph?m.', 'bad'); return }
   let added = 0
   for (const item of items) {
     const product = products.value.find(p =>
@@ -886,10 +886,10 @@ export function reorderItems(order) {
     )
     if (product && productStock(product) > 0) { addToCart(product); added++ }
   }
-  showNotice(added > 0 ? `Đã thêm lại ${added} sản phẩm vào giỏ hàng.` : 'Sản phẩm đã hết hàng, không thể đặt lại.', added > 0 ? 'ok' : 'bad')
+  showNotice(added > 0 ? `�� th�m l?i ${added} s?n ph?m v�o gi? h�ng.` : 'S?n ph?m d� h?t h�ng, kh�ng th? d?t l?i.', added > 0 ? 'ok' : 'bad')
 }
 
-// ─── Reviews ──────────────────────────────────────────────────────────────────
+// --- Reviews ------------------------------------------------------------------
 
 function reviewsFor(user) {
   const all = readJsonStorage(REVIEWS_KEY, {})
@@ -924,7 +924,7 @@ export function canReviewOrder(order) {
   return (s === 'completed' || s === 'confirmed') && !hasReviewed(order)
 }
 
-// ─── Checkout ─────────────────────────────────────────────────────────────────
+// --- Checkout -----------------------------------------------------------------
 
 export function initCheckoutShipping() {
   let defaultAddress = currentUser.value?.address || ''
@@ -945,7 +945,7 @@ export function initCheckoutShipping() {
 
 export async function quickBuy(p, qty = 1) {
   const stock = productStock(p)
-  if (stock <= 0) { showNotice('Sản phẩm này đã hết hàng trong kho.', 'bad'); return }
+  if (stock <= 0) { showNotice('S?n ph?m n�y d� h?t h�ng trong kho.', 'bad'); return }
   if (!currentUser.value) { selectedProduct.value = null; openAuth('login'); return }
   const addQty = Math.max(1, Math.min(Number(qty) || 1, stock))
   const id = productId(p)
@@ -991,7 +991,7 @@ function checkoutProfilePayload() {
   }
 }
 
-// ─── Auth ─────────────────────────────────────────────────────────────────────
+// --- Auth ---------------------------------------------------------------------
 
 export function openAuth(mode = 'login') {
   authMode.value = mode
@@ -1003,25 +1003,25 @@ export function openAuth(mode = 'login') {
 export function closeAuth() { showAuthModal.value = false; authError.value = '' }
 
 function validatePasswordStrength(pw) {
-  if (pw.length < 8) return 'Mật khẩu phải có ít nhất 8 ký tự.'
-  if (!/[A-Z]/.test(pw)) return 'Cần ít nhất 1 chữ hoa.'
-  if (!/[a-z]/.test(pw)) return 'Cần ít nhất 1 chữ thường.'
-  if (!/\d/.test(pw)) return 'Cần ít nhất 1 chữ số.'
-  if (!/[^A-Za-z0-9]/.test(pw)) return 'Cần ít nhất 1 ký tự đặc biệt (!@#$...).'
+  if (pw.length < 8) return 'M?t kh?u ph?i c� �t nh?t 8 k� t?.'
+  if (!/[A-Z]/.test(pw)) return 'C?n �t nh?t 1 ch? hoa.'
+  if (!/[a-z]/.test(pw)) return 'C?n �t nh?t 1 ch? thu?ng.'
+  if (!/\d/.test(pw)) return 'C?n �t nh?t 1 ch? s?.'
+  if (!/[^A-Za-z0-9]/.test(pw)) return 'C?n �t nh?t 1 k� t? d?c bi?t (!@#$...).'
   return null
 }
 
 export async function forgotStep1() {
   const phone = forgotForm.value.phone.trim()
   forgotForm.value.error = ''
-  if (!phone) { forgotForm.value.error = 'Vui lòng nhập số điện thoại.'; return }
-  if (!/^[0-9]{9,11}$/.test(phone.replace(/\s/g, ''))) { forgotForm.value.error = 'Số điện thoại không hợp lệ (9–11 chữ số).'; return }
+  if (!phone) { forgotForm.value.error = 'Vui l�ng nh?p s? di?n tho?i.'; return }
+  if (!/^[0-9]{9,11}$/.test(phone.replace(/\s/g, ''))) { forgotForm.value.error = 'S? di?n tho?i kh�ng h?p l? (9�11 ch? s?).'; return }
   forgotForm.value.busy = true
   try {
     const res = await api.get('/api/Customers/exists', { params: { phone } })
-    if (!res.data?.phoneExists) { forgotForm.value.error = 'Số điện thoại này chưa được đăng ký tài khoản.'; return }
+    if (!res.data?.phoneExists) { forgotForm.value.error = 'S? di?n tho?i n�y chua du?c dang k� t�i kho?n.'; return }
     forgotForm.value.step = 2
-  } catch { forgotForm.value.error = 'Không thể kiểm tra. Vui lòng thử lại.' }
+  } catch { forgotForm.value.error = 'Kh�ng th? ki?m tra. Vui l�ng th? l?i.' }
   finally { forgotForm.value.busy = false }
 }
 
@@ -1030,7 +1030,7 @@ export function forgotStep2() {
   forgotForm.value.error = ''
   const err = validatePasswordStrength(newPassword)
   if (err) { forgotForm.value.error = err; return }
-  if (newPassword !== confirmPassword) { forgotForm.value.error = 'Mật khẩu xác nhận không khớp.'; return }
+  if (newPassword !== confirmPassword) { forgotForm.value.error = 'M?t kh?u x�c nh?n kh�ng kh?p.'; return }
   saveDemoPassword(forgotForm.value.phone.trim(), newPassword)
   forgotForm.value.done = true
 }
@@ -1061,7 +1061,7 @@ function createLocalDemoCustomer(profile) {
     dateOfBirth: profile.dateOfBirth,
     currentDebt: 0,
     totalSpent: 0,
-    membershipTier: 'Thường',
+    membershipTier: 'Thu?ng',
     walletBalance: 500000
   }
 }
@@ -1103,8 +1103,8 @@ async function syncCustomerToUserService() {
       name: registerForm.value.fullName.trim(), storeName: 'OderApi', phone: registerForm.value.phone.trim(), province: ''
     })
   } catch (error) {
-    if (error.response?.status === 409) throw new Error(error.response?.data?.message || 'Email này đã được đăng ký ở hệ thống quản lý người dùng.')
-    // N3 down hoặc lỗi mạng → chỉ warn, không block đăng ký
+    if (error.response?.status === 409) throw new Error(error.response?.data?.message || 'Email n�y d� du?c dang k� ? h? th?ng qu?n l� ngu?i d�ng.')
+    // N3 down ho?c l?i m?ng ? ch? warn, kh�ng block dang k�
     console.warn('N3 sync skipped (N3 may be down):', error.message)
   }
 }
@@ -1145,7 +1145,7 @@ async function syncCustomerToUserServiceFast() {
     }
   } catch (directError) {
     if (directError?.response?.status === 409) {
-      throw new Error(directError.response?.data?.message || 'Email nÃ y Ä‘Ã£ Ä‘Æ°á»£c Ä‘Äƒng kÃ½ á»Ÿ há»‡ thá»‘ng quáº£n lÃ½ ngÆ°á»i dÃ¹ng.')
+      throw new Error(directError.response?.data?.message || 'Email này đã được đăng ký ở hệ thống quản lý người dùng.')
     }
 
     try {
@@ -1153,7 +1153,7 @@ async function syncCustomerToUserServiceFast() {
       return
     } catch (fallbackError) {
       if (fallbackError?.response?.status === 409) {
-        throw new Error(fallbackError.response?.data?.message || 'Email nÃ y Ä‘Ã£ Ä‘Æ°á»£c Ä‘Äƒng kÃ½ á»Ÿ há»‡ thá»‘ng quáº£n lÃ½ ngÆ°á»i dÃ¹ng.')
+        throw new Error(fallbackError.response?.data?.message || 'Email này đã được đăng ký ở hệ thống quản lý người dùng.')
       }
       console.warn('N3 sync skipped after retries:', fallbackError.message)
     }
@@ -1236,7 +1236,7 @@ export function logoutCustomer() {
   if (['myOrders', 'account'].includes(activePage.value)) openPage('shop')
 }
 
-// ─── Customer account ─────────────────────────────────────────────────────────
+// --- Customer account ---------------------------------------------------------
 
 export function avatarKey(user = currentUser.value) { return user ? `avatar_${user.customerId}` : null }
 
@@ -1310,8 +1310,8 @@ export function toggleAccountEdit(field) { accountEditing.value[field] = !accoun
 export async function saveAccount() {
   accountMessage.value = ''
   if (!currentUser.value?.customerId) return
-  if (!accountForm.value.fullName.trim()) { accountMessage.value = 'Vui lòng nhập tên khách hàng.'; return }
-  if (!accountForm.value.phone.trim()) { accountMessage.value = 'Vui lòng nhập số điện thoại.'; accountEditing.value.phone = true; return }
+  if (!accountForm.value.fullName.trim()) { accountMessage.value = 'Vui l�ng nh?p t�n kh�ch h�ng.'; return }
+  if (!accountForm.value.phone.trim()) { accountMessage.value = 'Vui l�ng nh?p s? di?n tho?i.'; accountEditing.value.phone = true; return }
   try {
     const dobString = (accountProfile.value.year && accountProfile.value.month && accountProfile.value.day)
       ? `${accountProfile.value.year}-${String(accountProfile.value.month).padStart(2, '0')}-${String(accountProfile.value.day).padStart(2, '0')}`
@@ -1330,37 +1330,37 @@ export async function saveAccount() {
       accountProfile.value.day = parseInt(parts[2])
     }
     accountEditing.value = { email: false, phone: false }
-    accountMessage.value = 'Đã lưu thông tin tài khoản.'
+    accountMessage.value = '�� luu th�ng tin t�i kho?n.'
     showNotice('Dang nhap thanh cong.')
-  } catch (error) { accountMessage.value = error.response?.data?.message || 'Không lưu được thông tin.' }
+  } catch (error) { accountMessage.value = error.response?.data?.message || 'Kh�ng luu du?c th�ng tin.' }
 }
 
 export function changePassword() {
   passwordMessage.value = { type: '', text: '' }
   const phone = currentUser.value?.phone
   if (!phone) return
-  if (!verifyDemoPassword(phone, passwordForm.value.currentPassword)) { passwordMessage.value = { type: 'error', text: 'Mật khẩu hiện tại không đúng.' }; return }
-  if (!passwordForm.value.newPassword) { passwordMessage.value = { type: 'error', text: 'Vui lòng nhập mật khẩu mới.' }; return }
-  if (passwordForm.value.newPassword !== passwordForm.value.confirmPassword) { passwordMessage.value = { type: 'error', text: 'Mật khẩu xác nhận không khớp.' }; return }
+  if (!verifyDemoPassword(phone, passwordForm.value.currentPassword)) { passwordMessage.value = { type: 'error', text: 'M?t kh?u hi?n t?i kh�ng d�ng.' }; return }
+  if (!passwordForm.value.newPassword) { passwordMessage.value = { type: 'error', text: 'Vui l�ng nh?p m?t kh?u m?i.' }; return }
+  if (passwordForm.value.newPassword !== passwordForm.value.confirmPassword) { passwordMessage.value = { type: 'error', text: 'M?t kh?u x�c nh?n kh�ng kh?p.' }; return }
   saveDemoPassword(phone, passwordForm.value.newPassword)
   passwordForm.value = { currentPassword: '', newPassword: '', confirmPassword: '' }
-  passwordMessage.value = { type: 'success', text: 'Đổi mật khẩu thành công.' }
+  passwordMessage.value = { type: 'success', text: '�?i m?t kh?u th�nh c�ng.' }
   showNotice('Dang nhap thanh cong.')
 }
 
 export async function requestAccountDeletion() {
-  if (!confirm('Bạn có chắc chắn muốn yêu cầu xóa tài khoản này? Hành động này không thể hoàn tác!')) return
+  if (!confirm('B?n c� ch?c ch?n mu?n y�u c?u x�a t�i kho?n n�y? H�nh d?ng n�y kh�ng th? ho�n t�c!')) return
   try {
     if (currentUser.value?.customerId) await api.delete(`/api/Customers/${currentUser.value.customerId}`)
     showNotice('Dang nhap thanh cong.')
     logoutCustomer()
-  } catch (error) { showNotice(error.response?.data?.message || 'Có lỗi xảy ra khi yêu cầu xóa tài khoản.') }
+  } catch (error) { showNotice(error.response?.data?.message || 'C� l?i x?y ra khi y�u c?u x�a t�i kho?n.') }
 }
 
-// ─── Address helpers ──────────────────────────────────────────────────────────
+// --- Address helpers ----------------------------------------------------------
 
 export function openAddressModal() {
-  addressForm.value = { fullName: '', phone: '', province: '', street: '', type: 'Nhà Riêng', isDefault: parsedAddresses.value.length === 0 }
+  addressForm.value = { fullName: '', phone: '', province: '', street: '', type: 'Nh� Ri�ng', isDefault: parsedAddresses.value.length === 0 }
   editingAddressIndex.value = -1
   showAddressModal.value = true
 }
@@ -1384,7 +1384,7 @@ export function editAddress(index) {
 }
 
 export function deleteAddress(index) {
-  if (!confirm('Bạn có chắc chắn muốn xóa địa chỉ này?')) return
+  if (!confirm('B?n c� ch?c ch?n mu?n x�a d?a ch? n�y?')) return
   let list = [...parsedAddresses.value]
   list.splice(index, 1)
   if (list.length > 0 && !list.some(a => a.isDefault)) list[0].isDefault = true
@@ -1392,7 +1392,7 @@ export function deleteAddress(index) {
   saveAccount()
 }
 
-// ─── Orders ───────────────────────────────────────────────────────────────────
+// --- Orders -------------------------------------------------------------------
 
 export function loadLocalOrders(customer = currentUser.value) {
   if (!customer) return []
@@ -1442,14 +1442,14 @@ function applyCheckoutSideEffects(order) {
   if (!currentUser.value) return
   if (checkout.value.paymentMethod === 'Wallet' && paidAmount.value > 0) {
     currentUser.value.walletBalance = Math.max(0, walletBalance.value - paidAmount.value)
-    addWalletTransaction('pay', -paidAmount.value, 'Thanh toán đơn hàng bằng ví', order.orderCode)
+    addWalletTransaction('pay', -paidAmount.value, 'Thanh to�n don h�ng b?ng v�', order.orderCode)
   }
   currentUser.value.currentDebt = Math.max(0, Number(currentUser.value.currentDebt || 0) + orderDebt(order))
   currentUser.value.totalSpent = Number(currentUser.value.totalSpent || 0) + orderTotal(order)
   saveCustomerUser(currentUser.value)
   saveDemoCustomer(currentUser.value)
   saveWalletState()
-  addActivityLog('order.created', `Đặt hàng thành công${order.orderCode ? ' - ' + order.orderCode : ''}`, order.orderCode)
+  addActivityLog('order.created', `�?t h�ng th�nh c�ng${order.orderCode ? ' - ' + order.orderCode : ''}`, order.orderCode)
 }
 
 export async function loadMyOrders() {
@@ -1488,8 +1488,8 @@ export function toggleLookupExpand(id) {
 
 function validatePhone(phone) {
   const digits = phone.replace(/\D/g, '')
-  if (!digits) return 'Vui lòng nhập số điện thoại.'
-  if (digits.length < 9 || digits.length > 11) return 'Số điện thoại phải có 9–11 chữ số.'
+  if (!digits) return 'Vui l�ng nh?p s? di?n tho?i.'
+  if (digits.length < 9 || digits.length > 11) return 'S? di?n tho?i ph?i c� 9�11 ch? s?.'
   return null
 }
 
@@ -1497,7 +1497,7 @@ export async function lookupOrder() {
   const code = orderLookup.value.orderCode.trim().toUpperCase()
   const phone = orderLookup.value.phone.trim()
   orderLookup.value.error = ''; orderLookup.value.result = null
-  if (!code) { orderLookup.value.error = 'Vui lòng nhập mã đơn hàng.'; return }
+  if (!code) { orderLookup.value.error = 'Vui l�ng nh?p m� don h�ng.'; return }
   if (phone) {
     const phoneErr = validatePhone(phone)
     if (phoneErr) { orderLookup.value.error = phoneErr; return }
@@ -1511,9 +1511,9 @@ export async function lookupOrder() {
   } catch (error) {
     const status = error.response?.status
     const msg = error.response?.data?.message || error.response?.data || error.message
-    if (!error.response) orderLookup.value.error = 'Không kết nối được đến server. Kiểm tra backend đang chạy chưa.'
-    else if (status === 404) orderLookup.value.error = 'Không tìm thấy đơn hàng. Kiểm tra lại mã đơn hoặc tìm theo SĐT.'
-    else orderLookup.value.error = `Lỗi ${status ?? '?'}: ${msg || 'Không thể tra cứu lúc này.'}`
+    if (!error.response) orderLookup.value.error = 'Kh�ng k?t n?i du?c d?n server. Ki?m tra backend dang ch?y chua.'
+    else if (status === 404) orderLookup.value.error = 'Kh�ng t�m th?y don h�ng. Ki?m tra l?i m� don ho?c t�m theo S�T.'
+    else orderLookup.value.error = `L?i ${status ?? '?'}: ${msg || 'Kh�ng th? tra c?u l�c n�y.'}`
   } finally { orderLookup.value.loading = false }
 }
 
@@ -1527,32 +1527,32 @@ export async function lookupByPhone() {
     const res = await api.get('/api/Orders/lookup', { params: { phone } })
     const data = Array.isArray(res.data) ? res.data : [res.data]
     orderLookup.value.results = data
-    if (!data.length) orderLookup.value.error = 'Không tìm thấy đơn hàng nào với số điện thoại này.'
+    if (!data.length) orderLookup.value.error = 'Kh�ng t�m th?y don h�ng n�o v?i s? di?n tho?i n�y.'
   } catch (error) {
     const status = error.response?.status
     const msg = error.response?.data?.message || error.response?.data || error.message
-    if (!error.response) orderLookup.value.error = 'Không kết nối được đến server. Kiểm tra backend đang chạy chưa.'
-    else if (status === 404 || status === 400) orderLookup.value.error = 'Không tìm thấy đơn hàng với số điện thoại này.'
-    else orderLookup.value.error = `Lỗi ${status ?? '?'}: ${msg || 'Không thể tra cứu lúc này.'}`
+    if (!error.response) orderLookup.value.error = 'Kh�ng k?t n?i du?c d?n server. Ki?m tra backend dang ch?y chua.'
+    else if (status === 404 || status === 400) orderLookup.value.error = 'Kh�ng t�m th?y don h�ng v?i s? di?n tho?i n�y.'
+    else orderLookup.value.error = `L?i ${status ?? '?'}: ${msg || 'Kh�ng th? tra c?u l�c n�y.'}`
   } finally { orderLookup.value.loading = false }
 }
 
 export async function cancelFromLookup(order) {
-  if (!canCancelOrder(order)) { showNotice('Đơn này không thể hủy ở trạng thái hiện tại.', 'bad'); return }
-  if (!confirm(`Hủy đơn ${order.orderCode}?`)) return
+  if (!canCancelOrder(order)) { showNotice('�on n�y kh�ng th? h?y ? tr?ng th�i hi?n t?i.', 'bad'); return }
+  if (!confirm(`H?y don ${order.orderCode}?`)) return
   const phone = orderLookup.value.phone.trim()
   try {
     await api.put(`/api/Orders/${order.orderId}/customer-cancel`, { phone })
     showNotice('Dang nhap thanh cong.')
     await lookupByPhone()
     if (currentUser.value) await loadMyOrders()
-  } catch (error) { showNotice(error.response?.data?.message || 'Không hủy được đơn hàng.', 'bad') }
+  } catch (error) { showNotice(error.response?.data?.message || 'Kh�ng h?y du?c don h�ng.', 'bad') }
 }
 
 export async function submitCheckout() {
   checkoutMessage.value = ''; checkoutBusy.value = true
   syncCartStock()
-  if (selectedCart.value.length === 0) { checkoutMessage.value = 'Vui lòng chọn ít nhất một sản phẩm để thanh toán.'; checkoutBusy.value = false; return }
+  if (selectedCart.value.length === 0) { checkoutMessage.value = 'Vui l�ng ch?n �t nh?t m?t s?n ph?m d? thanh to�n.'; checkoutBusy.value = false; return }
   if (!currentUser.value) { checkoutBusy.value = false; openAuth('login'); return }
   try {
     const customer = await ensureCheckoutCustomer()
@@ -1574,7 +1574,7 @@ export async function submitCheckout() {
     checkout.value = { voucher: 'NONE', paymentMethod: 'Cash', depositAmount: 0 }
     await Promise.all([loadProducts(), loadMyOrders()])
     await loadCustomerAccountData()
-    showNotice(`Đặt hàng thành công ${order?.orderCode ? `- ${order.orderCode}` : ''}.`)
+    showNotice(`�?t h�ng th�nh c�ng ${order?.orderCode ? `- ${order.orderCode}` : ''}.`)
     openPage('myOrders')
   } catch (error) {
     if (!error.response) {
@@ -1586,11 +1586,11 @@ export async function submitCheckout() {
       checkout.value = { voucher: 'NONE', paymentMethod: 'Cash', depositAmount: 0 }
       await Promise.all([loadProducts(), loadMyOrders()])
       await loadCustomerAccountData()
-      showNotice(`Đã tạo đơn demo local - ${order.orderCode}.`)
+      showNotice(`�� t?o don demo local - ${order.orderCode}.`)
       openPage('myOrders')
       return
     }
-    checkoutMessage.value = error.response?.data?.message || error.message || 'Lỗi khi tạo đơn hàng.'
+    checkoutMessage.value = error.response?.data?.message || error.message || 'L?i khi t?o don h�ng.'
   } finally { checkoutBusy.value = false }
 }
 
@@ -1620,14 +1620,14 @@ async function findCustomerByPhone(phone) {
 
 async function ensureCheckoutCustomer() {
   const profile = checkoutProfilePayload()
-  if (!profile.fullName) throw new Error('Vui lòng nhập họ tên người nhận.')
-  if (!profile.phone) throw new Error('Vui lòng nhập số điện thoại.')
-  if (!profile.address) throw new Error('Vui lòng nhập địa chỉ nhận hàng.')
+  if (!profile.fullName) throw new Error('Vui l�ng nh?p h? t�n ngu?i nh?n.')
+  if (!profile.phone) throw new Error('Vui l�ng nh?p s? di?n tho?i.')
+  if (!profile.address) throw new Error('Vui l�ng nh?p d?a ch? nh?n h�ng.')
   if (currentUser.value?.customerId) {
     try { return await updateBackendCustomer(currentUser.value, profile) }
     catch (error) {
       if (!error.response) { setCurrentCustomer({ ...currentUser.value, ...profile }); return currentUser.value }
-      if (![400, 404].includes(error.response?.status)) throw new Error(error.response?.data?.message || 'Không cập nhật được địa chỉ nhận hàng.')
+      if (![400, 404].includes(error.response?.status)) throw new Error(error.response?.data?.message || 'Kh�ng c?p nh?t du?c d?a ch? nh?n h�ng.')
     }
   }
   const existing = await findCustomerByPhone(profile.phone)
@@ -1654,7 +1654,7 @@ function markOrderCancelled(order) {
   const updated = { ...order, orderStatus: 'Cancelled', paymentStatus: Number(order.paidAmount || 0) > 0 ? 'Refunded' : paymentStatusFor(order) }
   if (currentUser.value && order.paymentMethod === 'Wallet' && Number(order.paidAmount || 0) > 0) {
     currentUser.value.walletBalance = walletBalance.value + Number(order.paidAmount || 0)
-    addWalletTransaction('refund', Number(order.paidAmount || 0), 'Hoàn tiền do hủy đơn', order.orderCode)
+    addWalletTransaction('refund', Number(order.paidAmount || 0), 'Ho�n ti?n do h?y don', order.orderCode)
   }
   if (currentUser.value) {
     currentUser.value.currentDebt = Math.max(0, Number(currentUser.value.currentDebt || 0) - orderDebt(order))
@@ -1662,12 +1662,12 @@ function markOrderCancelled(order) {
   }
   if (isLocalOrder(order)) adjustLocalStockReserves(order.items, -1)
   upsertLocalOrder(updated)
-  addActivityLog('order.cancelled', 'Hủy đơn hàng', order.orderCode)
+  addActivityLog('order.cancelled', 'H?y don h�ng', order.orderCode)
   return updated
 }
 
 export async function cancelOrder(order, staff = false) {
-  if (!canCancelOrder(order)) { showNotice('Đơn này không thể hủy ở trạng thái hiện tại.', 'bad'); return }
+  if (!canCancelOrder(order)) { showNotice('�on n�y kh�ng th? h?y ? tr?ng th�i hi?n t?i.', 'bad'); return }
   const id = order.orderId || order.id
   try {
     if (id && !String(id).startsWith('local-') && !order.isLocalDemo) {
@@ -1680,7 +1680,7 @@ export async function cancelOrder(order, staff = false) {
     }
     throw new Error('local')
   } catch (error) {
-    if (staff && error.message !== 'local' && error.response) { showNotice(error.response?.data?.message || 'Không hủy được đơn hàng.', 'bad'); return }
+    if (staff && error.message !== 'local' && error.response) { showNotice(error.response?.data?.message || 'Kh�ng h?y du?c don h�ng.', 'bad'); return }
     markOrderCancelled(order)
     await loadProducts(); await loadMyOrders()
     if (staff) await loadStaffData()
@@ -1698,7 +1698,7 @@ export function isDepositHolding(order) {
 }
 
 export async function payRemainingOrder(order) {
-  if (!confirm(`Xác nhận đã thanh toán đủ số tiền còn lại cho đơn ${order.orderCode}?`)) return
+  if (!confirm(`X�c nh?n d� thanh to�n d? s? ti?n c�n l?i cho don ${order.orderCode}?`)) return
   const id = order.orderId || order.id
   try {
     if (id && !String(id).startsWith('local-') && !order.isLocalDemo) {
@@ -1712,17 +1712,17 @@ export async function payRemainingOrder(order) {
       }
     }
     await loadMyOrders()
-    showNotice(`Đơn ${order.orderCode} đã thanh toán đủ.`)
-  } catch (e) { showNotice(e.response?.data?.message || 'Không thể cập nhật đơn hàng.', 'bad') }
+    showNotice(`�on ${order.orderCode} d� thanh to�n d?.`)
+  } catch (e) { showNotice(e.response?.data?.message || 'Kh�ng th? c?p nh?t don h�ng.', 'bad') }
 }
 
-// ─── Wallet top-up ────────────────────────────────────────────────────────────
+// --- Wallet top-up ------------------------------------------------------------
 
 function mapTopUpRequestFromApi(r) {
   return {
     id: r.requestCode || `TOPUP-${r.walletTopUpRequestId}`, backendId: r.walletTopUpRequestId,
     customerKey: String(r.customerId || ''), customerId: r.customerId || null,
-    customerName: r.customerName || 'Khách hàng', customerPhone: r.customerPhone || '',
+    customerName: r.customerName || 'Kh�ch h�ng', customerPhone: r.customerPhone || '',
     amount: Number(r.amount || 0), paymentMethod: r.paymentMethod || 'BankTransfer',
     status: String(r.status || 'pending').toLowerCase(),
     createdAt: r.requestedAt || new Date().toISOString(),
@@ -1762,7 +1762,7 @@ async function submitTopUpRequest(amount) {
     try {
       const res = await api.post('/api/WalletTopUps', {
         customerId: currentUser.value.customerId, amount: Number(amount || 0),
-        paymentMethod: walletTopUpForm.value.paymentMethod, note: 'Khách yêu cầu nạp ví'
+        paymentMethod: walletTopUpForm.value.paymentMethod, note: 'Kh�ch y�u c?u n?p v�'
       })
       const request = mapTopUpRequestFromApi(res.data)
       topUpRequests.value = [request, ...topUpRequests.value.filter(item => item.id !== request.id)]
@@ -1772,7 +1772,7 @@ async function submitTopUpRequest(amount) {
   const request = {
     id: `TOPUP-${Date.now()}`, customerKey: walletKeyFor(),
     customerId: currentUser.value?.customerId || null,
-    customerName: currentUser.value?.fullName || 'Khách hàng', customerPhone: currentUser.value?.phone || '',
+    customerName: currentUser.value?.fullName || 'Kh�ch h�ng', customerPhone: currentUser.value?.phone || '',
     amount: Number(amount || 0), paymentMethod: walletTopUpForm.value.paymentMethod,
     status: 'pending', createdAt: new Date().toISOString(), reviewedAt: null, reviewedBy: ''
   }
@@ -1791,10 +1791,10 @@ export function closeTopUpModal() { showTopUpModal.value = false }
 export async function topUpWallet() {
   if (!currentUser.value) { openAuth('login'); return }
   const amount = Math.max(0, Number(walletTopUpForm.value.amount || 0))
-  if (amount <= 0) { showNotice('Vui lòng nhập số tiền nạp ví hợp lệ.', 'bad'); return }
+  if (amount <= 0) { showNotice('Vui l�ng nh?p s? ti?n n?p v� h?p l?.', 'bad'); return }
   const request = await submitTopUpRequest(amount)
   showTopUpModal.value = false
-  addActivityLog('wallet.requested', `Khách yêu cầu nạp ví ${formatMoney(amount)}`, request.id)
+  addActivityLog('wallet.requested', `Kh�ch y�u c?u n?p v� ${formatMoney(amount)}`, request.id)
   showNotice('Dang nhap thanh cong.')
 }
 
@@ -1802,29 +1802,29 @@ export async function approveTopUpRequest(request) {
   if (!request || request.status !== 'pending') return
   if (request.backendId) {
     try {
-      const res = await api.post(`/api/WalletTopUps/${request.backendId}/approve`, { reviewedBy: staffUser.value?.username || 'Nhân viên' })
+      const res = await api.post(`/api/WalletTopUps/${request.backendId}/approve`, { reviewedBy: staffUser.value?.username || 'Nh�n vi�n' })
       const updated = mapTopUpRequestFromApi(res.data)
       topUpRequests.value = topUpRequests.value.map(item => item.id === request.id ? updated : item)
       if (currentUser.value?.customerId && Number(currentUser.value.customerId) === Number(updated.customerId) && updated.customerWalletBalance != null) {
         currentUser.value = { ...currentUser.value, walletBalance: Number(updated.customerWalletBalance || 0) }
         saveCustomerUser(currentUser.value)
       }
-      addActivityLog('wallet.approved', `Duyệt nạp ví ${formatMoney(updated.amount)} cho ${updated.customerName}`)
+      addActivityLog('wallet.approved', `Duy?t n?p v� ${formatMoney(updated.amount)} cho ${updated.customerName}`)
       showNotice('Dang nhap local thanh cong.')
       return
-    } catch (error) { showNotice(error.response?.data?.message || 'Không duyệt được yêu cầu nạp ví.', 'bad'); return }
+    } catch (error) { showNotice(error.response?.data?.message || 'Kh�ng duy?t du?c y�u c?u n?p v�.', 'bad'); return }
   }
   const states = readJsonStorage(WALLET_STATE_KEY, {})
   const state = states[request.customerKey] || { balance: 500000, transactions: [] }
   const amount = Number(request.amount || 0)
   const nextBalance = Number(state.balance || 0) + amount
-  const nextTransactions = [{ id: Date.now(), type: 'topup', amount, note: 'Nạp ví đã được nhân viên duyệt', orderCode: request.id, createdAt: new Date().toISOString() }, ...(state.transactions || [])].slice(0, 12)
+  const nextTransactions = [{ id: Date.now(), type: 'topup', amount, note: 'N?p v� d� du?c nh�n vi�n duy?t', orderCode: request.id, createdAt: new Date().toISOString() }, ...(state.transactions || [])].slice(0, 12)
   saveWalletStateForCustomer(request.customerKey, nextBalance, nextTransactions)
-  topUpRequests.value = topUpRequests.value.map(item => item.id === request.id ? { ...item, status: 'approved', reviewedAt: new Date().toISOString(), reviewedBy: staffUser.value?.username || 'Nhân viên' } : item)
+  topUpRequests.value = topUpRequests.value.map(item => item.id === request.id ? { ...item, status: 'approved', reviewedAt: new Date().toISOString(), reviewedBy: staffUser.value?.username || 'Nh�n vi�n' } : item)
   saveTopUpRequests()
   updateStoredCustomerBalance(request.customerKey, amount)
   if (currentUser.value && walletKeyFor() === request.customerKey) loadWalletState(currentUser.value)
-  addActivityLog('wallet.approved', `Duyệt nạp ví ${formatMoney(amount)} cho ${request.customerName}`)
+  addActivityLog('wallet.approved', `Duy?t n?p v� ${formatMoney(amount)} cho ${request.customerName}`)
   showNotice('Dang nhap thanh cong.')
 }
 
@@ -1832,21 +1832,21 @@ export async function rejectTopUpRequest(request) {
   if (!request || request.status !== 'pending') return
   if (request.backendId) {
     try {
-      const res = await api.post(`/api/WalletTopUps/${request.backendId}/reject`, { reviewedBy: staffUser.value?.username || 'Nhân viên' })
+      const res = await api.post(`/api/WalletTopUps/${request.backendId}/reject`, { reviewedBy: staffUser.value?.username || 'Nh�n vi�n' })
       const updated = mapTopUpRequestFromApi(res.data)
       topUpRequests.value = topUpRequests.value.map(item => item.id === request.id ? updated : item)
-      addActivityLog('wallet.rejected', `Từ chối nạp ví ${formatMoney(updated.amount)} cho ${updated.customerName}`)
+      addActivityLog('wallet.rejected', `T? ch?i n?p v� ${formatMoney(updated.amount)} cho ${updated.customerName}`)
       showNotice('Dang nhap local thanh cong.')
       return
-    } catch (error) { showNotice(error.response?.data?.message || 'Không từ chối được yêu cầu nạp ví.', 'bad'); return }
+    } catch (error) { showNotice(error.response?.data?.message || 'Kh�ng t? ch?i du?c y�u c?u n?p v�.', 'bad'); return }
   }
-  topUpRequests.value = topUpRequests.value.map(item => item.id === request.id ? { ...item, status: 'rejected', reviewedAt: new Date().toISOString(), reviewedBy: staffUser.value?.username || 'Nhân viên' } : item)
+  topUpRequests.value = topUpRequests.value.map(item => item.id === request.id ? { ...item, status: 'rejected', reviewedAt: new Date().toISOString(), reviewedBy: staffUser.value?.username || 'Nh�n vi�n' } : item)
   saveTopUpRequests()
-  addActivityLog('wallet.rejected', `Từ chối nạp ví ${formatMoney(request.amount)} cho ${request.customerName}`)
+  addActivityLog('wallet.rejected', `T? ch?i n?p v� ${formatMoney(request.amount)} cho ${request.customerName}`)
   showNotice('Dang nhap thanh cong.')
 }
 
-// ─── Staff ────────────────────────────────────────────────────────────────────
+// --- Staff --------------------------------------------------------------------
 
 export function openStaffAuth() { staffError.value = ''; showStaffModal.value = true }
 
@@ -1876,8 +1876,8 @@ export async function loginStaff() {
     await loadStaffData()
     openPage('dashboard')
   } catch (error) {
-    if (!error.response) staffError.value = 'Không kết nối được đến máy chủ. Kiểm tra Nhóm 3 (port 8083) và API Gateway (port 7000) đang chạy chưa.'
-    else staffError.value = error.response?.data?.message || `Đăng nhập thất bại (${error.response.status}).`
+    if (!error.response) staffError.value = 'Kh�ng k?t n?i du?c d?n m�y ch?. Ki?m tra Nh�m 3 (port 8083) v� API Gateway (port 7000) dang ch?y chua.'
+    else staffError.value = error.response?.data?.message || `�ang nh?p th?t b?i (${error.response.status}).`
   }
   finally { staffBusy.value = false }
 }
@@ -1964,7 +1964,7 @@ export function editSupplier(supplier) {
 }
 
 export async function saveSupplier() {
-  if (!supplierForm.value.supplierName.trim() || !supplierForm.value.phone.trim()) { showNotice('Vui lòng nhập tên nhà cung cấp và số điện thoại.', 'bad'); return }
+  if (!supplierForm.value.supplierName.trim() || !supplierForm.value.phone.trim()) { showNotice('Vui l�ng nh?p t�n nh� cung c?p v� s? di?n tho?i.', 'bad'); return }
   supplierSaving.value = true
   try {
     if (supplierEditingId.value) {
@@ -1987,20 +1987,20 @@ export async function saveSupplier() {
     }
     resetSupplierForm()
     await loadStaffData()
-  } catch (error) { showNotice(error.response?.data?.message || 'Không lưu được nhà cung cấp.', 'bad') }
+  } catch (error) { showNotice(error.response?.data?.message || 'Kh�ng luu du?c nh� cung c?p.', 'bad') }
   finally { supplierSaving.value = false }
 }
 
 export async function deleteSupplier(supplier) {
   const id = supplier.supplierId || supplier.id
-  if (!id || !confirm('Xóa nhà cung cấp này?')) return
+  if (!id || !confirm('X�a nh� cung c?p n�y?')) return
   try {
     await api.delete(`/api/Suppliers/${id}`)
     await recordAuditLog('supplier.deleted', 'Supplier', id, supplier.supplierName || supplier.name || '', '')
     if (supplierEditingId.value === id) resetSupplierForm()
     await loadStaffData()
     showNotice('Dang nhap thanh cong.')
-  } catch (error) { showNotice(error.response?.data?.message || 'Không xóa được nhà cung cấp.', 'bad') }
+  } catch (error) { showNotice(error.response?.data?.message || 'Kh�ng x�a du?c nh� cung c?p.', 'bad') }
 }
 
 export function debtRemaining(debt) { return Math.max(0, Number(debt?.remainingAmount ?? debt?.debtAmount - debt?.paidAmount ?? 0)) }
@@ -2013,7 +2013,7 @@ export function setDebtPayAmount(debt, amount) {
 export async function payDebt(debt) {
   const id = debt.debtId || debt.id
   const amount = debtPayAmount(debt)
-  if (!id || amount <= 0) { showNotice('Nhập số tiền trả nợ hợp lệ.', 'bad'); return }
+  if (!id || amount <= 0) { showNotice('Nh?p s? ti?n tr? n? h?p l?.', 'bad'); return }
   debtPaying.value = { ...debtPaying.value, [id]: true }
   try {
     await api.post(`/api/Debts/${id}/pay`, { amount, paymentMethod: debtPayForms.value[id]?.paymentMethod || 'Cash', note: 'Debt payment from staff UI' })
@@ -2021,7 +2021,7 @@ export async function payDebt(debt) {
     const next = { ...debtPayForms.value }; delete next[id]; debtPayForms.value = next
     await loadStaffData()
     showNotice('Dang nhap thanh cong.')
-  } catch (error) { showNotice(error.response?.data?.message || 'Không thanh toán được công nợ.', 'bad') }
+  } catch (error) { showNotice(error.response?.data?.message || 'Kh�ng thanh to�n du?c c�ng n?.', 'bad') }
   finally { const next = { ...debtPaying.value }; delete next[id]; debtPaying.value = next }
 }
 
@@ -2043,16 +2043,16 @@ export async function updateCustomerTier(customer, tierName) {
       saveCustomerUser(currentUser.value)
     }
     await recordAuditLog('customer.tier.updated', 'Customer', id, previousTier, tierName)
-    showNotice(`Đã cập nhật hạng ${tierName} cho ${customerName(customer)}.`)
+    showNotice(`�� c?p nh?t h?ng ${tierName} cho ${customerName(customer)}.`)
   } catch (error) {
     customer.membershipTier = previousTier
     staffData.value.customers = [...staffData.value.customers]
-    showNotice(error.response?.data?.message || 'Không thể cập nhật hạng thành viên.', 'bad')
+    showNotice(error.response?.data?.message || 'Kh�ng th? c?p nh?t h?ng th�nh vi�n.', 'bad')
   } finally { const next = { ...staffTierSaving.value }; delete next[id]; staffTierSaving.value = next }
 }
 
 export function isPendingPaymentOrder(order) {
-  // BankTransfer/QR chưa được xác nhận thanh toán (chờ khách bấm "Tôi đã TT")
+  // BankTransfer/QR chua du?c x�c nh?n thanh to�n (ch? kh�ch b?m "T�i d� TT")
   const s = String(order?.orderStatus || '').toLowerCase()
   const ps = String(order?.paymentStatus || '').toLowerCase()
   const m = String(order?.paymentMethod || '').toLowerCase()
@@ -2063,7 +2063,7 @@ export function isPendingPaymentOrder(order) {
 }
 
 export function isAwaitingPaymentConfirmation(order) {
-  // Khách đã bấm "Tôi đã TT", chờ nhân viên xác nhận
+  // Kh�ch d� b?m "T�i d� TT", ch? nh�n vi�n x�c nh?n
   const s = String(order?.orderStatus || '').toLowerCase()
   const ps = String(order?.paymentStatus || '').toLowerCase()
   return s === 'awaitingpaymentconfirmation' || ps === 'awaitingpaymentconfirmation'
@@ -2106,7 +2106,7 @@ export async function confirmPaymentReceived(order) {
     await api.put(`/api/Orders/${id}/status`, { status: 'AwaitingConfirmation' })
     await loadStaffData(); await loadMyOrders()
     showNotice('Dang nhap thanh cong.')
-  } catch { showNotice('Không xác nhận được. Vui lòng thử lại.', 'bad') }
+  } catch { showNotice('Kh�ng x�c nh?n du?c. Vui l�ng th? l?i.', 'bad') }
 }
 
 export async function approveOrder(order) {
@@ -2156,23 +2156,23 @@ export async function updateOrderStatus(order, status) {
     await recordAuditLog('order.status.updated', 'Order', order.orderCode || id, order.orderStatus || '', status)
     await loadStaffData(); await loadMyOrders()
     showNotice('Dang nhap thanh cong.')
-  } catch (error) { showNotice(error.response?.data?.message || 'Không cập nhật được đơn hàng.', 'bad') }
+  } catch (error) { showNotice(error.response?.data?.message || 'Kh�ng c?p nh?t du?c don h�ng.', 'bad') }
 }
 
 export async function updateReturnStatus(returnId, status) {
   try {
     await api.put(`/api/Returns/${returnId}/status`, { status })
-    showNotice(`Đã cập nhật trạng thái phiếu hoàn hàng.`)
+    showNotice(`�� c?p nh?t tr?ng th�i phi?u ho�n h�ng.`)
     await loadStaffData()
-  } catch { showNotice('Không thể cập nhật trạng thái. Vui lòng thử lại.', 'bad') }
+  } catch { showNotice('Kh�ng th? c?p nh?t tr?ng th�i. Vui l�ng th? l?i.', 'bad') }
 }
 
 export async function createInvoiceForOrder(orderId, cId) {
   try {
     const inv = await api.post('/api/SalesInvoices', { orderId, customerId: cId })
-    showNotice(`Đã tạo hóa đơn ${inv.data?.invoiceCode || ''}.`)
+    showNotice(`�� t?o h�a don ${inv.data?.invoiceCode || ''}.`)
     await loadStaffData()
-  } catch { showNotice('Không thể tạo hóa đơn. Vui lòng thử lại.', 'bad') }
+  } catch { showNotice('Kh�ng th? t?o h�a don. Vui l�ng th? l?i.', 'bad') }
 }
 
 

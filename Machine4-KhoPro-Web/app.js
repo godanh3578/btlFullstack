@@ -145,7 +145,7 @@ function bindAuth() {
 
       if (!canEnterWarehouse(state.user)) {
         clearWarehouseSession();
-        showToast("TÃ i khoáº£n khÃ¡ch hÃ ng chá»‰ Ä‘Æ°á»£c Ä‘Äƒng nháº­p táº¡i web mua hÃ ng.");
+        showToast("Tài khoản khách hàng chỉ được đăng nhập tại web mua hàng.");
         setTimeout(redirectToShop, 500);
         return;
       }
@@ -153,13 +153,13 @@ function bindAuth() {
       localStorage.setItem("khopro_token", state.token);
       localStorage.setItem("khopro_user", JSON.stringify(state.user));
       localStorage.setItem("khopro_login_role", ["admin-user", "Admin"].includes(state.user.role) ? "admin" : "user");
-      showToast("ÄÄƒng nháº­p thÃ nh cÃ´ng");
+      showToast("Đăng nhập thành công");
       showApp();
       await loadAll();
     } catch (error) {
       showToast(error.message.includes("401")
-        ? "Email hoáº·c máº­t kháº©u khÃ´ng Ä‘Ãºng."
-        : error.message || "KhÃ´ng thá»ƒ Ä‘Äƒng nháº­p.");
+        ? "Email hoặc mật khẩu không đúng."
+        : error.message || "Không thể đăng nhập.");
     } finally {
       submit.disabled = false;
     }
@@ -189,12 +189,12 @@ function bindAuth() {
       const email = form.elements.email.value;
       form.reset();
       $("#loginForm").elements.email.value = email;
-      showToast("Táº¡o tÃ i khoáº£n thÃ nh cÃ´ng. HÃ£y Ä‘Äƒng nháº­p.");
+      showToast("Tạo tài khoản thành công. Hãy đăng nhập.");
       $('[data-auth-tab="login"]').click();
     } catch (error) {
       showToast(error.message.includes("409")
-        ? "Email nÃ y Ä‘Ã£ Ä‘Æ°á»£c Ä‘Äƒng kÃ½."
-        : error.message || "KhÃ´ng thá»ƒ Ä‘Äƒng kÃ½ tÃ i khoáº£n.");
+        ? "Email này đã được đăng ký."
+        : error.message || "Không thể đăng ký tài khoản.");
     } finally {
       submit.disabled = false;
     }
@@ -346,7 +346,7 @@ function bindForms() {
   $("#productForm").addEventListener("submit", async (event) => {
     event.preventDefault();
     if (!canManageCatalog()) {
-      showToast("TÃ i khoáº£n nÃ y chá»‰ cÃ³ quyá»n xem sáº£n pháº©m, khÃ´ng cÃ³ quyá»n thÃªm/sá»­a.");
+      showToast("Tài khoản này chỉ có quyền xem sản phẩm, không có quyền thêm/sửa.");
       return;
     }
 
@@ -361,10 +361,10 @@ function bindForms() {
 
     if (id) {
       await request(`${PRODUCT_API}/products/${id}`, { method: "PUT", body: data });
-      showToast("ÄÃ£ cáº­p nháº­t sáº£n pháº©m");
+      showToast("Đã cập nhật sản phẩm");
     } else {
       await request(`${PRODUCT_API}/products`, { method: "POST", body: data });
-      showToast("ÄÃ£ thÃªm sáº£n pháº©m");
+      showToast("Đã thêm sản phẩm");
     }
 
     $("#productModal").close();
@@ -388,7 +388,7 @@ function bindForms() {
   $("#supplierForm").addEventListener("submit", async (event) => {
     event.preventDefault();
     if (!canManageCatalog()) {
-      showToast("TÃ i khoáº£n nÃ y khÃ´ng cÃ³ quyá»n thÃªm/sá»­a nhÃ  cung cáº¥p.");
+      showToast("Tài khoản này không có quyền thêm/sửa nhà cung cấp.");
       return;
     }
 
@@ -399,10 +399,10 @@ function bindForms() {
 
     if (id) {
       await request(`${PRODUCT_API}/suppliers/${id}`, { method: "PUT", body: data });
-      showToast("ÄÃ£ cáº­p nháº­t nhÃ  cung cáº¥p");
+      showToast("Đã cập nhật nhà cung cấp");
     } else {
       await request(`${PRODUCT_API}/suppliers`, { method: "POST", body: data });
-      showToast("ÄÃ£ thÃªm nhÃ  cung cáº¥p");
+      showToast("Đã thêm nhà cung cấp");
     }
 
     $("#supplierModal").close();
@@ -414,7 +414,7 @@ function bindForms() {
   $("#userForm").addEventListener("submit", async (event) => {
     event.preventDefault();
     if (!isAdminMode()) {
-      showToast("Báº¡n khÃ´ng cÃ³ quyá»n chá»‰nh sá»­a tÃ i khoáº£n.");
+      showToast("Bạn không có quyền chỉnh sửa tài khoản.");
       return;
     }
 
@@ -425,7 +425,7 @@ function bindForms() {
     delete data.email;
 
     if (!id) {
-      showToast("KhÃ´ng tÃ¬m tháº¥y tÃ i khoáº£n cáº§n sá»­a.");
+      showToast("Không tìm thấy tài khoản cần sửa.");
       return;
     }
 
@@ -434,7 +434,7 @@ function bindForms() {
     }
 
     await request(`${USER_API}/users/${id}`, { method: "PUT", body: data });
-    showToast("ÄÃ£ cáº­p nháº­t tÃ i khoáº£n");
+    showToast("Đã cập nhật tài khoản");
     $("#userModal").close();
     form.reset();
     await loadUsersData();
@@ -444,7 +444,7 @@ function bindForms() {
   $("#categoryForm").addEventListener("submit", async (event) => {
     event.preventDefault();
     if (!canManageCatalog()) {
-      showToast("TÃ i khoáº£n nÃ y khÃ´ng cÃ³ quyá»n thÃªm danh má»¥c.");
+      showToast("Tài khoản này không có quyền thêm danh mục.");
       return;
     }
 
@@ -458,13 +458,13 @@ function bindForms() {
         method: "PUT",
         body: data
       });
-      showToast("ÄÃ£ cáº­p nháº­t danh má»¥c");
+      showToast("Đã cập nhật danh mục");
     } else {
       await request(`${PRODUCT_API}/categories`, {
         method: "POST",
         body: data
       });
-      showToast("ÄÃ£ thÃªm danh má»¥c");
+      showToast("Đã thêm danh mục");
     }
 
     resetCategoryForm();
@@ -477,7 +477,7 @@ function bindForms() {
   $("#movementForm").addEventListener("submit", async (event) => {
     event.preventDefault();
     if (!canManageInventory()) {
-      showToast("Tài khoản này không có quyền điều chỉnh tồn kho.");
+      showToast("T�i kho?n n�y kh�ng c� quy?n di?u ch?nh t?n kho.");
       return;
     }
 
@@ -494,13 +494,13 @@ function bindForms() {
         method: "PUT",
         body: data
       });
-      showToast("Đã cập nhật lệnh điều chỉnh");
+      showToast("�� c?p nh?t l?nh di?u ch?nh");
     } else {
       await request(`${PRODUCT_API}/products/${productId}/stock/adjust`, {
         method: "POST",
         body: data
       });
-      showToast("Đã tạo lệnh điều chỉnh");
+      showToast("�� t?o l?nh di?u ch?nh");
     }
     form.reset();
     form.querySelector("input[name='requestId']").value = "";
@@ -512,7 +512,7 @@ function bindForms() {
   $("#receiptForm").addEventListener("submit", async (event) => {
     event.preventDefault();
     if (!canManageInventory()) {
-      showToast("Tài khoản này không có quyền tạo phiếu nhập.");
+      showToast("T�i kho?n n�y kh�ng c� quy?n t?o phi?u nh?p.");
       return;
     }
 
@@ -531,7 +531,7 @@ function bindForms() {
           }]
         }
       });
-      showToast("Đã cập nhật phiếu nhập");
+      showToast("�� c?p nh?t phi?u nh?p");
     } else {
       const receipt = await request(`${PRODUCT_API}/inventory/receipts`, {
         method: "POST",
@@ -544,7 +544,7 @@ function bindForms() {
           }]
         }
       });
-      showToast("Đã tạo phiếu nhập chờ duyệt");
+      showToast("�� t?o phi?u nh?p ch? duy?t");
     }
     form.reset();
     form.querySelector("input[name='requestId']").value = "";
@@ -557,7 +557,7 @@ function bindForms() {
     event.preventDefault();
     const form = event.currentTarget;
     const data = formData(form);
-    const noteParts = [data.note || "", data.receiver ? `Người nhận: ${data.receiver}` : ""].filter(Boolean);
+    const noteParts = [data.note || "", data.receiver ? `Ngu?i nh?n: ${data.receiver}` : ""].filter(Boolean);
 
     if (data.requestId) {
       await request(`${PRODUCT_API}/inventory/movements/${data.requestId}`, {
@@ -568,7 +568,7 @@ function bindForms() {
           note: noteParts.join(" - ")
         }
       });
-      showToast("Đã cập nhật phiếu xuất kho");
+      showToast("�� c?p nh?t phi?u xu?t kho");
     } else {
       await request(`${PRODUCT_API}/products/${data.productId}/stock/adjust`, {
         method: "POST",
@@ -578,7 +578,7 @@ function bindForms() {
           note: noteParts.join(" - ")
         }
       });
-      showToast("Đã tạo phiếu xuất kho chờ duyệt");
+      showToast("�� t?o phi?u xu?t kho ch? duy?t");
     }
 
     form.reset();
@@ -597,17 +597,17 @@ function bindForms() {
     state.user = response.user;
     localStorage.setItem("khopro_user", JSON.stringify(state.user));
     renderUser();
-    showToast("ÄÃ£ lÆ°u há»“ sÆ¡");
+    showToast("Đã lưu hồ sơ");
   });
 
   $("#addSaleLineBtn").addEventListener("click", addSaleLine);
   $("#salesForm").addEventListener("submit", createSaleOrder);
   $("#clearOrdersBtn").addEventListener("click", () => {
     if (state.orders.some((order) => order.status === "pending_cod" || order.status === "deposit_holding")) {
-      showToast("HÃ£y xá»­ lÃ½ cÃ¡c Ä‘Æ¡n COD / á»©ng cá»c Ä‘ang giá»¯ hÃ ng trÆ°á»›c khi xÃ³a lá»‹ch sá»­.");
+      showToast("Hãy xử lý các đơn COD / ứng cọc đang giữ hàng trước khi xóa lịch sử.");
       return;
     }
-    if (!confirm("XÃ³a lá»‹ch sá»­ Ä‘Æ¡n bÃ¡n local?")) return;
+    if (!confirm("Xóa lịch sử đơn bán local?")) return;
     state.orders = [];
     localStorage.setItem("khopro_orders", JSON.stringify(state.orders));
     renderSales();
@@ -638,9 +638,9 @@ async function loadAll() {
     const failed = results.find((result) => result.status === "rejected");
     if (failed?.status === "rejected") {
       const error = failed.reason;
-      showToast(error?.message || "KhÃƒÂ´ng tÃ¡ÂºÂ£i Ã„â€˜Ã†Â°Ã¡Â»Â£c mÃ¡Â»â„¢t phÃ¡ÂºÂ§n dÃ¡Â»Â¯ liÃ¡Â»â€¡u, Ã„â€˜ang dÃ¡Â»Â±a trÃƒÂªn dÃ¡Â»Â¯ liÃ¡Â»â€¡u Ã„â€˜ÃƒÂ£ lÃ†Â°u.");
+      showToast(error?.message || "KhÃ´ng táº£i Ä‘Æ°á»£c má»™t pháº§n dá»¯ liá»‡u, Ä‘ang dá»±a trÃªn dá»¯ liá»‡u Ä‘Ã£ lÆ°u.");
       if (isAuthError(error)) {
-        forceLogout("TÃƒÂ i khoÃ¡ÂºÂ£n Ã„â€˜ÃƒÂ£ bÃ¡Â»â€¹ khÃƒÂ³a hoÃ¡ÂºÂ·c phiÃƒÂªn Ã„â€˜Ã„Æ’ng nhÃ¡ÂºÂ­p khÃƒÂ´ng cÃƒÂ²n hÃ¡Â»Â£p lÃ¡Â»â€¡.");
+        forceLogout("TÃ i khoáº£n Ä‘Ã£ bá»‹ khÃ³a hoáº·c phiÃªn Ä‘Äƒng nháº­p khÃ´ng cÃ²n há»£p lá»‡.");
         return;
       }
     }
@@ -648,9 +648,9 @@ async function loadAll() {
     renderAll();
     startReservationTimer();
   } catch (error) {
-    showToast(error.message || "KhÃ´ng táº£i Ä‘Æ°á»£c dá»¯ liá»‡u");
+    showToast(error.message || "Không tải được dữ liệu");
     if (isAuthError(error)) {
-      forceLogout("TÃ i khoáº£n Ä‘Ã£ bá»‹ khÃ³a hoáº·c phiÃªn Ä‘Äƒng nháº­p khÃ´ng cÃ²n há»£p lá»‡.");
+      forceLogout("Tài khoản đã bị khóa hoặc phiên đăng nhập không còn hợp lệ.");
     }
   }
 }
@@ -683,7 +683,7 @@ function normalizeRemoteOrder(order) {
     id: order.orderId || order.id,
     code: order.orderCode || order.code,
     customerId: order.customerId || "",
-    customerName: order.customerName || "KhÃ¡ch hÃ ng",
+    customerName: order.customerName || "Khách hàng",
     email: order.customerEmail || order.email || "",
     phone: order.customerPhone || order.phone || "",
     address: order.customerAddress || order.address || "",
@@ -691,7 +691,7 @@ function normalizeRemoteOrder(order) {
     paymentStatus: order.paymentStatus || "Unpaid",
     items: (order.items || []).map((item) => ({
       productId: item.productId,
-      name: item.productName || item.name || "Sáº£n pháº©m",
+      name: item.productName || item.name || "Sản phẩm",
       categoryName: item.categoryName || "",
       quantity: number(item.quantity),
       price: number(item.unitPrice ?? item.price),
@@ -789,7 +789,7 @@ function isAuthError(error) {
   return message.includes("401") || message.includes("403") || message.toLowerCase().includes("unauthorized") || message.toLowerCase().includes("forbidden");
 }
 
-function forceLogout(message = "PhiÃªn Ä‘Äƒng nháº­p khÃ´ng cÃ²n há»£p lá»‡.") {
+function forceLogout(message = "Phiên đăng nhập không còn hợp lệ.") {
   localStorage.removeItem("khopro_token");
   localStorage.removeItem("khopro_user");
   localStorage.removeItem("khopro_login_role");
@@ -826,7 +826,7 @@ function startPresenceHeartbeat() {
       }
     } catch (error) {
       if (isAuthError(error)) {
-        forceLogout("TÃ i khoáº£n Ä‘Ã£ bá»‹ khÃ³a hoáº·c phiÃªn Ä‘Äƒng nháº­p khÃ´ng cÃ²n há»£p lá»‡.");
+        forceLogout("Tài khoản đã bị khóa hoặc phiên đăng nhập không còn hợp lệ.");
       }
     }
   }, 1500);
@@ -889,8 +889,8 @@ function renderAll() {
 }
 
 function renderUser() {
-  const name = state.user?.name || state.user?.email || "NgÆ°á»i dÃ¹ng";
-  $("#userPill").textContent = `${name} Â· ${roleText(state.user?.role)}`;
+  const name = state.user?.name || state.user?.email || "Người dùng";
+  $("#userPill").textContent = `${name} · ${roleText(state.user?.role)}`;
   $("#storeName").textContent = state.user?.storeName || "Local";
 }
 
@@ -898,10 +898,10 @@ function renderStats() {
   const summary = state.summary || {};
   const totalValue = state.products.reduce((sum, item) => sum + number(item.price) * number(item.stock), 0);
   const stats = [
-    ["pe-7s-box1", "Sáº£n pháº©m", summary.totalProducts ?? state.products.length],
-    ["pe-7s-repeat", "Tá»•ng tá»“n", summary.totalStock ?? 0],
-    ["pe-7s-attention", "Sáº¯p háº¿t hÃ ng", summary.lowStockProducts ?? 0],
-    ["pe-7s-cash", "GiÃ¡ trá»‹ tá»“n", money(totalValue)]
+    ["pe-7s-box1", "Sản phẩm", summary.totalProducts ?? state.products.length],
+    ["pe-7s-repeat", "Tổng tồn", summary.totalStock ?? 0],
+    ["pe-7s-attention", "Sắp hết hàng", summary.lowStockProducts ?? 0],
+    ["pe-7s-cash", "Giá trị tồn", money(totalValue)]
   ];
 
   $("#stats").innerHTML = stats.map(([icon, label, value]) => `
@@ -914,12 +914,12 @@ function renderStats() {
 
   const lowStock = state.products.filter((item) => number(item.stock) <= number(item.minimumStock));
   $("#lowStockList").innerHTML = lowStock.length
-    ? lowStock.map((item) => listItem(item.name, `Tá»“n ${item.stock} / Tá»‘i thiá»ƒu ${item.minimumStock}`, `<span class="badge warn">Cáº§n nháº­p</span>`)).join("")
-    : empty("ChÆ°a cÃ³ sáº£n pháº©m sáº¯p háº¿t hÃ ng");
+    ? lowStock.map((item) => listItem(item.name, `Tồn ${item.stock} / Tối thiểu ${item.minimumStock}`, `<span class="badge warn">Cần nhập</span>`)).join("")
+    : empty("Chưa có sản phẩm sắp hết hàng");
 
   $("#recentMovements").innerHTML = state.movements.slice(0, 6).map((item) =>
-    listItem(item.productName || "Sáº£n pháº©m", `${movementLabel(item.type)} ${item.quantity} - ${dateTime(item.createdAt)}`, `<span class="badge ${item.type === "out" ? "danger" : "ok"}">${item.type}</span>`)
-  ).join("") || empty("ChÆ°a cÃ³ giao dá»‹ch kho");
+    listItem(item.productName || "Sản phẩm", `${movementLabel(item.type)} ${item.quantity} - ${dateTime(item.createdAt)}`, `<span class="badge ${item.type === "out" ? "danger" : "ok"}">${item.type}</span>`)
+  ).join("") || empty("Chưa có giao dịch kho");
 }
 
 function renderCharts() {
@@ -1010,7 +1010,7 @@ function drawStockBarChart(canvas) {
     ctx.fill();
     ctx.fillStyle = "#64748b";
     ctx.textAlign = "center";
-    ctx.fillText(shortLabel(item.name || "Sáº£n pháº©m"), x + barWidth / 2, height - 22);
+    ctx.fillText(shortLabel(item.name || "Sản phẩm"), x + barWidth / 2, height - 22);
   });
 }
 
@@ -1185,9 +1185,9 @@ function renderPagination(containerId, currentPage, totalPages, pageAttr) {
   }
 
   container.innerHTML = `
-    <button class="product-page-btn ${currentPage === 1 ? "disabled" : ""}" type="button" ${pageAttr}-nav="prev" ${currentPage === 1 ? "disabled" : ""}>â€¹</button>
+    <button class="product-page-btn ${currentPage === 1 ? "disabled" : ""}" type="button" ${pageAttr}-nav="prev" ${currentPage === 1 ? "disabled" : ""}>‹</button>
     ${pages.join("")}
-    <button class="product-page-btn ${currentPage === totalPages ? "disabled" : ""}" type="button" ${pageAttr}-nav="next" ${currentPage === totalPages ? "disabled" : ""}>â€º</button>
+    <button class="product-page-btn ${currentPage === totalPages ? "disabled" : ""}" type="button" ${pageAttr}-nav="next" ${currentPage === totalPages ? "disabled" : ""}>›</button>
   `;
 }
 
@@ -1203,7 +1203,7 @@ function renderProducts() {
         <div class="product-cell">
           ${item.image ? `<img class="thumb" src="${escapeHtml(item.image)}" alt="">` : `<div class="thumb placeholder-thumb">${initial(item.name)}</div>`}
           <div>
-            <strong>${escapeHtml(item.name || "ChÆ°a Ä‘áº·t tÃªn")}</strong>
+            <strong>${escapeHtml(item.name || "Chưa đặt tên")}</strong>
             <p class="muted">${escapeHtml(item.description || "")}</p>
           </div>
         </div>
@@ -1218,24 +1218,24 @@ function renderProducts() {
       <td class="product-action-cell">
         ${canManageCatalog() ? `
           <div class="actions product-actions">
-            <button class="user-icon-button edit" type="button" onclick="editProduct('${item.id}')" title="Sá»­a sáº£n pháº©m" aria-label="Sá»­a sáº£n pháº©m">
+            <button class="user-icon-button edit" type="button" onclick="editProduct('${item.id}')" title="Sửa sản phẩm" aria-label="Sửa sản phẩm">
               <i class="pe-7s-pen" aria-hidden="true"></i>
             </button>
-            <button class="user-icon-button delete" type="button" onclick="deleteProduct('${item.id}')" title="XÃ³a sáº£n pháº©m" aria-label="XÃ³a sáº£n pháº©m">
+            <button class="user-icon-button delete" type="button" onclick="deleteProduct('${item.id}')" title="Xóa sản phẩm" aria-label="Xóa sản phẩm">
               <i class="pe-7s-trash" aria-hidden="true"></i>
             </button>
           </div>
-        ` : `<span class="muted">Chá»‰ xem</span>`}
+        ` : `<span class="muted">Chỉ xem</span>`}
       </td>
     </tr>
-  `).join("") || `<tr><td colspan="7" class="empty">ChÆ°a cÃ³ sáº£n pháº©m</td></tr>`;
+  `).join("") || `<tr><td colspan="7" class="empty">Chưa có sản phẩm</td></tr>`;
 
   updateProductSelectionControls(pageRows);
   const info = $("#productPaginationInfo");
   if (info) {
     info.textContent = totalItems
-      ? `Äang xem ${((currentPage - 1) * 5) + 1}-${Math.min(totalItems, currentPage * 5)} / ${totalItems} sáº£n pháº©m`
-      : "ChÆ°a cÃ³ sáº£n pháº©m";
+      ? `Đang xem ${((currentPage - 1) * 5) + 1}-${Math.min(totalItems, currentPage * 5)} / ${totalItems} sản phẩm`
+      : "Chưa có sản phẩm";
   }
   renderPagination("productPagination", currentPage, totalPages, "data-product-page");
 }
@@ -1259,7 +1259,7 @@ function renderSales() {
 
   $("#ordersList").innerHTML = state.orders.length
     ? state.orders.slice(0, 12).map(renderOrderItem).join("")
-    : empty("ChÆ°a cÃ³ Ä‘Æ¡n bÃ¡n hÃ ng");
+    : empty("Chưa có đơn bán hàng");
 }
 
 function renderOrderItem(order) {
@@ -1268,44 +1268,44 @@ function renderOrderItem(order) {
   const depositHolding = order.status === "deposit_holding";
   const cancelled = ["expired", "cancelled"].includes(order.status);
   const status = webPending
-    ? `<span class="badge warn">ÄÆ¡n web chá» xá»­ lÃ½</span>`
+    ? `<span class="badge warn">Đơn web chờ xử lý</span>`
     : pending
-    ? `<span class="badge warn">COD Ä‘ang giá»¯</span>`
+    ? `<span class="badge warn">COD đang giữ</span>`
     : depositHolding
-    ? `<span class="badge warn">á»¨ng cá»c Ä‘ang giá»¯</span>`
+    ? `<span class="badge warn">Ứng cọc đang giữ</span>`
     : cancelled
-      ? `<span class="badge danger">${order.status === "expired" ? "ÄÃ£ háº¿t háº¡n" : "ÄÃ£ há»§y"}</span>`
-      : `<span class="badge ok">ÄÃ£ thanh toÃ¡n</span>`;
+      ? `<span class="badge danger">${order.status === "expired" ? "Đã hết hạn" : "Đã hủy"}</span>`
+      : `<span class="badge ok">Đã thanh toán</span>`;
   const countdown = pending
     ? `<span class="cod-countdown" data-cod-countdown="${order.id}">${formatCountdown(order.expiresAt)}</span>`
     : "";
   const actions = webPending
     ? `<div class="order-actions">
-        <button class="btn btn-info btn-fill btn-sm" type="button" onclick="updateWebOrderStatus('${order.id}', 'Confirmed')">XÃ¡c nháº­n Ä‘Æ¡n</button>
-        <button class="btn btn-danger btn-sm" type="button" onclick="updateWebOrderStatus('${order.id}', 'Cancelled')">Há»§y Ä‘Æ¡n</button>
+        <button class="btn btn-info btn-fill btn-sm" type="button" onclick="updateWebOrderStatus('${order.id}', 'Confirmed')">Xác nhận đơn</button>
+        <button class="btn btn-danger btn-sm" type="button" onclick="updateWebOrderStatus('${order.id}', 'Cancelled')">Hủy đơn</button>
       </div>`
     : pending
     ? `<div class="order-actions">
-        <button class="btn btn-info btn-fill btn-sm" type="button" onclick="confirmCodOrder('${order.id}')">XÃ¡c nháº­n Ä‘Ã£ tráº£</button>
-        <button class="btn btn-danger btn-sm" type="button" onclick="cancelCodOrder('${order.id}')">Há»§y & hoÃ n kho</button>
+        <button class="btn btn-info btn-fill btn-sm" type="button" onclick="confirmCodOrder('${order.id}')">Xác nhận đã trả</button>
+        <button class="btn btn-danger btn-sm" type="button" onclick="cancelCodOrder('${order.id}')">Hủy & hoàn kho</button>
       </div>`
     : depositHolding
     ? `<div class="order-actions">
-        <button class="btn btn-info btn-fill btn-sm" type="button" onclick="confirmDepositRemote('${order.id}')">XÃ¡c nháº­n Ä‘Ã£ tráº£ Ä‘á»§</button>
-        <button class="btn btn-danger btn-sm" type="button" onclick="cancelDepositRemote('${order.id}')">Há»§y & hoÃ n cá»c</button>
+        <button class="btn btn-info btn-fill btn-sm" type="button" onclick="confirmDepositRemote('${order.id}')">Xác nhận đã trả đủ</button>
+        <button class="btn btn-danger btn-sm" type="button" onclick="cancelDepositRemote('${order.id}')">Hủy & hoàn cọc</button>
       </div>`
     : "";
 
   return `
     <div class="list-item order-item ${pending ? "order-pending" : ""}">
       <div class="order-main">
-        <strong>${escapeHtml(`${order.code} - ${order.customerName || "KhÃ¡ch láº»"}`)}</strong>
+        <strong>${escapeHtml(`${order.code} - ${order.customerName || "Khách lẻ"}`)}</strong>
         <p>${dateTime(order.createdAt)} - ${money(order.finalAmount)} - ${escapeHtml(order.paymentMethod || "-")}</p>
-        ${order.source ? `<p><strong>${escapeHtml(order.source)}</strong> Â· ${escapeHtml(order.phone || "ChÆ°a cÃ³ SÄT")} Â· ${escapeHtml(order.email || "ChÆ°a cÃ³ email")}</p>` : ""}
-        ${order.address ? `<p>Äá»‹a chá»‰: ${escapeHtml(order.address)}</p>` : ""}
-        ${order.items?.length ? `<p>${order.items.map((item) => `${escapeHtml(item.name)} Ã— ${number(item.quantity)}`).join(" Â· ")}</p>` : ""}
-        ${pending ? `<p class="cod-hold-status">Kho Ä‘ang giá»¯ hÃ ng Â· cÃ²n ${countdown}</p>` : ""}
-        ${cancelled ? `<p>HÃ ng Ä‘Ã£ Ä‘Æ°á»£c tráº£ vá» kho.</p>` : ""}
+        ${order.source ? `<p><strong>${escapeHtml(order.source)}</strong> · ${escapeHtml(order.phone || "Chưa có SĐT")} · ${escapeHtml(order.email || "Chưa có email")}</p>` : ""}
+        ${order.address ? `<p>Địa chỉ: ${escapeHtml(order.address)}</p>` : ""}
+        ${order.items?.length ? `<p>${order.items.map((item) => `${escapeHtml(item.name)} × ${number(item.quantity)}`).join(" · ")}</p>` : ""}
+        ${pending ? `<p class="cod-hold-status">Kho đang giữ hàng · còn ${countdown}</p>` : ""}
+        ${cancelled ? `<p>Hàng đã được trả về kho.</p>` : ""}
       </div>
       <div class="order-side">${status}${actions}</div>
     </div>
@@ -1321,7 +1321,7 @@ window.updateWebOrderStatus = async (id, status) => {
         body: {
           type: "in",
           quantity: number(item.quantity),
-          note: `HoÃ n kho do há»§y Ä‘Æ¡n web ${order.code}`
+          note: `Hoàn kho do hủy đơn web ${order.code}`
         }
       });
     }
@@ -1331,7 +1331,7 @@ window.updateWebOrderStatus = async (id, status) => {
     method: "PUT",
     body: { status }
   });
-  showToast(status === "Confirmed" ? "ÄÃ£ xÃ¡c nháº­n Ä‘Æ¡n hÃ ng web" : "ÄÃ£ há»§y Ä‘Æ¡n hÃ ng web");
+  showToast(status === "Confirmed" ? "Đã xác nhận đơn hàng web" : "Đã hủy đơn hàng web");
   await Promise.all([loadOrderData(), loadInventoryData()]);
   renderSales();
   renderInventory();
@@ -1399,7 +1399,7 @@ function updateCodCountdowns() {
 
 function formatCountdown(expiresAt) {
   const remaining = Math.max(0, new Date(expiresAt).getTime() - Date.now());
-  if (remaining <= 0) return "Ä‘ang hoÃ n kho...";
+  if (remaining <= 0) return "đang hoàn kho...";
   const minutes = Math.floor(remaining / 60000);
   const seconds = Math.floor((remaining % 60000) / 1000);
   return `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
@@ -1408,13 +1408,13 @@ function formatCountdown(expiresAt) {
 window.confirmCodOrder = async (orderId) => {
   const order = state.orders.find((item) => item.id === orderId && item.status === "pending_cod");
   if (!order) return;
-  if (!confirm(`XÃ¡c nháº­n khÃ¡ch Ä‘Ã£ thanh toÃ¡n Ä‘Æ¡n ${order.code}?`)) return;
+  if (!confirm(`Xác nhận khách đã thanh toán đơn ${order.code}?`)) return;
   await request(`${PRODUCT_API}/inventory/reservations/${order.reservationId}/confirm`, { method: "POST" });
   order.status = "completed";
   order.paidAmount = order.finalAmount;
   order.debtAmount = 0;
   order.confirmedAt = new Date().toISOString();
-  // Äá»“ng bá»™ tráº¡ng thÃ¡i lÃªn Order API (NhÃ³m 2)
+  // Đồng bộ trạng thái lên Order API (Nhóm 2)
   const codeToSync = order.serverCode || order.code;
   try {
     await request(`${ORDER_API}/Orders/by-code/${codeToSync}/status`, {
@@ -1422,21 +1422,21 @@ window.confirmCodOrder = async (orderId) => {
       body: { status: "Completed" }
     });
   } catch (e) {
-    console.warn("KhÃ´ng thá»ƒ Ä‘á»“ng bá»™ tráº¡ng thÃ¡i COD confirm lÃªn Order API:", e?.message || e);
+    console.warn("Không thể đồng bộ trạng thái COD confirm lên Order API:", e?.message || e);
   }
   saveOrders();
   renderSales();
-  showToast("ÄÃ£ xÃ¡c nháº­n thanh toÃ¡n COD. HÃ ng chÃ­nh thá»©c xuáº¥t kho.");
+  showToast("Đã xác nhận thanh toán COD. Hàng chính thức xuất kho.");
 };
 
 window.cancelCodOrder = async (orderId) => {
   const order = state.orders.find((item) => item.id === orderId && item.status === "pending_cod");
   if (!order) return;
-  if (!confirm(`Há»§y Ä‘Æ¡n ${order.code} vÃ  hoÃ n toÃ n bá»™ hÃ ng vá» kho?`)) return;
+  if (!confirm(`Hủy đơn ${order.code} và hoàn toàn bộ hàng về kho?`)) return;
   await request(`${PRODUCT_API}/inventory/reservations/${order.reservationId}/cancel`, { method: "POST" });
   order.status = "cancelled";
   order.cancelledAt = new Date().toISOString();
-  // Äá»“ng bá»™ tráº¡ng thÃ¡i lÃªn Order API (NhÃ³m 2)
+  // Đồng bộ trạng thái lên Order API (Nhóm 2)
   const codeToSync = order.serverCode || order.code;
   try {
     await request(`${ORDER_API}/Orders/by-code/${codeToSync}/status`, {
@@ -1444,18 +1444,18 @@ window.cancelCodOrder = async (orderId) => {
       body: { status: "Cancelled" }
     });
   } catch (e) {
-    console.warn("KhÃ´ng thá»ƒ Ä‘á»“ng bá»™ tráº¡ng thÃ¡i COD cancel lÃªn Order API:", e?.message || e);
+    console.warn("Không thể đồng bộ trạng thái COD cancel lên Order API:", e?.message || e);
   }
   saveOrders();
   await loadInventoryData();
   renderAll();
-  showToast("ÄÃ£ há»§y COD vÃ  hoÃ n hÃ ng vá» kho.");
+  showToast("Đã hủy COD và hoàn hàng về kho.");
 };
 
 window.confirmDepositRemote = async (orderId) => {
   const order = state.orders.find((item) => item.id === orderId && item.status === "deposit_holding");
   if (!order) return;
-  if (!confirm(`XÃ¡c nháº­n khÃ¡ch Ä‘Ã£ thanh toÃ¡n Ä‘á»§ Ä‘Æ¡n á»©ng cá»c ${order.code}?`)) return;
+  if (!confirm(`Xác nhận khách đã thanh toán đủ đơn ứng cọc ${order.code}?`)) return;
   const codeToSync = order.serverCode || order.code;
   try {
     await request(`${ORDER_API}/Orders/by-code/${codeToSync}/status`, {
@@ -1463,7 +1463,7 @@ window.confirmDepositRemote = async (orderId) => {
       body: { status: "Completed" }
     });
   } catch (e) {
-    console.warn("KhÃ´ng thá»ƒ Ä‘á»“ng bá»™ xÃ¡c nháº­n á»©ng cá»c lÃªn Order API:", e?.message || e);
+    console.warn("Không thể đồng bộ xác nhận ứng cọc lên Order API:", e?.message || e);
   }
   order.status = "completed";
   order.paidAmount = order.finalAmount;
@@ -1471,13 +1471,13 @@ window.confirmDepositRemote = async (orderId) => {
   order.confirmedAt = new Date().toISOString();
   saveOrders();
   renderSales();
-  showToast("ÄÃ£ xÃ¡c nháº­n thanh toÃ¡n Ä‘á»§ Ä‘Æ¡n á»©ng cá»c. HÃ ng chÃ­nh thá»©c xuáº¥t kho.");
+  showToast("Đã xác nhận thanh toán đủ đơn ứng cọc. Hàng chính thức xuất kho.");
 };
 
 window.cancelDepositRemote = async (orderId) => {
   const order = state.orders.find((item) => item.id === orderId && item.status === "deposit_holding");
   if (!order) return;
-  if (!confirm(`Há»§y Ä‘Æ¡n á»©ng cá»c ${order.code} vÃ  hoÃ n cá»c cho khÃ¡ch?`)) return;
+  if (!confirm(`Hủy đơn ứng cọc ${order.code} và hoàn cọc cho khách?`)) return;
   const codeToSync = order.serverCode || order.code;
   try {
     await request(`${ORDER_API}/Orders/by-code/${codeToSync}/status`, {
@@ -1485,13 +1485,13 @@ window.cancelDepositRemote = async (orderId) => {
       body: { status: "Cancelled" }
     });
   } catch (e) {
-    console.warn("KhÃ´ng thá»ƒ Ä‘á»“ng bá»™ há»§y á»©ng cá»c lÃªn Order API:", e?.message || e);
+    console.warn("Không thể đồng bộ hủy ứng cọc lên Order API:", e?.message || e);
   }
   order.status = "cancelled";
   order.cancelledAt = new Date().toISOString();
   saveOrders();
   renderSales();
-  showToast("ÄÃ£ há»§y Ä‘Æ¡n á»©ng cá»c vÃ  hoÃ n tiá»n cá»c cho khÃ¡ch.");
+  showToast("Đã hủy đơn ứng cọc và hoàn tiền cọc cho khách.");
 };
 
 function saveOrders() {
@@ -1537,7 +1537,7 @@ function addSaleLine() {
 
   const available = getSaleAvailableQuantity(productId);
   if (available <= 0) {
-    showToast("Sáº£n pháº©m nÃ y Ä‘Ã£ háº¿t tá»“n kho hoáº·c Ä‘Ã£ Ä‘á»§ sá»‘ lÆ°á»£ng trong Ä‘Æ¡n");
+    showToast("Sản phẩm này đã hết tồn kho hoặc đã đủ số lượng trong đơn");
     updateSaleQuantityLimit();
     return;
   }
@@ -1595,7 +1595,7 @@ async function createSaleOrder(event) {
       method: "POST",
       body: {
         orderId,
-        customerName: data.customerName || "KhÃ¡ch láº»",
+        customerName: data.customerName || "Khách lẻ",
         lines: state.saleCart.map((line) => ({
           productId: line.productId,
           quantity: line.quantity
@@ -1608,7 +1608,7 @@ async function createSaleOrder(event) {
         method: "POST",
         body: {
           quantity: line.quantity,
-          note: `BÃ¡n hÃ ng ${orderCode} - ${data.customerName || "KhÃ¡ch láº»"}`
+          note: `Bán hàng ${orderCode} - ${data.customerName || "Khách lẻ"}`
         }
       });
     }
@@ -1617,7 +1617,7 @@ async function createSaleOrder(event) {
   const order = {
     id: orderId,
     code: orderCode,
-    customerName: data.customerName || "KhÃ¡ch láº»",
+    customerName: data.customerName || "Khách lẻ",
     paymentType: isCod ? "cod" : "direct",
     paymentMethod: isCod ? "COD" : data.paymentMethod || "Cash",
     items: state.saleCart,
@@ -1633,7 +1633,7 @@ async function createSaleOrder(event) {
     source: "KhoPro"
   };
 
-  // Äá»“ng bá»™ Ä‘Æ¡n hÃ ng lÃªn Order API (NhÃ³m 2)
+  // Đồng bộ đơn hàng lên Order API (Nhóm 2)
   try {
     const serverOrder = await request(`${ORDER_API}/Orders`, {
       method: "POST",
@@ -1658,13 +1658,13 @@ async function createSaleOrder(event) {
         }))
       }
     });
-    // Cáº­p nháº­t local order vá»›i orderId thá»±c tá»« server
+    // Cập nhật local order với orderId thực từ server
     if (serverOrder && serverOrder.orderId) {
       order.serverId = serverOrder.orderId;
       order.serverCode = serverOrder.orderCode;
     }
   } catch (e) {
-    console.warn("KhÃ´ng thá»ƒ Ä‘á»“ng bá»™ Ä‘Æ¡n lÃªn Order API:", e?.message || e);
+    console.warn("Không thể đồng bộ đơn lên Order API:", e?.message || e);
   }
 
   state.orders = [order, ...state.orders];
@@ -1678,8 +1678,8 @@ async function createSaleOrder(event) {
   $("#saleQuantityInput").value = 1;
   updateSaleQuantityLimit();
   showToast(isCod
-    ? "ÄÃ£ giá»¯ hÃ ng COD trong 10 phÃºt vÃ  trá»« tá»“n kho."
-    : "ÄÃ£ táº¡o Ä‘Æ¡n, thanh toÃ¡n vÃ  trá»« kho.");
+    ? "Đã giữ hàng COD trong 10 phút và trừ tồn kho."
+    : "Đã tạo đơn, thanh toán và trừ kho.");
   await loadInventoryData();
   renderAll();
 }
@@ -1700,17 +1700,17 @@ function renderRevenueAnalytics() {
   $("#revenuePeriodRange").textContent = selection.rangeLabel;
   $("#revenuePrimaryLabel").textContent = selection.totalLabel;
   $("#revenueToday").textContent = money(totalRevenue);
-  $("#revenueTodayOrders").textContent = `${selectedOrders.length} Ä‘Æ¡n hÃ ng`;
+  $("#revenueTodayOrders").textContent = `${selectedOrders.length} đơn hàng`;
   $("#revenueWeek").textContent = itemCount.toLocaleString("vi-VN");
-  $("#revenueWeekRange").textContent = "Tá»•ng sá»‘ lÆ°á»£ng sáº£n pháº©m";
+  $("#revenueWeekRange").textContent = "Tổng số lượng sản phẩm";
   $("#revenueMonth").textContent = money(averageOrder);
   $("#revenueMonthLabel").textContent = selectedOrders.length
-    ? `TrÃªn ${selectedOrders.length} Ä‘Æ¡n hÃ ng`
-    : "ChÆ°a cÃ³ Ä‘Æ¡n hÃ ng";
+    ? `Trên ${selectedOrders.length} đơn hàng`
+    : "Chưa có đơn hàng";
   $("#revenueChartTitle").textContent = selection.chartTitle;
   $("#revenueChartSubtitle").textContent = selection.rangeLabel;
   $("#revenueTableTitle").textContent = selection.tableTitle;
-  $("#revenueTableSubtitle").textContent = `Dá»¯ liá»‡u tá»« ${selection.rangeLabel.toLowerCase()}`;
+  $("#revenueTableSubtitle").textContent = `Dữ liệu từ ${selection.rangeLabel.toLowerCase()}`;
 
   renderDailyRevenueTable(selection.rows);
   renderCategoryRevenue(selectedOrders);
@@ -1734,26 +1734,26 @@ function getRevenueSelection() {
     start = startOfWeek(reference);
     end = addDays(start, 7);
     rows = buildRevenueRows(start, end);
-    title = "Doanh thu theo tuáº§n";
-    totalLabel = "Tá»•ng doanh thu tuáº§n Ä‘Ã£ chá»n";
-    chartTitle = "Doanh thu tá»«ng ngÃ y trong tuáº§n";
-    tableTitle = "Chi tiáº¿t doanh thu tuáº§n";
+    title = "Doanh thu theo tuần";
+    totalLabel = "Tổng doanh thu tuần đã chọn";
+    chartTitle = "Doanh thu từng ngày trong tuần";
+    tableTitle = "Chi tiết doanh thu tuần";
   } else if (period === "month") {
     start = new Date(reference.getFullYear(), reference.getMonth(), 1);
     end = new Date(reference.getFullYear(), reference.getMonth() + 1, 1);
     rows = buildRevenueRows(start, end);
-    title = "Doanh thu theo thÃ¡ng";
-    totalLabel = "Tá»•ng doanh thu thÃ¡ng Ä‘Ã£ chá»n";
-    chartTitle = "Doanh thu tá»«ng ngÃ y trong thÃ¡ng";
-    tableTitle = "Chi tiáº¿t doanh thu thÃ¡ng";
+    title = "Doanh thu theo tháng";
+    totalLabel = "Tổng doanh thu tháng đã chọn";
+    chartTitle = "Doanh thu từng ngày trong tháng";
+    tableTitle = "Chi tiết doanh thu tháng";
   } else {
     start = startOfDay(reference);
     end = addDays(start, 1);
     rows = buildRevenueRows(start, end);
-    title = "Doanh thu theo ngÃ y";
-    totalLabel = "Doanh thu ngÃ y Ä‘Ã£ chá»n";
-    chartTitle = "Doanh thu trong ngÃ y Ä‘Ã£ chá»n";
-    tableTitle = "Chi tiáº¿t doanh thu ngÃ y";
+    title = "Doanh thu theo ngày";
+    totalLabel = "Doanh thu ngày đã chọn";
+    chartTitle = "Doanh thu trong ngày đã chọn";
+    tableTitle = "Chi tiết doanh thu ngày";
   }
 
   return {
@@ -1828,7 +1828,7 @@ function renderCategoryRevenue(orders = state.orders) {
       const category = line.categoryName
         || (line.categoryId ? categoryName(line.categoryId) : "")
         || (product ? productCategoryName(product) : "")
-        || "ChÆ°a phÃ¢n loáº¡i";
+        || "Chưa phân loại";
       const lineGross = number(line.price) * number(line.quantity);
       const allocatedRevenue = grossTotal > 0 ? orderRevenue * lineGross / grossTotal : 0;
       categoryTotals.set(category, (categoryTotals.get(category) || 0) + allocatedRevenue);
@@ -1852,11 +1852,11 @@ function renderCategoryRevenue(orders = state.orders) {
           <div class="category-revenue-track">
             <span style="width:${percent.toFixed(2)}%;--category-color:${revenueColor(index)}"></span>
           </div>
-          <small>${percent.toLocaleString("vi-VN", { maximumFractionDigits: 1 })}% tá»•ng doanh thu</small>
+          <small>${percent.toLocaleString("vi-VN", { maximumFractionDigits: 1 })}% tổng doanh thu</small>
         </div>
       `;
     }).join("")
-    : empty("ChÆ°a cÃ³ doanh thu theo danh má»¥c");
+    : empty("Chưa có doanh thu theo danh mục");
 }
 
 function drawDailyRevenueChart(canvas, rows) {
@@ -1976,7 +1976,7 @@ function fullDate(value) {
 }
 
 function compactMoney(value) {
-  if (value >= 1000000000) return `${(value / 1000000000).toLocaleString("vi-VN", { maximumFractionDigits: 1 })} tá»·`;
+  if (value >= 1000000000) return `${(value / 1000000000).toLocaleString("vi-VN", { maximumFractionDigits: 1 })} tỷ`;
   if (value >= 1000000) return `${(value / 1000000).toLocaleString("vi-VN", { maximumFractionDigits: 1 })} tr`;
   if (value >= 1000) return `${Math.round(value / 1000)}k`;
   return `${Math.round(value)}`;
@@ -2011,11 +2011,11 @@ function inventoryItemsForTab(tab) {
 function inventoryStatusLabel(status) {
   const value = String(status || "pending").toLowerCase();
   const map = {
-    pending: ["Chờ duyệt", "warn"],
-    approved: ["Đã duyệt", "ok"],
-    cancelled: ["Đã hủy", "danger"]
+    pending: ["Ch? duy?t", "warn"],
+    approved: ["�� duy?t", "ok"],
+    cancelled: ["�� h?y", "danger"]
   };
-  return map[value] || [status || "Đã duyệt", "ok"];
+  return map[value] || [status || "�� duy?t", "ok"];
 }
 
 function renderInventoryTable(kind, items) {
@@ -2030,10 +2030,10 @@ function renderInventoryTable(kind, items) {
     const canCancel = statusValue === "pending" && canReviewInventory();
     const createdByEmail = item.createdByEmail || item.createdByName || item.createdBy || item.userName
       || (item.createdById === state.user?.id ? state.user?.email : "")
-      || (item.createdById === "system" ? "Hệ thống" : "Không lưu - dữ liệu cũ");
+      || (item.createdById === "system" ? "H? th?ng" : "Kh�ng luu - d? li?u cu");
     const createdByRole = item.createdByRole ? roleText(item.createdByRole) : "";
     const reviewedByEmail = item.reviewedByEmail || item.approvedByName || item.approvedBy
-      || (statusValue === "approved" || statusValue === "cancelled" ? "Không lưu - dữ liệu cũ" : "");
+      || (statusValue === "approved" || statusValue === "cancelled" ? "Kh�ng luu - d? li?u cu" : "");
     const reviewedByRole = item.reviewedByRole ? roleText(item.reviewedByRole) : "";
     const approvedAt = item.reviewedAt || item.approvedAt || item.confirmedAt || "-";
     const quantity = number(item.quantity || item.totalQuantity || item.lines?.reduce((sum, line) => sum + number(line.quantity), 0));
@@ -2043,9 +2043,9 @@ function renderInventoryTable(kind, items) {
     }).filter(Boolean).join(", ") || "-";
     const supplierName = state.suppliers.find((supplier) => String(supplier.id) === String(item.supplierId))?.name || "-";
     const typeText = kind === "receipts"
-      ? "Nhập"
+      ? "Nh?p"
       : kind === "exports"
-        ? "Xuất"
+        ? "Xu?t"
         : movementLabel(item.type);
     const personCell = (email, role) => email
       ? `<span class="inventory-person-email">${escapeHtml(email)}</span>${role ? `<span class="inventory-person-role">${escapeHtml(role)}</span>` : ""}`
@@ -2073,9 +2073,9 @@ function renderInventoryTable(kind, items) {
         <td>${escapeHtml(item.note || item.reviewNote || "")}</td>
         <td>
           <div class="actions inventory-actions">
-            ${canEdit ? `<button class="user-icon-button edit" type="button" onclick="editInventoryItem('${kind}', '${item.id}')" title="Sửa lệnh" aria-label="Sửa lệnh"><i class="pe-7s-pen" aria-hidden="true"></i></button>` : ""}
-            ${canApprove ? `<button class="user-icon-button lock" type="button" onclick="approveInventoryItem('${kind}', '${item.id}')" title="Duyệt lệnh" aria-label="Duyệt lệnh"><i class="pe-7s-check" aria-hidden="true"></i></button>` : ""}
-            ${canCancel ? `<button class="user-icon-button delete" type="button" onclick="cancelInventoryItem('${kind}', '${item.id}')" title="Hủy lệnh" aria-label="Hủy lệnh"><i class="pe-7s-close" aria-hidden="true"></i></button>` : ""}
+            ${canEdit ? `<button class="user-icon-button edit" type="button" onclick="editInventoryItem('${kind}', '${item.id}')" title="S?a l?nh" aria-label="S?a l?nh"><i class="pe-7s-pen" aria-hidden="true"></i></button>` : ""}
+            ${canApprove ? `<button class="user-icon-button lock" type="button" onclick="approveInventoryItem('${kind}', '${item.id}')" title="Duy?t l?nh" aria-label="Duy?t l?nh"><i class="pe-7s-check" aria-hidden="true"></i></button>` : ""}
+            ${canCancel ? `<button class="user-icon-button delete" type="button" onclick="cancelInventoryItem('${kind}', '${item.id}')" title="H?y l?nh" aria-label="H?y l?nh"><i class="pe-7s-close" aria-hidden="true"></i></button>` : ""}
           </div>
         </td>
       </tr>
@@ -2084,7 +2084,7 @@ function renderInventoryTable(kind, items) {
 
   const table = $(`#${tableId}`);
   if (table) {
-    table.innerHTML = rows || `<tr><td colspan="10" class="empty">Không có dữ liệu</td></tr>`;
+    table.innerHTML = rows || `<tr><td colspan="10" class="empty">Kh�ng c� d? li?u</td></tr>`;
   }
 }
 
@@ -2117,39 +2117,39 @@ function renderCategories() {
     return `
       <div class="list-item category-item">
         <button class="category-link" type="button" onclick="showProductsByCategory('${item.id}')">
-          <strong>${escapeHtml(item.name || "Danh má»¥c")}</strong>
-          <p>${escapeHtml(`${count} sáº£n pháº©m${item.parentId ? ` - Danh má»¥c cha: ${categoryName(item.parentId)}` : ""}`)}</p>
+          <strong>${escapeHtml(item.name || "Danh mục")}</strong>
+          <p>${escapeHtml(`${count} sản phẩm${item.parentId ? ` - Danh mục cha: ${categoryName(item.parentId)}` : ""}`)}</p>
       </button>
       ${canManageCatalog() ? `
         <div class="actions category-actions">
-          <button class="user-icon-button catalog-icon-button edit" type="button" onclick="editCategory('${item.id}')" title="Sá»­a danh má»¥c" aria-label="Sá»­a danh má»¥c">
+          <button class="user-icon-button catalog-icon-button edit" type="button" onclick="editCategory('${item.id}')" title="Sửa danh mục" aria-label="Sửa danh mục">
             <i class="pe-7s-pen" aria-hidden="true"></i>
           </button>
-          <button class="user-icon-button catalog-icon-button delete" type="button" onclick="deleteCategory('${item.id}')" title="XÃ³a danh má»¥c" aria-label="XÃ³a danh má»¥c">
+          <button class="user-icon-button catalog-icon-button delete" type="button" onclick="deleteCategory('${item.id}')" title="Xóa danh mục" aria-label="Xóa danh mục">
             <i class="pe-7s-trash" aria-hidden="true"></i>
           </button>
         </div>
       ` : ""}
       </div>
     `;
-  }).join("") || empty("ChÆ°a cÃ³ danh má»¥c");
+  }).join("") || empty("Chưa có danh mục");
 }
 
 function renderSuppliers() {
   $("#suppliersList").innerHTML = state.suppliers.map((item) =>
-    listItem(item.name || "NhÃ  cung cáº¥p", `${item.phone || "ChÆ°a cÃ³ SÄT"} ${item.email ? "- " + item.email : ""}`, `
+    listItem(item.name || "Nhà cung cấp", `${item.phone || "Chưa có SĐT"} ${item.email ? "- " + item.email : ""}`, `
       ${canManageCatalog() ? `
         <div class="actions supplier-actions">
-          <button class="user-icon-button catalog-icon-button edit" type="button" onclick="editSupplier('${item.id}')" title="Sá»­a nhÃ  cung cáº¥p" aria-label="Sá»­a nhÃ  cung cáº¥p">
+          <button class="user-icon-button catalog-icon-button edit" type="button" onclick="editSupplier('${item.id}')" title="Sửa nhà cung cấp" aria-label="Sửa nhà cung cấp">
             <i class="pe-7s-pen" aria-hidden="true"></i>
           </button>
-          <button class="user-icon-button catalog-icon-button delete" type="button" onclick="deleteSupplier('${item.id}')" title="XÃ³a nhÃ  cung cáº¥p" aria-label="XÃ³a nhÃ  cung cáº¥p">
+          <button class="user-icon-button catalog-icon-button delete" type="button" onclick="deleteSupplier('${item.id}')" title="Xóa nhà cung cấp" aria-label="Xóa nhà cung cấp">
             <i class="pe-7s-trash" aria-hidden="true"></i>
           </button>
         </div>
       ` : ""}
     `)
-  ).join("") || empty("ChÆ°a cÃ³ nhÃ  cung cáº¥p");
+  ).join("") || empty("Chưa có nhà cung cấp");
 }
 
 function renderUsers() {
@@ -2167,38 +2167,38 @@ function renderUsers() {
         <td>${escapeHtml(item.email)}</td>
         <td>${escapeHtml(item.name || "-")}</td>
         <td class="user-role-cell">
-          <select class="table-select user-role-select" aria-label="PhÃ¢n quyá»n cho ${escapeHtml(item.email)}" onchange="updateUserRole('${item.id}', this.value)" ${isSelf ? "disabled" : ""}>
-            <option value="user" ${item.role === "user" ? "selected" : ""}>NgÆ°á»i dÃ¹ng</option>
-            <option value="Sales" ${item.role === "Sales" ? "selected" : ""}>BÃ¡n hÃ ng</option>
-            <option value="Warehouse" ${item.role === "Warehouse" ? "selected" : ""}>Thá»§ kho</option>
-            <option value="admin-user" ${item.role === "admin-user" ? "selected" : ""}>Quáº£n trá»‹ há»‡ thá»‘ng</option>
+          <select class="table-select user-role-select" aria-label="Phân quyền cho ${escapeHtml(item.email)}" onchange="updateUserRole('${item.id}', this.value)" ${isSelf ? "disabled" : ""}>
+            <option value="user" ${item.role === "user" ? "selected" : ""}>Người dùng</option>
+            <option value="Sales" ${item.role === "Sales" ? "selected" : ""}>Bán hàng</option>
+            <option value="Warehouse" ${item.role === "Warehouse" ? "selected" : ""}>Thủ kho</option>
+            <option value="admin-user" ${item.role === "admin-user" ? "selected" : ""}>Quản trị hệ thống</option>
           </select>
         </td>
-        <td>${item.isActive ? `<span class="badge ok">Hoáº¡t Ä‘á»™ng</span>` : `<span class="badge danger">KhÃ³a</span>`}</td>
+        <td>${item.isActive ? `<span class="badge ok">Hoạt động</span>` : `<span class="badge danger">Khóa</span>`}</td>
         <td>${item.isOnline ? `<span class="badge ok">Online</span>` : `<span class="badge warn">Offline</span>`}</td>
         <td class="user-action-cell">
           <div class="actions user-actions">
-            <button class="user-icon-button edit" type="button" onclick="editUser('${item.id}')" title="Sá»­a thÃ´ng tin" aria-label="Sá»­a thÃ´ng tin">
+            <button class="user-icon-button edit" type="button" onclick="editUser('${item.id}')" title="Sửa thông tin" aria-label="Sửa thông tin">
               <i class="pe-7s-pen" aria-hidden="true"></i>
             </button>
-            <button class="user-icon-button ${item.isActive ? "lock" : "unlock"}" type="button" onclick="toggleUserActive('${item.id}', ${item.isActive})" title="${item.isActive ? "KhÃ³a tÃ i khoáº£n" : "Má»Ÿ khÃ³a tÃ i khoáº£n"}" aria-label="${item.isActive ? "KhÃ³a tÃ i khoáº£n" : "Má»Ÿ khÃ³a tÃ i khoáº£n"}" ${isSelf ? "disabled" : ""}>
+            <button class="user-icon-button ${item.isActive ? "lock" : "unlock"}" type="button" onclick="toggleUserActive('${item.id}', ${item.isActive})" title="${item.isActive ? "Khóa tài khoản" : "Mở khóa tài khoản"}" aria-label="${item.isActive ? "Khóa tài khoản" : "Mở khóa tài khoản"}" ${isSelf ? "disabled" : ""}>
               <i class="${item.isActive ? "pe-7s-lock" : "pe-7s-unlock"}" aria-hidden="true"></i>
             </button>
-            <button class="user-icon-button delete" type="button" onclick="deleteUser('${item.id}')" title="XÃ³a tÃ i khoáº£n" aria-label="XÃ³a tÃ i khoáº£n" ${isSelf ? "disabled" : ""}>
+            <button class="user-icon-button delete" type="button" onclick="deleteUser('${item.id}')" title="Xóa tài khoản" aria-label="Xóa tài khoản" ${isSelf ? "disabled" : ""}>
               <i class="pe-7s-trash" aria-hidden="true"></i>
             </button>
           </div>
         </td>
       </tr>
     `;
-  }).join("") || `<tr><td colspan="7" class="empty">${state.users.length ? "KhÃ´ng tÃ¬m tháº¥y tÃ i khoáº£n phÃ¹ há»£p" : "KhÃ´ng táº£i Ä‘Æ°á»£c danh sÃ¡ch ngÆ°á»i dÃ¹ng"}</td></tr>`;
+  }).join("") || `<tr><td colspan="7" class="empty">${state.users.length ? "Không tìm thấy tài khoản phù hợp" : "Không tải được danh sách người dùng"}</td></tr>`;
 
   updateUserSelectionControls();
   const info = $("#userPaginationInfo");
   if (info) {
     info.textContent = totalItems
-      ? `Äang xem ${((currentPage - 1) * 5) + 1}-${Math.min(totalItems, currentPage * 5)} / ${totalItems} tÃ i khoáº£n`
-      : "ChÆ°a cÃ³ tÃ i khoáº£n";
+      ? `Đang xem ${((currentPage - 1) * 5) + 1}-${Math.min(totalItems, currentPage * 5)} / ${totalItems} tài khoản`
+      : "Chưa có tài khoản";
   }
   renderPagination("userPagination", currentPage, totalPages, "data-user-page");
 }
@@ -2212,12 +2212,12 @@ function renderProfile() {
 }
 
 function fillSelects() {
-  const categoryOptions = `<option value="">KhÃ´ng cÃ³</option>` + state.categories.map((item) => `<option value="${item.id}">${escapeHtml(item.name)}</option>`).join("");
-  const inventoryCategoryOptions = `<option value="">Táº¥t cáº£ danh má»¥c</option>` + state.categories.map((item) => `<option value="${item.id}">${escapeHtml(item.name)}</option>`).join("");
+  const categoryOptions = `<option value="">Không có</option>` + state.categories.map((item) => `<option value="${item.id}">${escapeHtml(item.name)}</option>`).join("");
+  const inventoryCategoryOptions = `<option value="">Tất cả danh mục</option>` + state.categories.map((item) => `<option value="${item.id}">${escapeHtml(item.name)}</option>`).join("");
   const categorySuggestionOptions = state.categories.map((item) => `<option value="${escapeHtml(item.name)}"></option>`).join("");
-  const supplierOptions = `<option value="">KhÃ´ng chá»n</option>` + state.suppliers.map((item) => `<option value="${item.id}">${escapeHtml(item.name)}</option>`).join("");
+  const supplierOptions = `<option value="">Không chọn</option>` + state.suppliers.map((item) => `<option value="${item.id}">${escapeHtml(item.name)}</option>`).join("");
 
-  $("#productCategoryFilter").innerHTML = `<option value="">Táº¥t cáº£ danh má»¥c</option>` + state.categories.map((item) => `<option value="${item.id}">${escapeHtml(item.name)}</option>`).join("");
+  $("#productCategoryFilter").innerHTML = `<option value="">Tất cả danh mục</option>` + state.categories.map((item) => `<option value="${item.id}">${escapeHtml(item.name)}</option>`).join("");
   $("#productCategorySuggestions").innerHTML = categorySuggestionOptions;
   $("#categoryForm select[name='parentId']").innerHTML = categoryOptions;
   $("#receiptForm select[name='supplierId']").innerHTML = supplierOptions;
@@ -2244,8 +2244,8 @@ function renderInventoryProductSelect(form) {
   });
 
   productSelect.innerHTML = products.length
-    ? products.map((item) => `<option value="${item.id}">${escapeHtml(item.name || "Sáº£n pháº©m")} Â· tá»“n ${number(item.stock)}</option>`).join("")
-    : `<option value="">KhÃ´ng tÃ¬m tháº¥y sáº£n pháº©m</option>`;
+    ? products.map((item) => `<option value="${item.id}">${escapeHtml(item.name || "Sản phẩm")} · tồn ${number(item.stock)}</option>`).join("")
+    : `<option value="">Không tìm thấy sản phẩm</option>`;
 
   if (products.some((item) => item.id === selectedId)) {
     productSelect.value = selectedId;
@@ -2264,7 +2264,7 @@ function renderSaleProductOptions() {
 }
 
 function saleProductLabel(product) {
-  return `${product.name || "Sáº£n pháº©m"} Â· ${productCategoryName(product)} Â· tá»“n ${product.stock}`;
+  return `${product.name || "Sản phẩm"} · ${productCategoryName(product)} · tồn ${product.stock}`;
 }
 
 function syncSaleProductPicker() {
@@ -2320,7 +2320,7 @@ window.editInventoryItem = (kind, id) => {
   const source = kind === "receipts" ? state.receipts : state.movements;
   const item = source.find((entry) => String(entry.id) === String(id));
   if (!item) {
-    showToast("Không tìm thấy lệnh để sửa.");
+    showToast("Kh�ng t�m th?y l?nh d? s?a.");
     return;
   }
 
@@ -2329,17 +2329,17 @@ window.editInventoryItem = (kind, id) => {
 };
 
 window.approveInventoryItem = async (kind, id) => {
-  if (!confirm("Xác nhận duyệt lệnh này?")) return;
+  if (!confirm("X�c nh?n duy?t l?nh n�y?")) return;
   await request(inventoryEndpoint(kind, id, "approve"), { method: "POST" });
-  showToast("Đã duyệt lệnh thành công");
+  showToast("�� duy?t l?nh th�nh c�ng");
   await loadInventoryData();
   renderInventory();
 };
 
 window.cancelInventoryItem = async (kind, id) => {
-  if (!confirm("Xác nhận hủy lệnh này?")) return;
+  if (!confirm("X�c nh?n h?y l?nh n�y?")) return;
   await request(inventoryEndpoint(kind, id, "cancel"), { method: "POST" });
-  showToast("Đã hủy lệnh thành công");
+  showToast("�� h?y l?nh th�nh c�ng");
   await loadInventoryData();
   renderInventory();
 };
@@ -2356,8 +2356,8 @@ function updateSalePaymentType() {
   }
   if ($("#createSaleOrderBtn")) {
     $("#createSaleOrderBtn").textContent = isCod
-      ? "Táº¡o COD & giá»¯ hÃ ng 10 phÃºt"
-      : "Táº¡o Ä‘Æ¡n vÃ  trá»« kho";
+      ? "Tạo COD & giữ hàng 10 phút"
+      : "Tạo đơn và trừ kho";
   }
 }
 
@@ -2365,7 +2365,7 @@ function openProductModal(product = null) {
   const form = $("#productForm");
   form.reset();
   fillSelects();
-  $("#productModalTitle").textContent = product ? "Sá»­a sáº£n pháº©m" : "ThÃªm sáº£n pháº©m";
+  $("#productModalTitle").textContent = product ? "Sửa sản phẩm" : "Thêm sản phẩm";
   renderProductImagePreview(product?.image || "");
 
   if (product) {
@@ -2383,7 +2383,7 @@ function openProductModal(product = null) {
 function openSupplierModal(supplier = null) {
   const form = $("#supplierForm");
   form.reset();
-  $("#supplierModalTitle").textContent = supplier ? "Sá»­a nhÃ  cung cáº¥p" : "ThÃªm nhÃ  cung cáº¥p";
+  $("#supplierModalTitle").textContent = supplier ? "Sửa nhà cung cấp" : "Thêm nhà cung cấp";
 
   if (supplier) {
     Object.keys(supplier).forEach((key) => {
@@ -2398,7 +2398,7 @@ function openUserModal(user) {
   const form = $("#userForm");
   const isSelf = user.id === state.user?.id;
   form.reset();
-  $("#userModalTitle").textContent = `Chá»‰nh sá»­a: ${user.email}`;
+  $("#userModalTitle").textContent = `Chỉnh sửa: ${user.email}`;
 
   ["id", "email", "name", "storeName", "province", "phone", "birthday", "gender", "role"].forEach((key) => {
     if (form.elements[key]) form.elements[key].value = user[key] || "";
@@ -2413,7 +2413,7 @@ function openUserModal(user) {
 window.editProduct = (id) => {
   const product = state.products.find((item) => item.id === id);
   if (!product) {
-    showToast("KhÃ´ng tÃ¬m tháº¥y sáº£n pháº©m Ä‘á»ƒ sá»­a. HÃ£y báº¥m LÃ m má»›i rá»“i thá»­ láº¡i.");
+    showToast("Không tìm thấy sản phẩm để sửa. Hãy bấm Làm mới rồi thử lại.");
     return;
   }
 
@@ -2421,10 +2421,10 @@ window.editProduct = (id) => {
 };
 
 window.deleteProduct = async (id) => {
-  if (!confirm("XÃ³a sáº£n pháº©m nÃ y?")) return;
+  if (!confirm("Xóa sản phẩm này?")) return;
   await request(`${PRODUCT_API}/products/${id}`, { method: "DELETE" });
   state.selectedProductIds.delete(id);
-  showToast("ÄÃ£ xÃ³a sáº£n pháº©m");
+  showToast("Đã xóa sản phẩm");
   await loadInventoryData();
   renderAll();
 };
@@ -2438,17 +2438,17 @@ window.toggleProductSelection = (id, checked) => {
 async function deleteSelectedProducts() {
   const ids = [...state.selectedProductIds].filter((id) => state.products.some((item) => item.id === id));
   if (!ids.length) {
-    showToast("ChÆ°a chá»n sáº£n pháº©m Ä‘á»ƒ xÃ³a.");
+    showToast("Chưa chọn sản phẩm để xóa.");
     return;
   }
 
-  if (!confirm(`XÃ³a ${ids.length} sáº£n pháº©m Ä‘Ã£ chá»n?`)) return;
+  if (!confirm(`Xóa ${ids.length} sản phẩm đã chọn?`)) return;
   for (const id of ids) {
     await request(`${PRODUCT_API}/products/${id}`, { method: "DELETE" });
   }
 
   state.selectedProductIds.clear();
-  showToast(`ÄÃ£ xÃ³a ${ids.length} sáº£n pháº©m`);
+  showToast(`Đã xóa ${ids.length} sản phẩm`);
   await loadInventoryData();
   renderAll();
 }
@@ -2459,17 +2459,17 @@ window.editSupplier = (id) => {
 };
 
 window.deleteSupplier = async (id) => {
-  if (!confirm("XÃ³a nhÃ  cung cáº¥p nÃ y?")) return;
+  if (!confirm("Xóa nhà cung cấp này?")) return;
   await request(`${PRODUCT_API}/suppliers/${id}`, { method: "DELETE" });
-  showToast("ÄÃ£ xÃ³a nhÃ  cung cáº¥p");
+  showToast("Đã xóa nhà cung cấp");
   await loadInventoryData();
   renderAll();
 };
 
 window.deleteCategory = async (id) => {
-  if (!confirm("XÃ³a danh má»¥c nÃ y?")) return;
+  if (!confirm("Xóa danh mục này?")) return;
   await request(`${PRODUCT_API}/categories/${id}`, { method: "DELETE" });
-  showToast("ÄÃ£ xÃ³a danh má»¥c");
+  showToast("Đã xóa danh mục");
   await loadInventoryData();
   renderAll();
 };
@@ -2484,7 +2484,7 @@ function openCategoryCreate() {
 window.editCategory = (id) => {
   const category = state.categories.find((item) => item.id === id);
   if (!category) {
-    showToast("KhÃ´ng tÃ¬m tháº¥y danh má»¥c. HÃ£y báº¥m LÃ m má»›i rá»“i thá»­ láº¡i.");
+    showToast("Không tìm thấy danh mục. Hãy bấm Làm mới rồi thử lại.");
     return;
   }
 
@@ -2522,7 +2522,7 @@ window.removeSaleLine = (index) => {
 window.editUser = (id) => {
   const user = state.users.find((item) => item.id === id);
   if (!user) {
-    showToast("KhÃ´ng tÃ¬m tháº¥y tÃ i khoáº£n. HÃ£y báº¥m LÃ m má»›i rá»“i thá»­ láº¡i.");
+    showToast("Không tìm thấy tài khoản. Hãy bấm Làm mới rồi thử lại.");
     return;
   }
 
@@ -2531,17 +2531,17 @@ window.editUser = (id) => {
 
 window.deleteUser = async (id) => {
   if (id === state.user?.id) {
-    showToast("KhÃ´ng thá»ƒ xÃ³a chÃ­nh tÃ i khoáº£n Ä‘ang Ä‘Äƒng nháº­p.");
+    showToast("Không thể xóa chính tài khoản đang đăng nhập.");
     return;
   }
 
   const user = state.users.find((item) => item.id === id);
-  const label = user?.email || "tÃ i khoáº£n nÃ y";
-  if (!confirm(`XÃ³a tÃ i khoáº£n ${label}? NgÆ°á»i dÃ¹ng sáº½ khÃ´ng Ä‘Äƒng nháº­p Ä‘Æ°á»£c ná»¯a.`)) return;
+  const label = user?.email || "tài khoản này";
+  if (!confirm(`Xóa tài khoản ${label}? Người dùng sẽ không đăng nhập được nữa.`)) return;
 
   await request(`${USER_API}/users/${id}`, { method: "DELETE" });
   state.selectedUserIds.delete(id);
-  showToast("ÄÃ£ xÃ³a tÃ i khoáº£n");
+  showToast("Đã xóa tài khoản");
   await loadUsersData();
   renderUsers();
 };
@@ -2556,17 +2556,17 @@ window.toggleUserSelection = (id, checked) => {
 async function deleteSelectedUsers() {
   const ids = [...state.selectedUserIds].filter((id) => id !== state.user?.id && state.users.some((item) => item.id === id));
   if (!ids.length) {
-    showToast("ChÆ°a chá»n tÃ i khoáº£n Ä‘á»ƒ xÃ³a.");
+    showToast("Chưa chọn tài khoản để xóa.");
     return;
   }
 
-  if (!confirm(`XÃ³a ${ids.length} tÃ i khoáº£n Ä‘Ã£ chá»n?`)) return;
+  if (!confirm(`Xóa ${ids.length} tài khoản đã chọn?`)) return;
   for (const id of ids) {
     await request(`${USER_API}/users/${id}`, { method: "DELETE" });
   }
 
   state.selectedUserIds.clear();
-  showToast(`ÄÃ£ xÃ³a ${ids.length} tÃ i khoáº£n`);
+  showToast(`Đã xóa ${ids.length} tài khoản`);
   await loadUsersData();
   renderUsers();
 }
@@ -2576,7 +2576,7 @@ window.updateUserRole = async (id, role) => {
     method: "PUT",
     body: { role }
   });
-  showToast("ÄÃ£ cáº­p nháº­t quyá»n ngÆ°á»i dÃ¹ng");
+  showToast("Đã cập nhật quyền người dùng");
   await loadUsersData();
   renderUsers();
 };
@@ -2586,7 +2586,7 @@ window.toggleUserActive = async (id, isActive) => {
     method: "PUT",
     body: { isActive: !isActive }
   });
-  showToast(isActive ? "ÄÃ£ khÃ³a tÃ i khoáº£n" : "ÄÃ£ má»Ÿ tÃ i khoáº£n");
+  showToast(isActive ? "Đã khóa tài khoản" : "Đã mở tài khoản");
   await loadUsersData();
   renderUsers();
 };
@@ -2616,13 +2616,13 @@ function getVisibleUsers() {
 
   return state.users.filter((item) => {
     const role = {
-      "admin-user": "quáº£n trá»‹ há»‡ thá»‘ng admin",
-      Admin: "quáº£n trá»‹ há»‡ thá»‘ng admin",
-      Sales: "nhÃ¢n viÃªn bÃ¡n hÃ ng sales",
-      Warehouse: "thá»§ kho warehouse",
-      user: "ngÆ°á»i dÃ¹ng"
+      "admin-user": "quản trị hệ thống admin",
+      Admin: "quản trị hệ thống admin",
+      Sales: "nhân viên bán hàng sales",
+      Warehouse: "thủ kho warehouse",
+      user: "người dùng"
     }[item.role] || item.role || "";
-    const status = `${item.isActive ? "hoáº¡t Ä‘á»™ng" : "khÃ³a"} ${item.isOnline ? "online" : "offline"}`;
+    const status = `${item.isActive ? "hoạt động" : "khóa"} ${item.isOnline ? "online" : "offline"}`;
     return `${item.email || ""} ${item.name || ""} ${role} ${status}`.toLowerCase().includes(query);
   });
 }
@@ -2691,8 +2691,8 @@ function updateSaleQuantityLimit() {
   const product = state.products.find((item) => item.id === $("#saleProductSelect").value);
   if ($("#saleStockInfo")) {
     $("#saleStockInfo").innerHTML = product
-      ? `<span>Tá»“n kháº£ dá»¥ng</span><strong>${available}</strong><small>${escapeHtml(productCategoryName(product))}</small>`
-      : "Chá»n sáº£n pháº©m Ä‘á»ƒ xem tá»“n kho";
+      ? `<span>Tồn khả dụng</span><strong>${available}</strong><small>${escapeHtml(productCategoryName(product))}</small>`
+      : "Chọn sản phẩm để xem tồn kho";
   }
   input.max = String(available);
   input.disabled = available <= 0;
@@ -2717,7 +2717,7 @@ function clampSaleQuantity() {
 
 function setPage(page) {
   if (!canAccessPage(page)) {
-    showToast("Báº¡n khÃ´ng cÃ³ quyá»n vÃ o má»¥c nÃ y.");
+    showToast("Bạn không có quyền vào mục này.");
     page = "dashboard";
   }
 
@@ -2733,7 +2733,7 @@ function setPage(page) {
   if (page === "sales") {
     requestAnimationFrame(() => setSalesTab(state.salesTab || localStorage.getItem("khopro_sales_tab") || "orders"));
   }
-  $("#pageTitle").textContent = $(`#nav .nav-item[data-page="${page}"]`)?.textContent || "Tá»•ng quan";
+  $("#pageTitle").textContent = $(`#nav .nav-item[data-page="${page}"]`)?.textContent || "Tổng quan";
 }
 
 function applySalesTab(tab) {
@@ -2972,37 +2972,37 @@ function empty(text) {
 
 function statusBadge(status) {
   const off = status === "Ngung ban";
-  const label = off ? "Ngá»«ng bÃ¡n" : "Äang bÃ¡n";
+  const label = off ? "Ngừng bán" : "Đang bán";
   return `<span class="badge ${off ? "danger" : "ok"}">${label}</span>`;
 }
 
 function roleBadge(role) {
   const map = {
-    "admin-user": ["ok", "Quáº£n trá»‹ há»‡ thá»‘ng"],
-    Admin: ["ok", "Quáº£n trá»‹ há»‡ thá»‘ng"],
-    Sales: ["warn", "NhÃ¢n viÃªn bÃ¡n hÃ ng"],
-    Warehouse: ["ok", "Thá»§ kho"],
-    user: ["warn", "NgÆ°á»i dÃ¹ng"]
+    "admin-user": ["ok", "Quản trị hệ thống"],
+    Admin: ["ok", "Quản trị hệ thống"],
+    Sales: ["warn", "Nhân viên bán hàng"],
+    Warehouse: ["ok", "Thủ kho"],
+    user: ["warn", "Người dùng"]
   };
-  const [style, label] = map[role] || ["warn", role || "NgÆ°á»i dÃ¹ng"];
+  const [style, label] = map[role] || ["warn", role || "Người dùng"];
   return `<span class="badge ${style}">${escapeHtml(label)}</span>`;
 }
 
 function roleText(role) {
   const normalizedRole = String(role || "").toLowerCase();
   const map = {
-    "admin-user": "Quản trị hệ thống",
-    admin: "Quản trị hệ thống",
-    sales: "Nhân viên bán hàng",
-    warehouse: "Thủ kho",
-    user: "Người dùng",
-    system: "Hệ thống"
+    "admin-user": "Qu?n tr? h? th?ng",
+    admin: "Qu?n tr? h? th?ng",
+    sales: "Nh�n vi�n b�n h�ng",
+    warehouse: "Th? kho",
+    user: "Ngu?i d�ng",
+    system: "H? th?ng"
   };
-  return map[normalizedRole] || role || "Người dùng";
+  return map[normalizedRole] || role || "Ngu?i d�ng";
 }
 
 function movementLabel(type) {
-  const map = { in: "Nhập", out: "Xuất", set: "Đặt lại" };
+  const map = { in: "Nh?p", out: "Xu?t", set: "�?t l?i" };
   return map[type] || type || "-";
 }
 
