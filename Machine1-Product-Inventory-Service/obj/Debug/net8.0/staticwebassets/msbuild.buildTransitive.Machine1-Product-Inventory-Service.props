@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Machine1-Product-Inventory-Service.props" />
+</Project>

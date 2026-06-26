@@ -1,0 +1,157 @@
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\bin\Debug\net8.0\publish\web.config
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\bin\Debug\net8.0\appsettings.Development.json
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\bin\Debug\net8.0\appsettings.json
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\bin\Debug\net8.0\Data\categories.json
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\bin\Debug\net8.0\Data\events.json
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\bin\Debug\net8.0\Data\inventory-movements.json
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\bin\Debug\net8.0\Data\inventory-receipts.json
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\bin\Debug\net8.0\Data\inventory-reservations.json
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\bin\Debug\net8.0\Data\products.json
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\bin\Debug\net8.0\Data\suppliers.json
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\bin\Debug\net8.0\publish\appsettings.Development.json
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\bin\Debug\net8.0\publish\appsettings.json
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\bin\Debug\net8.0\publish\Machine1-Product-Inventory-Service.deps.json
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\bin\Debug\net8.0\publish\Machine1-Product-Inventory-Service.runtimeconfig.json
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\bin\Debug\net8.0\publish\Machine1-Product-Inventory-Service.staticwebassets.endpoints.json
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\bin\Debug\net8.0\Machine1-Product-Inventory-Service.exe
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\bin\Debug\net8.0\Machine1-Product-Inventory-Service.deps.json
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\bin\Debug\net8.0\Machine1-Product-Inventory-Service.runtimeconfig.json
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\bin\Debug\net8.0\Machine1-Product-Inventory-Service.dll
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\bin\Debug\net8.0\Machine1-Product-Inventory-Service.pdb
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\bin\Debug\net8.0\Microsoft.OpenApi.dll
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\obj\Debug\net8.0\Machine1-Product-Inventory-Service.csproj.AssemblyReference.cache
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\obj\Debug\net8.0\Machine1-Product-Inventory-Service.GeneratedMSBuildEditorConfig.editorconfig
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\obj\Debug\net8.0\Machine1-Product-Inventory-Service.AssemblyInfoInputs.cache
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\obj\Debug\net8.0\Machine1-Product-Inventory-Service.AssemblyInfo.cs
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\obj\Debug\net8.0\Machine1-Product-Inventory-Service.csproj.CoreCompileInputs.cache
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\obj\Debug\net8.0\Machine1-Product-Inventory-Service.MvcApplicationPartsAssemblyInfo.cs
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\obj\Debug\net8.0\Machine1-Product-Inventory-Service.MvcApplicationPartsAssemblyInfo.cache
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\obj\Debug\net8.0\staticwebassets.build.json
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\obj\Debug\net8.0\staticwebassets.development.json
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\obj\Debug\net8.0\staticwebassets\msbuild.Machine1-Product-Inventory-Service.Microsoft.AspNetCore.StaticWebAssets.props
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\obj\Debug\net8.0\staticwebassets\msbuild.build.Machine1-Product-Inventory-Service.props
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Machine1-Product-Inventory-Service.props
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Machine1-Product-Inventory-Service.props
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\obj\Debug\net8.0\staticwebassets.pack.json
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\obj\Debug\net8.0\scopedcss\bundle\Machine1-Product-Inventory-Service.styles.css
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\obj\Debug\net8.0\Machine1.35E9AE47.Up2Date
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\obj\Debug\net8.0\Machine1-Product-Inventory-Service.dll
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\obj\Debug\net8.0\refint\Machine1-Product-Inventory-Service.dll
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\obj\Debug\net8.0\Machine1-Product-Inventory-Service.pdb
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\obj\Debug\net8.0\Machine1-Product-Inventory-Service.genruntimeconfig.cache
+D:\baitap\btlfullstack\Machine1-Product-Inventory-Service\obj\Debug\net8.0\ref\Machine1-Product-Inventory-Service.dll
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\publish\web.config
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\appsettings.Development.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\appsettings.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\Data\categories.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\Data\inventory-receipts.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\Data\inventory-reservations.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\Data\suppliers.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\publish\appsettings.Development.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\publish\appsettings.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\publish\Machine1-Product-Inventory-Service.deps.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\publish\Machine1-Product-Inventory-Service.runtimeconfig.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\publish\Machine1-Product-Inventory-Service.staticwebassets.endpoints.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\Data\events.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\Data\inventory-movements.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\Data\products.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\Machine1-Product-Inventory-Service.staticwebassets.endpoints.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\Machine1-Product-Inventory-Service.exe
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\Machine1-Product-Inventory-Service.deps.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\Machine1-Product-Inventory-Service.runtimeconfig.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\Machine1-Product-Inventory-Service.dll
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\Machine1-Product-Inventory-Service.pdb
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\Microsoft.OpenApi.dll
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\obj\Debug\net8.0\Machine1-Product-Inventory-Service.csproj.AssemblyReference.cache
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\obj\Debug\net8.0\Machine1-Product-Inventory-Service.GeneratedMSBuildEditorConfig.editorconfig
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\obj\Debug\net8.0\Machine1-Product-Inventory-Service.AssemblyInfoInputs.cache
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\obj\Debug\net8.0\Machine1-Product-Inventory-Service.AssemblyInfo.cs
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\obj\Debug\net8.0\Machine1-Product-Inventory-Service.csproj.CoreCompileInputs.cache
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\obj\Debug\net8.0\Machine1-Product-Inventory-Service.MvcApplicationPartsAssemblyInfo.cs
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\obj\Debug\net8.0\Machine1-Product-Inventory-Service.MvcApplicationPartsAssemblyInfo.cache
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\obj\Debug\net8.0\rjimswa.dswa.cache.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\obj\Debug\net8.0\scopedcss\bundle\Machine1-Product-Inventory-Service.styles.css
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\obj\Debug\net8.0\staticwebassets.build.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\obj\Debug\net8.0\staticwebassets.build.json.cache
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\obj\Debug\net8.0\staticwebassets.development.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\obj\Debug\net8.0\swae.build.ex.cache
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\obj\Debug\net8.0\Machine1.35E9AE47.Up2Date
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\obj\Debug\net8.0\Machine1-Product-Inventory-Service.dll
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\obj\Debug\net8.0\refint\Machine1-Product-Inventory-Service.dll
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\obj\Debug\net8.0\Machine1-Product-Inventory-Service.pdb
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\obj\Debug\net8.0\Machine1-Product-Inventory-Service.genruntimeconfig.cache
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\obj\Debug\net8.0\ref\Machine1-Product-Inventory-Service.dll
+d:\fullStack\btlfullstack (1)\_buildcheck\publish\web.config
+d:\fullStack\btlfullstack (1)\_buildcheck\appsettings.Development.json
+d:\fullStack\btlfullstack (1)\_buildcheck\appsettings.json
+d:\fullStack\btlfullstack (1)\_buildcheck\Data\categories.json
+d:\fullStack\btlfullstack (1)\_buildcheck\Data\events.json
+d:\fullStack\btlfullstack (1)\_buildcheck\Data\inventory-movements.json
+d:\fullStack\btlfullstack (1)\_buildcheck\Data\inventory-receipts.json
+d:\fullStack\btlfullstack (1)\_buildcheck\Data\inventory-reservations.json
+d:\fullStack\btlfullstack (1)\_buildcheck\Data\products.json
+d:\fullStack\btlfullstack (1)\_buildcheck\Data\suppliers.json
+d:\fullStack\btlfullstack (1)\_buildcheck\publish\appsettings.Development.json
+d:\fullStack\btlfullstack (1)\_buildcheck\publish\appsettings.json
+d:\fullStack\btlfullstack (1)\_buildcheck\publish\Machine1-Product-Inventory-Service.deps.json
+d:\fullStack\btlfullstack (1)\_buildcheck\publish\Machine1-Product-Inventory-Service.runtimeconfig.json
+d:\fullStack\btlfullstack (1)\_buildcheck\publish\Machine1-Product-Inventory-Service.staticwebassets.endpoints.json
+d:\fullStack\btlfullstack (1)\_buildcheck\Machine1-Product-Inventory-Service.staticwebassets.endpoints.json
+d:\fullStack\btlfullstack (1)\_buildcheck\Machine1-Product-Inventory-Service.exe
+d:\fullStack\btlfullstack (1)\_buildcheck\Machine1-Product-Inventory-Service.deps.json
+d:\fullStack\btlfullstack (1)\_buildcheck\Machine1-Product-Inventory-Service.runtimeconfig.json
+d:\fullStack\btlfullstack (1)\_buildcheck\Machine1-Product-Inventory-Service.dll
+d:\fullStack\btlfullstack (1)\_buildcheck\Machine1-Product-Inventory-Service.pdb
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\build-check\publish\web.config
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\build-check\appsettings.Development.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\build-check\appsettings.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\build-check\Data\categories.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\build-check\Data\events.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\build-check\Data\inventory-movements.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\build-check\Data\inventory-receipts.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\build-check\Data\inventory-reservations.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\build-check\Data\products.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\build-check\Data\suppliers.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\build-check\publish\appsettings.Development.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\build-check\publish\appsettings.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\build-check\publish\Machine1-Product-Inventory-Service.deps.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\build-check\publish\Machine1-Product-Inventory-Service.runtimeconfig.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\build-check\publish\Machine1-Product-Inventory-Service.staticwebassets.endpoints.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\build-check\Machine1-Product-Inventory-Service.staticwebassets.endpoints.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\build-check\Machine1-Product-Inventory-Service.exe
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\build-check\Machine1-Product-Inventory-Service.deps.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\build-check\Machine1-Product-Inventory-Service.runtimeconfig.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\build-check\Machine1-Product-Inventory-Service.dll
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\build-check\Machine1-Product-Inventory-Service.pdb
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\build-check\Microsoft.OpenApi.dll
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\build-check\Swashbuckle.AspNetCore.Swagger.dll
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\build-check\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\build-check\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\build-check\publish\web.config
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\build-check\appsettings.Development.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\build-check\appsettings.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\build-check\Data\categories.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\build-check\Data\events.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\build-check\Data\inventory-movements.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\build-check\Data\inventory-receipts.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\build-check\Data\inventory-reservations.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\build-check\Data\products.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\build-check\Data\suppliers.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\build-check\Machine1-Product-Inventory-Service.deps.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\build-check\Machine1-Product-Inventory-Service.runtimeconfig.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\build-check\Machine1-Product-Inventory-Service.staticwebassets.endpoints.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\build-check\publish\appsettings.Development.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\build-check\publish\appsettings.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\build-check\publish\Machine1-Product-Inventory-Service.deps.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\build-check\publish\Machine1-Product-Inventory-Service.runtimeconfig.json
+D:\fullStack\btlfullstack (1)\Machine1-Product-Inventory-Service\bin\Debug\net8.0\build-check\publish\Machine1-Product-Inventory-Service.staticwebassets.endpoints.json

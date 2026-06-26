@@ -1,0 +1,1522 @@
+/* Final dashboard layout. Keep these rules scoped so legacy landing/auth styles cannot leak in. */
+html,
+body {
+  height: auto;
+  overflow: auto;
+}
+
+[data-view="app"] {
+  --sidebar-width: 260px;
+  display: grid;
+  grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+  width: 100%;
+  min-height: 100vh;
+  overflow: visible;
+  background: #f7f7f8;
+}
+
+[data-view="app"] > .sidebar {
+  position: fixed !important;
+  inset: 0 auto 0 0 !important;
+  z-index: 30;
+  width: var(--sidebar-width);
+  height: 100vh !important;
+  height: 100dvh !important;
+  min-height: 100vh !important;
+  max-height: 100vh;
+  max-height: 100dvh;
+  padding: 0;
+  overflow: hidden;
+  background: #258fd8;
+  transform: none !important;
+}
+
+[data-view="app"] > .sidebar::before,
+[data-view="app"] > .sidebar::after {
+  display: block;
+}
+
+[data-view="app"] > .sidebar::before {
+  opacity: 0.22;
+}
+
+[data-view="app"] > .sidebar::after {
+  opacity: 0.82;
+  background: linear-gradient(180deg, #1dc7ea 0%, #3478e5 100%);
+}
+
+[data-view="app"] .sidebar-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: url("./assets/img/warehouse-sidebar.jpg") center / cover;
+}
+
+[data-view="app"] .sidebar-backdrop::after {
+  display: none;
+}
+
+[data-view="app"] .sidebar-wrapper {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  width: 100%;
+  height: 100% !important;
+  min-height: 0;
+  max-height: none;
+  padding: 0 15px 18px;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+[data-view="app"] #nav {
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.35) transparent;
+}
+
+[data-view="app"] #nav::-webkit-scrollbar {
+  width: 5px;
+}
+
+[data-view="app"] #nav::-webkit-scrollbar-thumb {
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+[data-view="app"] .sidebar-brand {
+  display: flex;
+  width: 100%;
+  min-height: 76px;
+  margin: 0;
+  padding: 14px 10px;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  box-shadow: none;
+}
+
+[data-view="app"] .brand-mark {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+  background: transparent;
+  color: #fff;
+  font-weight: 700;
+}
+
+[data-view="app"] .sidebar-brand > div:last-child {
+  min-width: 0;
+  line-height: 1.25;
+}
+
+[data-view="app"] .sidebar-brand strong,
+[data-view="app"] .sidebar-brand #storeName {
+  display: block;
+  max-width: 155px;
+  overflow: hidden;
+  color: #fff;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+[data-view="app"] .sidebar-brand strong {
+  font-size: 17px;
+}
+
+[data-view="app"] .sidebar-brand #storeName {
+  margin-top: 3px;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 11px;
+}
+
+[data-view="app"] .sidebar-label {
+  margin: 13px 13px 5px;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+[data-view="app"] #nav {
+  display: block;
+  flex: 0 1 auto;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  list-style: none;
+}
+
+[data-view="app"] #nav::before,
+[data-view="app"] #nav::after {
+  display: none;
+  content: none;
+}
+
+[data-view="app"] #nav li {
+  display: block;
+  margin: 0;
+}
+
+[data-view="app"] #nav .nav-section {
+  margin: 12px 13px 4px;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+[data-view="app"] #nav .nav-item {
+  display: flex;
+  width: 100%;
+  min-height: 46px;
+  margin: 0;
+  padding: 9px 13px;
+  align-items: center;
+  gap: 13px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 400;
+  text-align: left;
+  text-transform: uppercase;
+  transform: none;
+  box-shadow: none;
+}
+
+[data-view="app"] #nav .nav-item::before,
+[data-view="app"] #nav .nav-item::after {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  content: none !important;
+}
+
+[data-view="app"] #nav .nav-item i {
+  display: block;
+  width: 30px;
+  flex: 0 0 30px;
+  color: #fff;
+  font-size: 27px;
+  line-height: 1;
+  text-align: center;
+}
+
+[data-view="app"] #nav .nav-item span {
+  min-width: 0;
+  line-height: 1.25;
+  white-space: normal;
+}
+
+[data-view="app"] #nav li.active > .nav-item,
+[data-view="app"] #nav .nav-item:hover {
+  background: rgba(255, 255, 255, 0.24);
+  color: #fff;
+}
+
+[data-view="app"] .sidebar-footer {
+  display: grid;
+  flex: 0 0 auto;
+  gap: 7px;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.27);
+  background: transparent;
+}
+
+[data-view="app"] .sidebar-footer-label {
+  margin: 0 12px;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+[data-view="app"] #logoutBtn {
+  display: flex;
+  width: 100%;
+  min-height: 44px;
+  margin: 0;
+  padding: 9px 13px;
+  align-items: center;
+  gap: 13px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 400;
+  text-transform: uppercase;
+  box-shadow: none;
+}
+
+[data-view="app"] #logoutBtn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+[data-view="app"] #logoutBtn i {
+  width: 30px;
+  flex: 0 0 30px;
+  font-size: 24px;
+  text-align: center;
+}
+
+[data-view="app"] > .main-panel {
+  position: relative;
+  grid-column: 2;
+  float: none;
+  width: auto;
+  min-width: 0;
+  min-height: 100vh;
+  padding: 0;
+  overflow: visible;
+  transform: none !important;
+  background: #f7f7f8;
+}
+
+[data-view="app"] .topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: block;
+  width: 100%;
+  min-height: 76px;
+  margin: 0 0 28px;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid #e7e7e7;
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: none;
+}
+
+[data-view="app"] .topbar > .container-fluid {
+  display: flex;
+  width: 100%;
+  min-height: 76px;
+  padding: 11px 30px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+[data-view="app"] .topbar-title {
+  float: none;
+  min-width: 180px;
+  margin: 0 auto 0 0;
+  text-align: left;
+}
+
+[data-view="app"] .topbar-title .eyebrow {
+  margin: 0 0 4px;
+  color: #9a9a9a;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+}
+
+[data-view="app"] .topbar-title .navbar-brand {
+  float: none;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  color: #777;
+  font-size: 21px;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+[data-view="app"] .top-actions {
+  display: flex;
+  min-width: 0;
+  margin-left: auto;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+[data-view="app"] [data-page-panel="users"] .table-responsive {
+  overflow-x: auto;
+}
+
+[data-view="app"] .users-table {
+  width: 100%;
+  min-width: 980px;
+  table-layout: auto;
+}
+
+[data-view="app"] .users-table th,
+[data-view="app"] .users-table td {
+  vertical-align: middle;
+}
+
+[data-view="app"] .users-table th:first-child,
+[data-view="app"] .users-table td:first-child {
+  width: 42px;
+  text-align: center;
+}
+
+[data-view="app"] .users-table .user-role-cell {
+  width: 190px;
+}
+
+[data-view="app"] .user-role-select {
+  width: 100%;
+  min-width: 165px;
+  height: 38px;
+  padding: 7px 30px 7px 10px;
+  border: 1px solid #e3e7ec;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #555;
+}
+
+[data-view="app"] .user-actions-heading,
+[data-view="app"] .user-action-cell {
+  width: 142px;
+  text-align: right;
+}
+
+[data-view="app"] .product-actions-heading,
+[data-view="app"] .product-action-cell {
+  width: 104px;
+  text-align: right;
+}
+
+[data-view="app"] [data-page-panel="products"] .toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+[data-view="app"] [data-page-panel="products"] .toolbar .form-control {
+  border-color: #d9e6ee;
+  box-shadow: none;
+}
+
+[data-view="app"] [data-page-panel="products"] .toolbar .form-control:focus {
+  border-color: #1dc7ea;
+  box-shadow: 0 0 0 3px rgba(29, 199, 234, 0.12);
+}
+
+[data-view="app"] [data-page-panel="products"] .toolbar #bulkDeleteProductsBtn {
+  background: linear-gradient(135deg, #ff9f43, #ff7f50);
+  border: 0;
+  color: #fff;
+}
+
+[data-view="app"] [data-page-panel="products"] .toolbar #bulkDeleteProductsBtn:disabled {
+  background: #f2b8c0;
+  color: #fff;
+  opacity: 0.72;
+}
+
+[data-view="app"] [data-page-panel="products"] .table-wrap {
+  overflow: hidden;
+}
+
+[data-view="app"] [data-page-panel="products"] .users-table th,
+[data-view="app"] [data-page-panel="products"] .users-table td {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+[data-view="app"] [data-page-panel="products"] .product-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+[data-view="app"] [data-page-panel="products"] .product-cell strong {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 14px;
+  line-height: 1.1;
+}
+
+[data-view="app"] [data-page-panel="products"] .product-sku {
+  display: block;
+  font-size: 11px;
+  line-height: 1.1;
+}
+
+[data-view="app"] [data-page-panel="products"] .thumb,
+[data-view="app"] [data-page-panel="products"] .placeholder-thumb {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  border-radius: 6px;
+}
+
+[data-view="app"] [data-page-panel="products"] .product-action-cell {
+  padding-right: 8px;
+}
+
+[data-view="app"] .product-list-footer {
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+[data-view="app"] .user-list-footer {
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+[data-view="app"] .product-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+[data-view="app"] .user-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+[data-view="app"] .product-page-btn {
+  min-width: 40px;
+  min-height: 38px;
+  padding: 8px 12px;
+  border: 1px solid #d7e2ea;
+  border-radius: 6px;
+  background: #fff;
+  color: #5f6b7a;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: none;
+}
+
+[data-view="app"] .product-page-btn:hover:not(:disabled) {
+  border-color: #98dff0;
+  background: #eefcff;
+  color: #178aa3;
+}
+
+[data-view="app"] .product-page-btn.active {
+  border-color: #1dc7ea;
+  background: linear-gradient(135deg, #1dc7ea, #4dd0e1);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(29, 199, 234, 0.22);
+}
+
+[data-view="app"] .product-page-btn.disabled,
+[data-view="app"] .product-page-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+[data-view="app"] .user-actions {
+  width: 100%;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+[data-view="app"] .product-actions {
+  width: 100%;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+[data-view="app"] .category-actions {
+  flex: 0 0 auto;
+  margin-left: auto;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+[data-view="app"] .supplier-actions {
+  width: 100%;
+  margin-top: 10px;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+[data-view="app"] .catalog-icon-button {
+  width: 34px;
+  height: 34px;
+  flex-basis: 34px;
+  font-size: 18px;
+}
+
+[data-view="app"] [data-page-panel="inventory"] .two-columns {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: 18px;
+}
+
+[data-view="app"] [data-page-panel="inventory"] .card > .header {
+  padding-bottom: 12px;
+}
+
+[data-view="app"] [data-page-panel="inventory"] .card > .content {
+  padding-top: 12px;
+}
+
+[data-view="app"] .inventory-form {
+  gap: 12px;
+}
+
+[data-view="app"] .inventory-product-filters {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  align-items: end;
+}
+
+[data-view="app"] .inventory-product-filters label,
+[data-view="app"] .inventory-product-filters select {
+  width: 100%;
+}
+
+[data-view="app"] .inventory-form-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+[data-view="app"] .inventory-history-bar {
+  display: flex;
+  margin: 14px 0 10px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+[data-view="app"] .inventory-history-bar h4 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+[data-view="app"] .inventory-history-bar p {
+  margin: 4px 0 0;
+  color: #8b93a7;
+  font-size: 13px;
+}
+
+[data-view="app"] .inventory-history-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+[data-view="app"] .inventory-history-tabs {
+  flex-shrink: 0;
+}
+
+[data-view="app"] .inventory-history-date-field {
+  min-width: 190px;
+}
+
+[data-view="app"] [data-page-panel="inventory"] .inventory-person {
+  min-width: 190px;
+  font-family: "Segoe UI", "Be Vietnam Pro", "Noto Sans", Arial, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.4;
+  text-transform: none;
+  word-break: break-word;
+}
+
+[data-view="app"] [data-page-panel="inventory"] .inventory-person-email {
+  display: block;
+  color: #4a5568;
+  font: inherit;
+  letter-spacing: normal;
+}
+
+[data-view="app"] [data-page-panel="inventory"] .inventory-person-role {
+  display: block;
+  margin-top: 2px;
+  color: #8b93a7;
+  font-family: inherit;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+[data-view="app"] [data-page-panel="inventory"] .inventory-person-empty {
+  color: #a0a7b5;
+  font: inherit;
+}
+
+[data-view="app"] .inventory-form label {
+  margin: 0;
+}
+
+[data-view="app"] .inventory-form input,
+[data-view="app"] .inventory-form select {
+  min-height: 42px;
+}
+
+[data-view="app"] .inventory-form button[type="submit"] {
+  min-height: 40px;
+  margin-top: 2px;
+}
+
+[data-view="app"] .inventory-form [data-inventory-cancel-edit] {
+  min-height: 40px;
+}
+
+@media (max-width: 1500px) {
+  [data-view="app"] [data-page-panel="inventory"] .two-columns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+[data-view="app"] .user-management-tools {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+[data-view="app"] .user-search {
+  position: relative;
+  width: min(320px, 32vw);
+  margin: 0;
+}
+
+[data-view="app"] .user-search i {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  z-index: 1;
+  color: #9a9a9a;
+  font-size: 19px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+[data-view="app"] .user-search input {
+  width: 100%;
+  height: 40px;
+  padding-left: 38px;
+}
+
+[data-view="app"] .user-icon-button {
+  display: inline-grid;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  margin: 0;
+  padding: 0;
+  place-items: center;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: #eef7fa;
+  color: #1aa6c5;
+  font-size: 19px;
+  line-height: 1;
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+[data-view="app"] .user-icon-button:hover {
+  border-color: #bfeaf3;
+  background: #e1f6fa;
+  color: #1192ae;
+}
+
+[data-view="app"] .user-icon-button.lock,
+[data-view="app"] .user-icon-button.delete {
+  background: #fff0f1;
+  color: #e35d6a;
+}
+
+[data-view="app"] .user-icon-button.lock:hover,
+[data-view="app"] .user-icon-button.delete:hover {
+  border-color: #ffcbd0;
+  background: #ffe4e7;
+  color: #cf3f4d;
+}
+
+[data-view="app"] .user-icon-button.unlock {
+  background: #edf9f1;
+  color: #35a85b;
+}
+
+[data-view="app"] .user-icon-button:disabled {
+  opacity: 0.38;
+}
+
+[data-view="app"] .service-status,
+[data-view="app"] #refreshBtn,
+[data-view="app"] .user-pill {
+  display: inline-flex;
+  min-height: 40px;
+  margin: 0;
+  padding: 8px 12px;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: #777;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.2;
+  white-space: nowrap;
+  box-shadow: none;
+}
+
+[data-view="app"] .service-status {
+  padding-left: 0;
+}
+
+[data-view="app"] .status-dot {
+  width: 9px;
+  height: 9px;
+  flex: 0 0 9px;
+  border-radius: 50%;
+  background: #87cb16;
+  box-shadow: 0 0 0 4px rgba(135, 203, 22, 0.12);
+}
+
+[data-view="app"] #refreshBtn:hover {
+  background: #f4f4f4;
+}
+
+[data-view="app"] .user-pill {
+  max-width: 310px;
+  color: #1dc7ea;
+}
+
+[data-view="app"] .user-pill span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+[data-view="app"] > .main-panel > .content {
+  min-height: calc(100vh - 140px);
+  padding: 0;
+  overflow: visible;
+}
+
+[data-view="app"] > .main-panel > .content > .container-fluid {
+  width: 100%;
+  padding: 0 30px 36px;
+  overflow: visible;
+}
+
+[data-view="app"] .page {
+  min-width: 0;
+  overflow: visible;
+}
+
+[data-view="app"] .page > .content {
+  overflow: visible;
+}
+
+[data-view="app"] [data-page-panel="products"] {
+  display: flex;
+  min-height: calc(100vh - 140px);
+  flex-direction: column;
+}
+
+[data-view="app"] [data-page-panel="products"] > .content {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: 14px;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  height: auto;
+}
+
+[data-view="app"] [data-page-panel="products"] .toolbar {
+  display: flex;
+  flex: 0 0 auto;
+}
+
+[data-view="app"] [data-page-panel="products"] .table-wrap {
+  min-height: 0;
+  overflow: auto;
+  margin-top: 0;
+}
+
+[data-view="app"] [data-page-panel="products"] .users-table {
+  margin-bottom: 0;
+}
+
+[data-view="app"] [data-page-panel="products"] .product-list-footer {
+  display: flex;
+  flex: 0 0 auto;
+  margin-top: 0;
+}
+
+[data-view="app"] .card,
+[data-view="app"] .stat {
+  overflow: hidden;
+  border: 0;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
+}
+
+[data-view="app"] .card > .header {
+  padding: 18px 18px 0;
+}
+
+[data-view="app"] .card > .content {
+  padding: 18px;
+}
+
+[data-view="app"] .card .title,
+[data-view="app"] .card .header h3 {
+  margin: 0;
+  color: #333;
+  font-size: 21px;
+  font-weight: 300;
+  line-height: 1.25;
+}
+
+[data-view="app"] .card .category {
+  margin: 5px 0 0;
+  color: #9a9a9a;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+[data-view="app"] .section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+[data-view="app"] .profile-form {
+  width: 100%;
+  max-width: none;
+}
+
+[data-view="app"] .dashboard-footer {
+  min-height: 58px;
+}
+
+[data-view="app"] .sales-tabs {
+  display: inline-flex;
+  margin: 0 0 24px;
+  padding: 5px;
+  gap: 5px;
+  border: 1px solid #e5e8ed;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 2px 2px rgba(204, 197, 185, 0.35);
+}
+
+[data-view="app"] .sales-tab {
+  display: inline-flex;
+  min-height: 44px;
+  padding: 10px 18px;
+  align-items: center;
+  gap: 9px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: #777;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: none;
+}
+
+[data-view="app"] .sales-tab i {
+  font-size: 21px;
+}
+
+[data-view="app"] .sales-tab:hover {
+  background: #f5f7f9;
+}
+
+[data-view="app"] .sales-tab.active {
+  background: #1dc7ea;
+  color: #fff;
+}
+
+[data-view="app"] .sale-stock-info {
+  display: grid;
+  min-height: 66px;
+  padding: 10px 14px;
+  align-content: center;
+  border: 1px solid #e3e7ec;
+  border-radius: 4px;
+  background: #f8fafc;
+  color: #8a94a6;
+}
+
+[data-view="app"] .sale-stock-info span,
+[data-view="app"] .sale-stock-info small {
+  color: #8a94a6;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+[data-view="app"] .sale-stock-info strong {
+  color: #28364b;
+  font-size: 20px;
+  line-height: 1.15;
+}
+
+[data-view="app"] .cod-hold-note {
+  display: flex;
+  padding: 12px 14px;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #f5d8a8;
+  border-radius: 4px;
+  background: #fff8eb;
+  color: #9a6818;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+[data-view="app"] .cod-hold-note i {
+  flex: 0 0 auto;
+  font-size: 23px;
+}
+
+[data-view="app"] #paidAmountLabel.is-disabled {
+  opacity: 0.55;
+}
+
+[data-view="app"] .order-item {
+  align-items: flex-start;
+}
+
+[data-view="app"] .order-pending {
+  border-left: 3px solid #ff9500;
+  background: #fffdfa;
+}
+
+[data-view="app"] .order-main {
+  min-width: 0;
+}
+
+[data-view="app"] .order-side {
+  display: grid;
+  min-width: 155px;
+  justify-items: end;
+  gap: 10px;
+}
+
+[data-view="app"] .cod-hold-status {
+  color: #c27a00;
+  font-weight: 600;
+}
+
+[data-view="app"] .cod-countdown {
+  display: inline-block;
+  min-width: 62px;
+  color: #ff9500;
+  font-variant-numeric: tabular-nums;
+}
+
+[data-view="app"] .order-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+[data-view="app"] .order-actions .btn {
+  margin: 0;
+  padding: 7px 9px;
+  font-size: 10px;
+}
+
+[data-view="app"] [data-page-panel="dashboard"] .chart-grid {
+  align-items: stretch;
+}
+
+[data-view="app"] [data-page-panel="dashboard"] .chart-card {
+  min-width: 0;
+  min-height: 315px;
+}
+
+[data-view="app"] [data-page-panel="dashboard"] .chart-card > .content {
+  height: 260px;
+}
+
+[data-view="app"] [data-page-panel="dashboard"] .chart-card canvas {
+  display: block;
+  width: 100%;
+  height: 230px;
+}
+
+[data-view="app"] .revenue-overview {
+  display: grid;
+  gap: 28px;
+  margin: 28px 0;
+}
+
+[data-view="app"] .revenue-filter {
+  display: flex;
+  min-height: 104px;
+  padding: 18px 22px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+[data-view="app"] .revenue-filter-copy {
+  display: grid;
+  min-width: 230px;
+  gap: 3px;
+}
+
+[data-view="app"] .revenue-filter-copy .eyebrow {
+  margin: 0;
+  color: #1dc7ea;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+[data-view="app"] .revenue-filter-copy strong {
+  color: #28364b;
+  font-size: 19px;
+  font-weight: 500;
+}
+
+[data-view="app"] .revenue-filter-copy small {
+  color: #8a94a6;
+}
+
+[data-view="app"] .revenue-filter-controls {
+  display: flex;
+  min-width: 0;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+[data-view="app"] .revenue-period-tabs {
+  display: inline-flex;
+  padding: 4px;
+  gap: 3px;
+  border: 1px solid #e3e7ec;
+  border-radius: 5px;
+  background: #f7f8fa;
+}
+
+[data-view="app"] .revenue-period-btn {
+  min-height: 38px;
+  padding: 8px 14px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: #777;
+  font-size: 12px;
+  font-weight: 600;
+  box-shadow: none;
+}
+
+[data-view="app"] .revenue-period-btn:hover {
+  background: #fff;
+}
+
+[data-view="app"] .revenue-period-btn.active {
+  background: #1dc7ea;
+  color: #fff;
+  box-shadow: 0 2px 5px rgba(29, 199, 234, 0.25);
+}
+
+[data-view="app"] .revenue-date-field {
+  display: grid;
+  min-width: 190px;
+  margin: 0;
+  gap: 5px;
+}
+
+[data-view="app"] .revenue-date-field span {
+  color: #8a94a6;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+[data-view="app"] .revenue-date-field input {
+  width: 100%;
+  height: 46px;
+}
+
+[data-view="app"] #revenueTodayBtn {
+  height: 46px;
+  margin: 0;
+  white-space: nowrap;
+}
+
+[data-view="app"] .revenue-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+[data-view="app"] .revenue-kpi {
+  position: relative;
+  display: grid;
+  min-height: 132px;
+  padding: 22px 24px;
+  overflow: hidden;
+  align-content: center;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
+}
+
+[data-view="app"] .revenue-kpi::after {
+  position: absolute;
+  top: -32px;
+  right: -25px;
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  background: var(--kpi-accent);
+  content: "";
+  opacity: 0.12;
+}
+
+[data-view="app"] .revenue-kpi-today {
+  --kpi-accent: #1dc7ea;
+}
+
+[data-view="app"] .revenue-kpi-week {
+  --kpi-accent: #87cb16;
+}
+
+[data-view="app"] .revenue-kpi-month {
+  --kpi-accent: #ff9500;
+}
+
+[data-view="app"] .revenue-kpi span {
+  color: #8a94a6;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+[data-view="app"] .revenue-kpi strong {
+  position: relative;
+  z-index: 1;
+  margin: 7px 0 3px;
+  color: #28364b;
+  font-size: clamp(24px, 2.2vw, 34px);
+  font-weight: 300;
+  line-height: 1.15;
+}
+
+[data-view="app"] .revenue-kpi small {
+  color: #9a9a9a;
+  font-size: 12px;
+}
+
+[data-view="app"] .revenue-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(320px, 0.8fr);
+  gap: 24px;
+}
+
+[data-view="app"] .revenue-chart-card canvas {
+  display: block;
+  width: 100%;
+  height: 260px;
+}
+
+[data-view="app"] .category-revenue-list {
+  display: grid;
+  gap: 20px;
+}
+
+[data-view="app"] .category-revenue-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+[data-view="app"] .category-revenue-head span {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 9px;
+  color: #525f72;
+  font-weight: 600;
+}
+
+[data-view="app"] .category-revenue-head i {
+  width: 10px;
+  height: 10px;
+  flex: 0 0 10px;
+  border-radius: 50%;
+  background: var(--category-color);
+}
+
+[data-view="app"] .category-revenue-head strong {
+  color: #28364b;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+[data-view="app"] .category-revenue-track {
+  height: 7px;
+  margin: 9px 0 6px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: #edf1f5;
+}
+
+[data-view="app"] .category-revenue-track span {
+  display: block;
+  height: 100%;
+  min-width: 2px;
+  border-radius: inherit;
+  background: var(--category-color);
+}
+
+[data-view="app"] .category-revenue-item small {
+  color: #9a9a9a;
+}
+
+[data-view="app"] .revenue-table-wrap {
+  border: 0;
+}
+
+[data-view="app"] .daily-revenue-card .table {
+  margin-bottom: 0;
+}
+
+[data-view="app"] .daily-revenue-card td:last-child,
+[data-view="app"] .daily-revenue-card th:last-child {
+  text-align: right;
+}
+
+@media (max-width: 1180px) {
+  [data-view="app"] .topbar > .container-fluid {
+    align-items: flex-start;
+  }
+
+  [data-view="app"] .top-actions {
+    flex-wrap: wrap;
+  }
+
+  [data-view="app"] .service-status {
+    display: none;
+  }
+
+  [data-view="app"] [data-page-panel="users"] > .section-head {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  [data-view="app"] .user-management-tools {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  [data-view="app"] .user-search {
+    width: min(100%, 420px);
+  }
+
+  [data-view="app"] .revenue-grid {
+    grid-template-columns: 1fr;
+  }
+
+  [data-view="app"] .revenue-filter {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  [data-view="app"] .revenue-filter-controls {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 900px) {
+  [data-view="app"] {
+    display: block;
+  }
+
+  [data-view="app"] > .sidebar {
+    position: relative !important;
+    inset: auto !important;
+    z-index: auto;
+    width: 100%;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none;
+  }
+
+  [data-view="app"] .sidebar-wrapper {
+    height: auto !important;
+    max-height: none;
+    min-height: 0;
+    padding-bottom: 14px;
+    overflow: visible;
+  }
+
+  [data-view="app"] > .main-panel {
+    grid-column: auto;
+  }
+
+  [data-view="app"] .user-management-tools,
+  [data-view="app"] .user-search,
+  [data-view="app"] #bulkDeleteUsersBtn {
+    width: 100%;
+  }
+
+  [data-view="app"] [data-page-panel="inventory"] .two-columns,
+  [data-view="app"] .inventory-product-filters {
+    grid-template-columns: 1fr;
+  }
+
+  [data-view="app"] .sidebar-label,
+  [data-view="app"] #nav .nav-section,
+  [data-view="app"] .sidebar-footer-label {
+    display: none;
+  }
+
+  [data-view="app"] #nav {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 4px;
+  }
+
+  [data-view="app"] #nav .nav-item {
+    min-height: 58px;
+    padding: 9px 10px;
+    text-transform: none;
+  }
+
+  [data-view="app"] .sidebar-footer {
+    margin-top: 8px;
+  }
+
+  [data-view="app"] #logoutBtn {
+    width: auto;
+  }
+
+  [data-view="app"] .topbar {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  [data-view="app"] .topbar > .container-fluid {
+    min-height: 76px;
+    padding: 12px 20px;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  [data-view="app"] .top-actions {
+    justify-content: flex-end;
+  }
+
+  [data-view="app"] > .main-panel > .content > .container-fluid {
+    padding: 0 16px 30px;
+  }
+
+  [data-view="app"] .revenue-summary {
+    grid-template-columns: 1fr;
+  }
+
+  [data-view="app"] .order-item,
+  [data-view="app"] .order-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  [data-view="app"] .order-side {
+    width: 100%;
+    justify-items: start;
+  }
+
+  [data-view="app"] .revenue-filter-controls,
+  [data-view="app"] .revenue-period-tabs {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  [data-view="app"] .revenue-date-field {
+    min-width: 0;
+    grid-column: 1 / -1;
+  }
+
+  [data-view="app"] #revenueTodayBtn {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 560px) {
+  [data-view="app"] #nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  [data-view="app"] .sales-tabs {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+
+  [data-view="app"] .sales-tab {
+    justify-content: center;
+  }
+
+  [data-view="app"] .top-actions {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    width: 100%;
+    justify-content: stretch;
+  }
+
+  [data-view="app"] .topbar > .container-fluid {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  [data-view="app"] #refreshBtn {
+    justify-content: flex-start;
+  }
+
+  [data-view="app"] .user-pill {
+    min-width: 0;
+  }
+}

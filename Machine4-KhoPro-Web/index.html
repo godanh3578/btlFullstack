@@ -1,0 +1,960 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KhoPro Web</title>
+  <link rel="icon" href="./assets/img/favicon.ico">
+  <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/css/animate.min.css">
+  <link rel="stylesheet" href="./assets/css/light-bootstrap-dashboard.css">
+  <link rel="stylesheet" href="./assets/css/pe-icon-7-stroke.css">
+  <link rel="stylesheet" href="./styles.css?v=20260610-2">
+  <link rel="stylesheet" href="./dashboard.css?v=20260619-25">
+</head>
+<body>
+  <div id="app">
+    <section class="home-screen" data-view="home">
+      <header class="home-nav">
+        <div class="brand">
+          <div class="logo">KP</div>
+          <div>
+            <strong>KhoPro</strong>
+            <span>Qu&#7843;n l&#253; b&#225;n h&#224;ng &amp; kho h&#224;ng</span>
+          </div>
+        </div>
+        <div class="home-actions">
+          <button class="ghost" type="button" data-home-auth="login">&#272;&#259;ng nh&#7853;p</button>
+          <button class="primary" type="button" data-home-auth="register">&#272;&#259;ng k&#253;</button>
+        </div>
+      </header>
+
+      <main class="home-main">
+        <section class="home-hero">
+          <div class="home-copy">
+            <p class="eyebrow">Microservices Inventory Platform</p>
+            <h1>Qu&#7843;n l&#253; kho h&#224;ng r&#245; r&#224;ng, b&#225;n h&#224;ng nhanh h&#417;n</h1>
+            <p class="home-lead">
+              KhoPro gi&#250;p c&#7917;a h&#224;ng theo d&#245;i s&#7843;n ph&#7849;m, t&#7891;n kho, nh&#224; cung c&#7845;p,
+              nh&#7853;p xu&#7845;t kho v&#224; ph&#226;n quy&#7873;n ng&#432;&#7901;i d&#249;ng tr&#234;n m&#7897;t giao di&#7879;n th&#226;n thi&#7879;n.
+            </p>
+            <div class="home-cta">
+              <button class="primary" type="button" data-home-auth="login">V&#224;o h&#7879; th&#7889;ng</button>
+              <button class="ghost" type="button" data-home-auth="register">T&#7841;o t&#224;i kho&#7843;n m&#7899;i</button>
+            </div>
+            <div class="home-trust">
+              <span>JWT Role</span>
+              <span>ProductDB</span>
+              <span>Stock Updated Event</span>
+            </div>
+          </div>
+
+          <div class="home-preview" aria-label="B&#7843;ng t&#7893;ng quan KhoPro">
+            <div class="preview-top">
+              <span>KhoPro Dashboard</span>
+              <strong>05/06/2026</strong>
+            </div>
+            <div class="preview-grid">
+              <div>
+                <span>S&#7843;n ph&#7849;m</span>
+                <strong>128</strong>
+              </div>
+              <div>
+                <span>T&#7891;n kho</span>
+                <strong>3.420</strong>
+              </div>
+              <div>
+                <span>S&#7855;p h&#7871;t</span>
+                <strong>09</strong>
+              </div>
+            </div>
+            <div class="preview-table">
+              <div><span>C&#224; ph&#234; Arabica</span><b>&#272;ang b&#225;n</b></div>
+              <div><span>Tr&#224; sen t&#250;i l&#7885;c</span><b>C&#7847;n nh&#7853;p</b></div>
+              <div><span>S&#7919;a t&#432;&#417;i 1L</span><b>&#272;&#227; xu&#7845;t</b></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="home-feature-grid">
+          <article>
+            <span>01</span>
+            <h3>Qu&#7843;n l&#253; s&#7843;n ph&#7849;m</h3>
+            <p>CRUD s&#7843;n ph&#7849;m, gi&#225; nh&#7853;p, gi&#225; b&#225;n, h&#236;nh &#7843;nh v&#224; danh m&#7909;c cha-con.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Ki&#7875;m so&#225;t t&#7891;n kho</h3>
+            <p>Theo d&#245;i t&#7891;n hi&#7879;n t&#7841;i, c&#7843;nh b&#225;o khi d&#432;&#7899;i ng&#432;&#7905;ng v&#224; ghi l&#7841;i l&#7883;ch s&#7917; nh&#7853;p xu&#7845;t.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Ph&#226;n quy&#7873;n r&#245; r&#224;ng</h3>
+            <p>Admin, Sales v&#224; Warehouse &#273;&#432;&#7907;c t&#225;ch quy&#7873;n truy c&#7853;p theo vai tr&#242; JWT.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Ki&#7871;n tr&#250;c microservices</h3>
+            <p>T&#225;ch Product &amp; Inventory, User &amp; Report, s&#7861;n s&#224;ng m&#7903; r&#7897;ng qua API Gateway.</p>
+          </article>
+        </section>
+      </main>
+    </section>
+
+    <section class="auth-screen hidden" data-view="auth">
+      <div class="auth-panel">
+        <div class="auth-heading">
+          <p class="eyebrow">KhoPro Local</p>
+          <h1>Quản lý kho hàng</h1>
+          <div class="auth-highlights">
+            <span>Kho</span>
+            <span>Sản phẩm</span>
+            <span>Nhân sự</span>
+          </div>
+        </div>
+
+        <div class="auth-tabs">
+          <button class="tab active" data-auth-tab="login">Đăng nhập</button>
+          <button class="tab" data-auth-tab="register">Đăng ký</button>
+        </div>
+
+        <form id="loginForm" class="form stack" data-auth-form="login">
+          <div class="role-switch" aria-label="Chọn quyền đăng nhập">
+            <button class="role-card active" type="button" data-login-role="user">
+              <strong>Người dùng</strong>
+              <span>Dành cho tài khoản nhân viên và người dùng kho.</span>
+            </button>
+            <button class="role-card" type="button" data-login-role="admin">
+              <strong>Quản trị hệ thống</strong>
+              <span>Dành cho tài khoản admin có quyền quản trị.</span>
+            </button>
+          </div>
+          <label>Email
+            <input name="email" type="email" autocomplete="username" placeholder="Nhập email của bạn" required>
+          </label>
+          <label>Mật khẩu
+            <input name="password" type="password" autocomplete="current-password" placeholder="Nhập mật khẩu" required>
+          </label>
+          <button class="primary" type="submit">Đăng nhập</button>
+        </form>
+
+        <form id="registerForm" class="form stack hidden" data-auth-form="register">
+          <label>Email
+            <input name="email" type="email" required>
+          </label>
+          <label>Mật khẩu
+            <input name="password" type="password" minlength="6" required>
+          </label>
+          <div class="grid two">
+            <label>Họ tên
+              <input name="name">
+            </label>
+            <label>Tên cửa hàng
+              <input name="storeName" value="KhoPro">
+            </label>
+          </div>
+          <div class="grid two">
+            <label>Điện thoại
+              <input name="phone">
+            </label>
+            <label>Tỉnh/Thành
+              <input name="province">
+            </label>
+          </div>
+          <button class="primary" type="submit">Tạo tài khoản</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="wrapper shell hidden" data-view="app">
+      <aside class="sidebar" data-color="azure" data-image="./assets/img/warehouse-sidebar.jpg">
+        <div class="sidebar-backdrop" aria-hidden="true"></div>
+        <div class="sidebar-wrapper">
+          <div class="logo sidebar-brand">
+            <div class="brand-mark">KP</div>
+            <div>
+              <strong>KhoPro</strong>
+              <span id="storeName">Local</span>
+            </div>
+          </div>
+          <p class="sidebar-label">Không gian làm việc</p>
+          <ul class="nav" id="nav">
+            <li class="active"><button class="nav-item active" data-page="dashboard"><i class="pe-7s-graph"></i><span>Tổng quan</span></button></li>
+            <li class="nav-section">Vận hành</li>
+            <li data-sales-only><button class="nav-item" data-page="sales"><i class="pe-7s-cart"></i><span>Bán hàng</span></button></li>
+            <li><button class="nav-item" data-page="products"><i class="pe-7s-box1"></i><span>Sản phẩm</span></button></li>
+            <li data-warehouse-only><button class="nav-item" data-page="inventory"><i class="pe-7s-repeat"></i><span>Nhập xuất kho</span></button></li>
+            <li class="nav-section">Dữ liệu nền</li>
+            <li><button class="nav-item" data-page="categories"><i class="pe-7s-keypad"></i><span>Danh mục</span></button></li>
+            <li><button class="nav-item" data-page="suppliers"><i class="pe-7s-network"></i><span>Nhà cung cấp</span></button></li>
+            <li class="nav-section">Hệ thống</li>
+            <li data-admin-only><button class="nav-item" data-page="users"><i class="pe-7s-users"></i><span>Quản lý người dùng</span></button></li>
+            <li><button class="nav-item" data-page="profile"><i class="pe-7s-user"></i><span>Hồ sơ</span></button></li>
+          </ul>
+          <div class="sidebar-footer">
+            <span class="sidebar-footer-label">Phiên làm việc</span>
+            <button id="logoutBtn" class="ghost"><i class="pe-7s-power"></i><span>Đăng xuất</span></button>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-panel main">
+        <nav class="navbar navbar-default navbar-fixed topbar">
+          <div class="container-fluid">
+            <div class="navbar-header topbar-title">
+              <p class="eyebrow" id="todayLabel"></p>
+              <h2 class="navbar-brand" id="pageTitle">Tổng quan</h2>
+            </div>
+            <div class="top-actions">
+              <div class="service-status" title="Product API và User API">
+                <span class="status-dot"></span>
+                <span>Hệ thống nội bộ</span>
+              </div>
+              <button id="refreshBtn" class="ghost"><i class="pe-7s-refresh-2"></i><span>Làm mới</span></button>
+              <div class="user-pill"><i class="pe-7s-user"></i><span id="userPill">Admin</span></div>
+            </div>
+          </div>
+        </nav>
+
+        <div id="toast" class="toast hidden"></div>
+        <div class="content">
+          <div class="container-fluid">
+
+        <section class="page" data-page-panel="dashboard">
+          <div class="stats" id="stats"></div>
+          <div class="chart-grid">
+            <section class="chart-card chart-card-wide card">
+              <div class="section-head header">
+                <div>
+                  <p class="eyebrow">Xu hướng</p>
+                  <h3>Nhập - xuất kho theo ngày</h3>
+                </div>
+              </div>
+              <div class="content"><canvas id="movementLineChart" height="230"></canvas></div>
+            </section>
+            <section class="chart-card card">
+              <div class="section-head header">
+                <div>
+                  <p class="eyebrow">Tồn kho</p>
+                  <h3>Top sản phẩm tồn</h3>
+                </div>
+              </div>
+              <div class="content"><canvas id="stockBarChart" height="230"></canvas></div>
+            </section>
+            <section class="chart-card card">
+              <div class="section-head header">
+                <div>
+                  <p class="eyebrow">Tỷ lệ</p>
+                  <h3>Trạng thái tồn kho</h3>
+                </div>
+              </div>
+              <div class="content"><canvas id="stockPieChart" height="230"></canvas></div>
+            </section>
+          </div>
+          <div class="layout two-columns">
+            <section class="card">
+              <div class="section-head header">
+                <h3>Cảnh báo tồn kho</h3>
+              </div>
+              <div class="content"><div id="lowStockList" class="list"></div></div>
+            </section>
+            <section class="card">
+              <div class="section-head header">
+                <h3>Giao dịch gần đây</h3>
+              </div>
+              <div class="content"><div id="recentMovements" class="list"></div></div>
+            </section>
+          </div>
+        </section>
+
+        <section class="page card hidden" data-page-panel="products">
+          <div class="section-head header">
+            <div><h3 class="title">Sản phẩm</h3><p class="category">Quản lý danh sách và tồn kho sản phẩm</p></div>
+            <button class="btn btn-info btn-fill" data-open-modal="productModal">Thêm sản phẩm</button>
+          </div>
+          <div class="content">
+            <div class="toolbar">
+              <input class="form-control" id="productSearch" placeholder="Tìm theo tên sản phẩm">
+              <select class="form-control" id="productCategoryFilter"></select>
+              <button class="btn btn-danger btn-fill" type="button" id="bulkDeleteProductsBtn" disabled>Xóa sản phẩm đã chọn</button>
+            </div>
+          <div class="table-wrap table-responsive table-full-width">
+            <table class="table table-hover table-striped users-table">
+              <thead>
+                <tr>
+                  <th><input type="checkbox" id="selectAllProducts"></th>
+                  <th>Sản phẩm</th>
+                  <th>Danh mục</th>
+                  <th>Giá</th>
+                  <th>Tồn</th>
+                  <th>Trạng thái</th>
+                  <th class="product-actions-heading">Thao tác</th>
+                </tr>
+              </thead>
+              <tbody id="productsTable"></tbody>
+            </table>
+          </div>
+          <div class="product-list-footer">
+            <div class="muted" id="productPaginationInfo">Chưa có sản phẩm</div>
+            <div class="product-pagination" id="productPagination"></div>
+          </div>
+          </div>
+        </section>
+
+        <section class="page hidden" data-page-panel="sales">
+          <div class="sales-tabs" role="tablist" aria-label="Chức năng bán hàng">
+            <button class="sales-tab active" type="button" data-sales-tab="orders">
+              <i class="pe-7s-cart"></i>
+              <span>Tạo đơn &amp; lịch sử</span>
+            </button>
+            <button class="sales-tab" type="button" data-sales-tab="revenue">
+              <i class="pe-7s-graph1"></i>
+              <span>Báo cáo doanh thu</span>
+            </button>
+          </div>
+
+          <div class="stats sales-stats" data-sales-panel="orders">
+            <div class="stat">
+              <span>Đơn hàng</span>
+              <strong id="salesOrderCount">0</strong>
+            </div>
+            <div class="stat">
+              <span>Doanh thu</span>
+              <strong id="salesRevenue">0 ₫</strong>
+            </div>
+            <div class="stat">
+              <span>Sản phẩm đã bán</span>
+              <strong id="salesItemsSold">0</strong>
+            </div>
+            <div class="stat">
+              <span>Đơn gần nhất</span>
+              <strong id="salesLastOrder">-</strong>
+            </div>
+          </div>
+
+          <section class="revenue-overview hidden" data-sales-panel="revenue">
+            <section class="revenue-filter card">
+              <div class="revenue-filter-copy">
+                <span class="eyebrow">Khoảng báo cáo</span>
+                <strong id="revenuePeriodTitle">Doanh thu theo ngày</strong>
+                <small id="revenuePeriodRange">-</small>
+              </div>
+              <div class="revenue-filter-controls">
+                <div class="revenue-period-tabs" role="tablist" aria-label="Kiểu thời gian báo cáo">
+                  <button class="revenue-period-btn active" type="button" data-revenue-period="day">Theo ngày</button>
+                  <button class="revenue-period-btn" type="button" data-revenue-period="week">Theo tuần</button>
+                  <button class="revenue-period-btn" type="button" data-revenue-period="month">Theo tháng</button>
+                </div>
+                <label class="revenue-date-field">
+                  <span>Chọn ngày, tháng, năm</span>
+                  <input id="revenueReferenceDate" type="date">
+                </label>
+                <button class="btn btn-default" type="button" id="revenueTodayBtn">Hôm nay</button>
+              </div>
+            </section>
+
+            <div class="revenue-summary">
+              <article class="revenue-kpi revenue-kpi-today">
+                <span id="revenuePrimaryLabel">Doanh thu ngày đã chọn</span>
+                <strong id="revenueToday">0 ₫</strong>
+                <small id="revenueTodayOrders">0 đơn hàng</small>
+              </article>
+              <article class="revenue-kpi revenue-kpi-week">
+                <span>Sản phẩm đã bán</span>
+                <strong id="revenueWeek">0 ₫</strong>
+                <small id="revenueWeekRange">-</small>
+              </article>
+              <article class="revenue-kpi revenue-kpi-month">
+                <span>Giá trị trung bình / đơn</span>
+                <strong id="revenueMonth">0 ₫</strong>
+                <small id="revenueMonthLabel">-</small>
+              </article>
+            </div>
+
+            <div class="revenue-grid">
+              <section class="card revenue-chart-card">
+                <div class="section-head header">
+                  <div>
+                    <h3 class="title" id="revenueChartTitle">Doanh thu theo ngày</h3>
+                    <p class="category" id="revenueChartSubtitle">Tổng hợp theo khoảng thời gian đã chọn</p>
+                  </div>
+                </div>
+                <div class="content">
+                  <canvas id="dailyRevenueChart" height="260"></canvas>
+                </div>
+              </section>
+
+              <section class="card category-revenue-card">
+                <div class="section-head header">
+                  <div>
+                    <h3 class="title">Doanh thu theo danh mục</h3>
+                    <p class="category">Nước, hoa quả và các nhóm sản phẩm khác</p>
+                  </div>
+                </div>
+                <div class="content">
+                  <div id="categoryRevenueList" class="category-revenue-list"></div>
+                </div>
+              </section>
+            </div>
+
+            <section class="card daily-revenue-card">
+              <div class="section-head header">
+                <div>
+                  <h3 class="title" id="revenueTableTitle">Chi tiết doanh thu từng ngày</h3>
+                  <p class="category" id="revenueTableSubtitle">Số đơn, sản phẩm bán ra và tổng doanh thu</p>
+                </div>
+              </div>
+              <div class="content">
+                <div class="table-responsive revenue-table-wrap">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th>Ngày</th>
+                        <th>Số đơn</th>
+                        <th>Sản phẩm bán</th>
+                        <th>Doanh thu</th>
+                      </tr>
+                    </thead>
+                    <tbody id="dailyRevenueTable"></tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+          </section>
+
+          <div class="layout two-columns" data-sales-panel="orders">
+            <section class="card">
+              <div class="section-head header">
+                <div><h3 class="title">Tạo đơn bán hàng</h3><p class="category">Chọn sản phẩm và thông tin thanh toán</p></div>
+              </div>
+              <div class="content">
+              <form id="salesForm" class="form stack">
+                <div class="grid two">
+                  <label>Tên khách hàng
+                    <input name="customerName" placeholder="Khách lẻ / tên khách">
+                  </label>
+                  <label>Phương thức thanh toán
+                    <select name="paymentMethod" id="salePaymentMethod">
+                      <option value="Cash">Tiền mặt</option>
+                      <option value="Bank">Chuyển khoản</option>
+                      <option value="Card">Thẻ</option>
+                      <option value="COD">COD - giữ hàng 10 phút</option>
+                    </select>
+                  </label>
+                </div>
+                <div class="grid two">
+                  <label>Sản phẩm
+                    <input id="saleProductPicker" list="saleProductOptions" placeholder="Nhập tên hoặc chọn sản phẩm" autocomplete="off">
+                    <datalist id="saleProductOptions"></datalist>
+                    <input id="saleProductSelect" type="hidden">
+                  </label>
+                  <label>Số lượng
+                    <input id="saleQuantityInput" type="number" min="1" step="1" value="1">
+                  </label>
+                </div>
+                <div class="sale-stock-info" id="saleStockInfo">Chọn sản phẩm để xem tồn kho</div>
+                <button class="ghost" type="button" id="addSaleLineBtn">Thêm vào đơn</button>
+                <div id="saleCart" class="sale-cart empty">Đơn hàng chưa có sản phẩm</div>
+                <div class="grid two">
+                  <label>Giảm giá
+                    <input name="discountAmount" type="number" min="0" step="1000" value="0">
+                  </label>
+                  <label id="paidAmountLabel">Khách thanh toán
+                    <input name="paidAmount" type="number" min="0" step="1000">
+                  </label>
+                </div>
+                <div class="cod-hold-note hidden" id="codHoldNote">
+                  <i class="pe-7s-timer"></i>
+                  COD sẽ trừ tồn kho và giữ hàng trong 10 phút. Nếu chưa xác nhận thanh toán, hệ thống tự hủy và hoàn kho.
+                </div>
+                <button class="btn btn-info btn-fill" id="createSaleOrderBtn" type="submit">Tạo đơn và trừ kho</button>
+              </form>
+              </div>
+            </section>
+
+            <section class="card">
+              <div class="section-head header">
+                <div><h3 class="title">Đơn bán gần đây</h3><p class="category">Lịch sử bán hàng trên máy hiện tại</p></div>
+                <button class="btn btn-default" type="button" id="clearOrdersBtn">Xóa lịch sử local</button>
+              </div>
+              <div class="content"><div id="ordersList" class="list"></div></div>
+            </section>
+          </div>
+        </section>
+
+        <section class="page hidden" data-page-panel="inventory">
+          <div class="sales-tabs inventory-tabs" role="tablist" aria-label="Chức năng kho hàng">
+            <button class="sales-tab active" type="button" data-inventory-tab="adjustments">
+              <i class="pe-7s-edit"></i>
+              <span>Điều chỉnh</span>
+            </button>
+            <button class="sales-tab" type="button" data-inventory-tab="receipts">
+              <i class="pe-7s-download"></i>
+              <span>Nhập</span>
+            </button>
+            <button class="sales-tab" type="button" data-inventory-tab="exports">
+              <i class="pe-7s-upload"></i>
+              <span>Xuất</span>
+            </button>
+          </div>
+
+          <div class="inventory-panels">
+            <section class="card inventory-panel" data-inventory-panel="adjustments">
+              <div class="section-head header">
+                <div><h3 class="title">Điều chỉnh tồn kho</h3><p class="category">Đặt lại hoặc cập nhật số lượng trực tiếp</p></div>
+              </div>
+              <div class="content">
+                <form id="movementForm" class="form stack inventory-form">
+                  <input type="hidden" name="requestId">
+                  <div class="inventory-product-filters">
+                    <label>Danh mục
+                      <select data-inventory-category>
+                        <option value="">Tất cả danh mục</option>
+                      </select>
+                    </label>
+                    <label>Sản phẩm
+                      <select name="productId" required></select>
+                    </label>
+                  </div>
+                  <div class="grid two">
+                    <label>Mức tồn mới
+                      <input name="quantity" type="number" min="0" step="0.01" placeholder="Nhập số lượng tồn sau điều chỉnh" required>
+                    </label>
+                    <label>Ghi chú
+                      <input name="note" placeholder="Lý do điều chỉnh">
+                    </label>
+                  </div>
+                  <div class="inventory-form-actions">
+                    <button class="btn btn-default" type="button" data-inventory-cancel-edit hidden>Hủy chỉnh sửa</button>
+                    <button class="btn btn-info btn-fill" type="submit">Tạo lệnh điều chỉnh</button>
+                  </div>
+                </form>
+                <div class="inventory-history-bar">
+                  <div>
+                    <h4>Lịch sử điều chỉnh</h4>
+                    <p class="muted" data-inventory-history-range="adjustments">Đang xem: -</p>
+                  </div>
+                  <div class="inventory-history-controls">
+                    <div class="revenue-period-tabs inventory-history-tabs" role="tablist" aria-label="Kiểu thời gian lịch sử điều chỉnh">
+                      <button class="revenue-period-btn active" type="button" data-inventory-history-period="day">Theo ngày</button>
+                      <button class="revenue-period-btn" type="button" data-inventory-history-period="week">Theo tuần</button>
+                      <button class="revenue-period-btn" type="button" data-inventory-history-period="month">Theo tháng</button>
+                    </div>
+                    <label class="revenue-date-field inventory-history-date-field">
+                      <span>Chọn ngày, tháng, năm</span>
+                      <input type="date" data-inventory-history-date>
+                    </label>
+                  </div>
+                </div>
+                <div class="table-wrap table-responsive table-full-width">
+                  <table class="table table-hover table-striped">
+                    <thead>
+                      <tr>
+                        <th>Thời gian tạo</th>
+                        <th>Người tạo</th>
+                        <th>Thời gian duyệt</th>
+                        <th>Người duyệt</th>
+                        <th>Sản phẩm</th>
+                        <th>Loại</th>
+                        <th>Số lượng</th>
+                        <th>Trạng thái</th>
+                        <th>Ghi chú</th>
+                        <th>Thao tác</th>
+                      </tr>
+                    </thead>
+                    <tbody id="adjustmentsHistoryTable"></tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            <section class="card inventory-panel hidden" data-inventory-panel="receipts">
+              <div class="section-head header">
+                <div><h3 class="title">Phiếu nhập</h3><p class="category">Nhận hàng từ nhà cung cấp</p></div>
+              </div>
+              <div class="content">
+                <form id="receiptForm" class="form stack inventory-form">
+                  <input type="hidden" name="requestId">
+                  <label>Nhà cung cấp
+                    <select name="supplierId"></select>
+                  </label>
+                  <div class="inventory-product-filters">
+                    <label>Danh mục
+                      <select data-inventory-category>
+                        <option value="">Tất cả danh mục</option>
+                      </select>
+                    </label>
+                    <label>Sản phẩm
+                      <select name="productId" required></select>
+                    </label>
+                  </div>
+                  <div class="grid two">
+                    <label>Số lượng
+                      <input name="quantity" type="number" min="0" step="0.01" required>
+                    </label>
+                    <label>Ghi chú
+                      <input name="note">
+                    </label>
+                  </div>
+                  <div class="inventory-form-actions">
+                    <button class="btn btn-default" type="button" data-inventory-cancel-edit hidden>Hủy chỉnh sửa</button>
+                    <button class="btn btn-success btn-fill" type="submit">Tạo lệnh nhập</button>
+                  </div>
+                </form>
+                <div class="inventory-history-bar">
+                  <div>
+                    <h4>Lịch sử phiếu nhập</h4>
+                    <p class="muted" data-inventory-history-range="receipts">Đang xem: -</p>
+                  </div>
+                  <div class="inventory-history-controls">
+                    <div class="revenue-period-tabs inventory-history-tabs" role="tablist" aria-label="Kiểu thời gian lịch sử phiếu nhập">
+                      <button class="revenue-period-btn active" type="button" data-inventory-history-period="day">Theo ngày</button>
+                      <button class="revenue-period-btn" type="button" data-inventory-history-period="week">Theo tuần</button>
+                      <button class="revenue-period-btn" type="button" data-inventory-history-period="month">Theo tháng</button>
+                    </div>
+                    <label class="revenue-date-field inventory-history-date-field">
+                      <span>Chọn ngày, tháng, năm</span>
+                      <input type="date" data-inventory-history-date>
+                    </label>
+                  </div>
+                </div>
+                <div class="table-wrap table-responsive table-full-width">
+                  <table class="table table-hover table-striped">
+                    <thead>
+                      <tr>
+                        <th>Thời gian tạo</th>
+                        <th>Người tạo</th>
+                        <th>Thời gian duyệt</th>
+                        <th>Người duyệt</th>
+                        <th>Nhà cung cấp</th>
+                        <th>Sản phẩm</th>
+                        <th>Số lượng</th>
+                        <th>Trạng thái</th>
+                        <th>Ghi chú</th>
+                        <th>Thao tác</th>
+                      </tr>
+                    </thead>
+                    <tbody id="receiptsHistoryTable"></tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            <section class="card inventory-panel hidden" data-inventory-panel="exports">
+              <div class="section-head header">
+                <div><h3 class="title">Phiếu xuất</h3><p class="category">Xuất hàng cho khách hoặc bộ phận</p></div>
+              </div>
+              <div class="content">
+                <form id="exportForm" class="form stack inventory-form">
+                  <input type="hidden" name="requestId">
+                  <div class="inventory-product-filters">
+                    <label>Danh mục
+                      <select data-inventory-category>
+                        <option value="">Tất cả danh mục</option>
+                      </select>
+                    </label>
+                    <label>Sản phẩm
+                      <select name="productId" required></select>
+                    </label>
+                  </div>
+                  <div class="grid two">
+                    <label>Số lượng xuất
+                      <input name="quantity" type="number" min="0.01" step="0.01" required>
+                    </label>
+                    <label>Người nhận
+                      <input name="receiver" placeholder="Khách hàng / bộ phận">
+                    </label>
+                  </div>
+                  <label>Ghi chú
+                    <input name="note" placeholder="Lý do xuất kho">
+                  </label>
+                  <div class="inventory-form-actions">
+                    <button class="btn btn-default" type="button" data-inventory-cancel-edit hidden>Hủy chỉnh sửa</button>
+                    <button class="btn btn-warning btn-fill" type="submit">Tạo lệnh xuất</button>
+                  </div>
+                </form>
+                <div class="inventory-history-bar">
+                  <div>
+                    <h4>Lịch sử phiếu xuất</h4>
+                    <p class="muted" data-inventory-history-range="exports">Đang xem: -</p>
+                  </div>
+                  <div class="inventory-history-controls">
+                    <div class="revenue-period-tabs inventory-history-tabs" role="tablist" aria-label="Kiểu thời gian lịch sử phiếu xuất">
+                      <button class="revenue-period-btn active" type="button" data-inventory-history-period="day">Theo ngày</button>
+                      <button class="revenue-period-btn" type="button" data-inventory-history-period="week">Theo tuần</button>
+                      <button class="revenue-period-btn" type="button" data-inventory-history-period="month">Theo tháng</button>
+                    </div>
+                    <label class="revenue-date-field inventory-history-date-field">
+                      <span>Chọn ngày, tháng, năm</span>
+                      <input type="date" data-inventory-history-date>
+                    </label>
+                  </div>
+                </div>
+                <div class="table-wrap table-responsive table-full-width">
+                  <table class="table table-hover table-striped">
+                    <thead>
+                      <tr>
+                        <th>Thời gian tạo</th>
+                        <th>Người tạo</th>
+                        <th>Thời gian duyệt</th>
+                        <th>Người duyệt</th>
+                        <th>Sản phẩm</th>
+                        <th>Loại</th>
+                        <th>Số lượng</th>
+                        <th>Trạng thái</th>
+                        <th>Ghi chú</th>
+                        <th>Thao tác</th>
+                      </tr>
+                    </thead>
+                    <tbody id="exportsHistoryTable"></tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <section class="page card hidden" data-page-panel="categories">
+          <div class="section-head header">
+            <div><h3 class="title">Danh mục</h3><p class="category">Tổ chức sản phẩm theo nhóm cha và nhóm con</p></div>
+            <button class="btn btn-info btn-fill" type="button" id="addCategoryBtn">Thêm danh mục</button>
+          </div>
+          <div class="content">
+          <form id="categoryForm" class="inline-form hidden">
+            <input type="hidden" name="id">
+            <input name="name" placeholder="Tên danh mục" required>
+            <select name="parentId"></select>
+            <button class="primary" type="submit">Lưu</button>
+            <button class="ghost hidden" type="button" id="cancelCategoryEditBtn">Hủy sửa</button>
+          </form>
+          <div id="categoriesList" class="list"></div>
+          </div>
+        </section>
+
+        <section class="page card hidden" data-page-panel="suppliers">
+          <div class="section-head header">
+            <div><h3 class="title">Nhà cung cấp</h3><p class="category">Thông tin đối tác cung ứng hàng hóa</p></div>
+            <button class="btn btn-info btn-fill" data-open-modal="supplierModal">Thêm nhà cung cấp</button>
+          </div>
+          <div class="content"><div id="suppliersList" class="list grid-list"></div></div>
+        </section>
+
+        <section class="page card hidden" data-page-panel="users">
+          <div class="section-head header">
+            <div><h3 class="title">Quản lý người dùng</h3><p class="category">Tìm kiếm, phân quyền và quản lý trạng thái tài khoản</p></div>
+            <div class="user-management-tools">
+              <label class="user-search">
+                <i class="pe-7s-search" aria-hidden="true"></i>
+                <input class="form-control" id="userSearch" type="search" placeholder="Tìm tên, email, vai trò...">
+              </label>
+              <button class="btn btn-danger btn-fill" type="button" id="bulkDeleteUsersBtn" disabled>Xóa tài khoản đã chọn</button>
+            </div>
+          </div>
+          <div class="content table-responsive table-full-width">
+            <table class="table table-hover table-striped">
+              <thead>
+                <tr>
+                  <th><input type="checkbox" id="selectAllUsers"></th>
+                  <th>Email</th>
+                  <th>Tên</th>
+                  <th>Vai trò</th>
+                  <th>Trạng thái</th>
+                  <th>Online</th>
+                  <th class="user-actions-heading">Thao tác</th>
+                </tr>
+              </thead>
+              <tbody id="usersTable"></tbody>
+            </table>
+          </div>
+          <div class="user-list-footer">
+            <div class="muted" id="userPaginationInfo">Chưa có tài khoản</div>
+            <div class="user-pagination" id="userPagination"></div>
+          </div>
+        </section>
+
+        <section class="page card hidden" data-page-panel="profile">
+          <div class="section-head header">
+            <div><h3 class="title">Hồ sơ của tôi</h3><p class="category">Thông tin cá nhân và cửa hàng</p></div>
+          </div>
+          <div class="content">
+          <form id="profileForm" class="form profile-form">
+            <label>Họ tên
+              <input name="name">
+            </label>
+            <label>Tên cửa hàng
+              <input name="storeName">
+            </label>
+            <label>Tỉnh/Thành
+              <input name="province">
+            </label>
+            <label>Điện thoại
+              <input name="phone">
+            </label>
+            <label>Ngày sinh
+              <input name="birthday" type="date">
+            </label>
+            <label>Giới tính
+              <select name="gender">
+                <option value="">Chưa chọn</option>
+                <option value="Nam">Nam</option>
+                <option value="Nu">Nữ</option>
+                <option value="Khac">Khác</option>
+              </select>
+            </label>
+            <button class="btn btn-info btn-fill" type="submit">Lưu hồ sơ</button>
+          </form>
+          </div>
+        </section>
+          </div>
+        </div>
+        <footer class="footer dashboard-footer">
+          <div class="container-fluid">
+            <p>KhoPro · Quản lý sản phẩm, tồn kho và vận hành nội bộ</p>
+            <p>Product Service · User &amp; Report Service</p>
+          </div>
+        </footer>
+      </main>
+    </section>
+
+    <dialog id="productModal">
+      <form id="productForm" class="form modal-form">
+        <div class="modal-head">
+          <h3 id="productModalTitle">Thêm sản phẩm</h3>
+          <button type="button" class="icon" data-close-modal>×</button>
+        </div>
+        <input type="hidden" name="id">
+        <label>Tên sản phẩm
+          <input name="name" required>
+        </label>
+        <label>Danh mục
+          <input name="categoryName" list="productCategorySuggestions" placeholder="Nhập hoặc chọn danh mục">
+          <datalist id="productCategorySuggestions"></datalist>
+        </label>
+        <label>Mô tả
+          <textarea name="description" rows="3"></textarea>
+        </label>
+        <div class="grid two">
+          <label>Giá bán
+            <input name="price" type="number" min="0" step="1000">
+          </label>
+          <label>Giá vốn
+            <input name="cost" type="number" min="0" step="1000">
+          </label>
+        </div>
+        <div class="grid two">
+          <label>Tồn kho
+            <input name="stock" type="number" min="0" step="0.01">
+          </label>
+          <label>Tồn tối thiểu
+            <input name="minimumStock" type="number" min="0" step="0.01">
+          </label>
+        </div>
+        <div class="grid two">
+          <label>Trạng thái
+            <select name="status">
+              <option value="Dang ban">Đang bán</option>
+              <option value="Ngung ban">Ngừng bán</option>
+            </select>
+          </label>
+          <label>Link ảnh
+            <input name="image" placeholder="https://...">
+          </label>
+          <label>Chọn ảnh từ máy
+            <input name="imageFile" type="file" accept="image/*">
+          </label>
+          <div class="image-preview" id="productImagePreview">Chưa có ảnh sản phẩm</div>
+        </div>
+        <button class="primary" type="submit">Lưu sản phẩm</button>
+      </form>
+    </dialog>
+
+    <dialog id="supplierModal">
+      <form id="supplierForm" class="form modal-form">
+        <div class="modal-head">
+          <h3 id="supplierModalTitle">Thêm nhà cung cấp</h3>
+          <button type="button" class="icon" data-close-modal>×</button>
+        </div>
+        <input type="hidden" name="id">
+        <label>Tên nhà cung cấp
+          <input name="name" required>
+        </label>
+        <div class="grid two">
+          <label>Điện thoại
+            <input name="phone">
+          </label>
+          <label>Email
+            <input name="email" type="email">
+          </label>
+        </div>
+        <label>Địa chỉ
+          <input name="address">
+        </label>
+        <label>Ghi chú
+          <textarea name="note" rows="3"></textarea>
+        </label>
+        <button class="primary" type="submit">Lưu nhà cung cấp</button>
+      </form>
+    </dialog>
+    <dialog id="userModal">
+      <form id="userForm" class="form modal-form">
+        <div class="modal-head">
+          <h3 id="userModalTitle">Chỉnh sửa tài khoản</h3>
+          <button type="button" class="icon" data-close-modal>×</button>
+        </div>
+        <input type="hidden" name="id">
+        <label>Email đăng nhập
+          <input name="email" type="email" disabled>
+        </label>
+        <div class="grid two">
+          <label>Họ tên
+            <input name="name" placeholder="Nguyễn Văn A">
+          </label>
+          <label>Tên cửa hàng
+            <input name="storeName" placeholder="KhoPro Store">
+          </label>
+        </div>
+        <div class="grid two">
+          <label>Tỉnh/Thành phố
+            <input name="province" placeholder="Hà Nội">
+          </label>
+          <label>Số điện thoại
+            <input name="phone" placeholder="09xxxxxxxx">
+          </label>
+        </div>
+        <div class="grid two">
+          <label>Ngày sinh
+            <input name="birthday" type="date">
+          </label>
+          <label>Giới tính
+            <select name="gender">
+              <option value="">Chưa chọn</option>
+              <option value="Nam">Nam</option>
+              <option value="Nữ">Nữ</option>
+              <option value="Khác">Khác</option>
+            </select>
+          </label>
+        </div>
+        <div class="grid two">
+          <label>Vai trò
+            <select name="role">
+              <option value="user">Người dùng</option>
+              <option value="Sales">Nhân viên bán hàng</option>
+              <option value="Warehouse">Thủ kho</option>
+              <option value="admin-user">Quản trị hệ thống</option>
+            </select>
+          </label>
+          <label>Trạng thái
+            <select name="isActive">
+              <option value="true">Hoạt động</option>
+              <option value="false">Khóa tài khoản</option>
+            </select>
+          </label>
+        </div>
+        <button class="primary" type="submit">Lưu tài khoản</button>
+      </form>
+    </dialog>
+  </div>
+
+    <script src="./app.js?v=20260619-29"></script>
+  </body>
+</html>

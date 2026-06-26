@@ -1,0 +1,508 @@
+[
+  {
+    "Id": "20dd95e2ac574bb997193f41dfa6a491",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "SupplierId": "",
+    "Lines": [
+      {
+        "ProductId": "04f3fa9d3e824cc1b6623fbdc3c45e34",
+        "Quantity": 20,
+        "Note": "Nh?p th?"
+      }
+    ],
+    "Status": "confirmed",
+    "CreatedById": "",
+    "CreatedByEmail": "",
+    "CreatedByRole": "",
+    "CreatedAt": "2026-06-04T16:00:19.5663644+00:00",
+    "ReviewedById": null,
+    "ReviewedByEmail": null,
+    "ReviewedByRole": null,
+    "ReviewedAt": null,
+    "ReviewNote": null,
+    "ConfirmedAt": "2026-06-04T16:00:19.6549787+00:00"
+  },
+  {
+    "Id": "4dcb3c3706414fe3b13196f4b7e27e51",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "SupplierId": "",
+    "Lines": [
+      {
+        "ProductId": "04f3fa9d3e824cc1b6623fbdc3c45e34",
+        "Quantity": 20,
+        "Note": "Nh?p th?"
+      }
+    ],
+    "Status": "confirmed",
+    "CreatedById": "",
+    "CreatedByEmail": "",
+    "CreatedByRole": "",
+    "CreatedAt": "2026-06-04T16:01:04.0486076+00:00",
+    "ReviewedById": null,
+    "ReviewedByEmail": null,
+    "ReviewedByRole": null,
+    "ReviewedAt": null,
+    "ReviewNote": null,
+    "ConfirmedAt": "2026-06-04T16:01:04.1214865+00:00"
+  },
+  {
+    "Id": "4b10c6b8e02c4611a0ac1035c8fe242f",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "SupplierId": "",
+    "Lines": [
+      {
+        "ProductId": "04f3fa9d3e824cc1b6623fbdc3c45e34",
+        "Quantity": 20,
+        "Note": "Nh?p th?"
+      }
+    ],
+    "Status": "confirmed",
+    "CreatedById": "",
+    "CreatedByEmail": "",
+    "CreatedByRole": "",
+    "CreatedAt": "2026-06-04T16:08:54.4710561+00:00",
+    "ReviewedById": null,
+    "ReviewedByEmail": null,
+    "ReviewedByRole": null,
+    "ReviewedAt": null,
+    "ReviewNote": null,
+    "ConfirmedAt": "2026-06-04T16:08:54.5604218+00:00"
+  },
+  {
+    "Id": "e611be52a261428894df5369512c94a4",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "SupplierId": "",
+    "Lines": [
+      {
+        "ProductId": "04f3fa9d3e824cc1b6623fbdc3c45e34",
+        "Quantity": 20,
+        "Note": "Nh?p th?"
+      }
+    ],
+    "Status": "confirmed",
+    "CreatedById": "",
+    "CreatedByEmail": "",
+    "CreatedByRole": "",
+    "CreatedAt": "2026-06-04T16:10:02.8863957+00:00",
+    "ReviewedById": null,
+    "ReviewedByEmail": null,
+    "ReviewedByRole": null,
+    "ReviewedAt": null,
+    "ReviewNote": null,
+    "ConfirmedAt": "2026-06-04T16:10:02.8924241+00:00"
+  },
+  {
+    "Id": "d005117189af4b80969a01336a06bfba",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "SupplierId": "",
+    "Lines": [
+      {
+        "ProductId": "04f3fa9d3e824cc1b6623fbdc3c45e34",
+        "Quantity": 20,
+        "Note": "Nh?p th?"
+      }
+    ],
+    "Status": "confirmed",
+    "CreatedById": "",
+    "CreatedByEmail": "",
+    "CreatedByRole": "",
+    "CreatedAt": "2026-06-04T16:11:04.1891423+00:00",
+    "ReviewedById": null,
+    "ReviewedByEmail": null,
+    "ReviewedByRole": null,
+    "ReviewedAt": null,
+    "ReviewNote": null,
+    "ConfirmedAt": "2026-06-04T16:11:04.194831+00:00"
+  },
+  {
+    "Id": "04a4f637cd6f4f74b780e5c73535b836",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "SupplierId": "",
+    "Lines": [
+      {
+        "ProductId": "3939974d20ab4df0a2bd4734edabac2f",
+        "Quantity": 2,
+        "Note": ""
+      }
+    ],
+    "Status": "confirmed",
+    "CreatedById": "",
+    "CreatedByEmail": "",
+    "CreatedByRole": "",
+    "CreatedAt": "2026-06-05T01:04:34.868154+00:00",
+    "ReviewedById": null,
+    "ReviewedByEmail": null,
+    "ReviewedByRole": null,
+    "ReviewedAt": null,
+    "ReviewNote": null,
+    "ConfirmedAt": "2026-06-05T01:04:34.8924405+00:00"
+  },
+  {
+    "Id": "2500c93032b1490295c0d17e4a2bfe1d",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "SupplierId": "",
+    "Lines": [
+      {
+        "ProductId": "3939974d20ab4df0a2bd4734edabac2f",
+        "Quantity": 2,
+        "Note": ""
+      }
+    ],
+    "Status": "confirmed",
+    "CreatedById": "",
+    "CreatedByEmail": "",
+    "CreatedByRole": "",
+    "CreatedAt": "2026-06-05T01:04:35.5591089+00:00",
+    "ReviewedById": null,
+    "ReviewedByEmail": null,
+    "ReviewedByRole": null,
+    "ReviewedAt": null,
+    "ReviewNote": null,
+    "ConfirmedAt": "2026-06-05T01:04:35.5727115+00:00"
+  },
+  {
+    "Id": "ece9cd287ea84347ac72b98f4c8e7b11",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "SupplierId": "",
+    "Lines": [
+      {
+        "ProductId": "3939974d20ab4df0a2bd4734edabac2f",
+        "Quantity": 2,
+        "Note": ""
+      }
+    ],
+    "Status": "confirmed",
+    "CreatedById": "",
+    "CreatedByEmail": "",
+    "CreatedByRole": "",
+    "CreatedAt": "2026-06-05T01:04:35.6898443+00:00",
+    "ReviewedById": null,
+    "ReviewedByEmail": null,
+    "ReviewedByRole": null,
+    "ReviewedAt": null,
+    "ReviewNote": null,
+    "ConfirmedAt": "2026-06-05T01:04:35.6999056+00:00"
+  },
+  {
+    "Id": "bf7da745d1fc4625a81de638192f150f",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "SupplierId": "",
+    "Lines": [
+      {
+        "ProductId": "3939974d20ab4df0a2bd4734edabac2f",
+        "Quantity": 2,
+        "Note": ""
+      }
+    ],
+    "Status": "confirmed",
+    "CreatedById": "",
+    "CreatedByEmail": "",
+    "CreatedByRole": "",
+    "CreatedAt": "2026-06-05T01:04:35.8570568+00:00",
+    "ReviewedById": null,
+    "ReviewedByEmail": null,
+    "ReviewedByRole": null,
+    "ReviewedAt": null,
+    "ReviewNote": null,
+    "ConfirmedAt": "2026-06-05T01:04:35.8715546+00:00"
+  },
+  {
+    "Id": "6de954e9e1b6423e991eb4a2dc8934b0",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "SupplierId": "",
+    "Lines": [
+      {
+        "ProductId": "3939974d20ab4df0a2bd4734edabac2f",
+        "Quantity": 2,
+        "Note": ""
+      }
+    ],
+    "Status": "confirmed",
+    "CreatedById": "",
+    "CreatedByEmail": "",
+    "CreatedByRole": "",
+    "CreatedAt": "2026-06-05T01:04:36.1425881+00:00",
+    "ReviewedById": null,
+    "ReviewedByEmail": null,
+    "ReviewedByRole": null,
+    "ReviewedAt": null,
+    "ReviewNote": null,
+    "ConfirmedAt": "2026-06-05T01:04:36.1557749+00:00"
+  },
+  {
+    "Id": "d9cbd4eaadb24ac98a3a323ea558041a",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "SupplierId": "1d7cfaec1e2849668e0db02289d709d6",
+    "Lines": [
+      {
+        "ProductId": "ec9734ab0e9e4006b831638cd8ffd50d",
+        "Quantity": 10,
+        "Note": ""
+      }
+    ],
+    "Status": "confirmed",
+    "CreatedById": "",
+    "CreatedByEmail": "",
+    "CreatedByRole": "",
+    "CreatedAt": "2026-06-08T00:43:22.4755554+00:00",
+    "ReviewedById": null,
+    "ReviewedByEmail": null,
+    "ReviewedByRole": null,
+    "ReviewedAt": null,
+    "ReviewNote": null,
+    "ConfirmedAt": "2026-06-08T00:43:22.5507269+00:00"
+  },
+  {
+    "Id": "95bf2fe81fd146ecab22986166cadd77",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "SupplierId": "1d7cfaec1e2849668e0db02289d709d6",
+    "Lines": [
+      {
+        "ProductId": "ec9734ab0e9e4006b831638cd8ffd50d",
+        "Quantity": 3000,
+        "Note": "nh\u1EADp kho"
+      }
+    ],
+    "Status": "confirmed",
+    "CreatedById": "",
+    "CreatedByEmail": "",
+    "CreatedByRole": "",
+    "CreatedAt": "2026-06-08T00:51:55.5795603+00:00",
+    "ReviewedById": null,
+    "ReviewedByEmail": null,
+    "ReviewedByRole": null,
+    "ReviewedAt": null,
+    "ReviewNote": null,
+    "ConfirmedAt": "2026-06-08T00:51:55.6050978+00:00"
+  },
+  {
+    "Id": "550a867c79354a288c8a1c3af19a642f",
+    "OwnerId": "cb229299cc6f4f80a3a3518a10f2c790",
+    "SupplierId": "",
+    "Lines": [
+      {
+        "ProductId": "ca34615cdc1d438789316fa11175348a",
+        "Quantity": 1000,
+        "Note": "nh\u1EADp"
+      }
+    ],
+    "Status": "confirmed",
+    "CreatedById": "",
+    "CreatedByEmail": "",
+    "CreatedByRole": "",
+    "CreatedAt": "2026-06-15T03:10:16.1631486+00:00",
+    "ReviewedById": null,
+    "ReviewedByEmail": null,
+    "ReviewedByRole": null,
+    "ReviewedAt": null,
+    "ReviewNote": null,
+    "ConfirmedAt": "2026-06-15T03:10:16.1913535+00:00"
+  },
+  {
+    "Id": "9f557976ccad4062a8c8110a37527be7",
+    "OwnerId": "cb229299cc6f4f80a3a3518a10f2c790",
+    "SupplierId": "",
+    "Lines": [
+      {
+        "ProductId": "ca34615cdc1d438789316fa11175348a",
+        "Quantity": 1000,
+        "Note": "nh\u1EADp"
+      }
+    ],
+    "Status": "confirmed",
+    "CreatedById": "",
+    "CreatedByEmail": "",
+    "CreatedByRole": "",
+    "CreatedAt": "2026-06-15T03:10:17.2091764+00:00",
+    "ReviewedById": null,
+    "ReviewedByEmail": null,
+    "ReviewedByRole": null,
+    "ReviewedAt": null,
+    "ReviewNote": null,
+    "ConfirmedAt": "2026-06-15T03:10:17.2408492+00:00"
+  },
+  {
+    "Id": "99ad452031d84fd89f69359289d0868f",
+    "OwnerId": "cb229299cc6f4f80a3a3518a10f2c790",
+    "SupplierId": "",
+    "Lines": [
+      {
+        "ProductId": "ca34615cdc1d438789316fa11175348a",
+        "Quantity": 1000,
+        "Note": "nh\u1EADp"
+      }
+    ],
+    "Status": "confirmed",
+    "CreatedById": "",
+    "CreatedByEmail": "",
+    "CreatedByRole": "",
+    "CreatedAt": "2026-06-15T03:10:17.3914758+00:00",
+    "ReviewedById": null,
+    "ReviewedByEmail": null,
+    "ReviewedByRole": null,
+    "ReviewedAt": null,
+    "ReviewNote": null,
+    "ConfirmedAt": "2026-06-15T03:10:17.4308502+00:00"
+  },
+  {
+    "Id": "39afcc4a6ef645769f59326ca6c757c4",
+    "OwnerId": "cb229299cc6f4f80a3a3518a10f2c790",
+    "SupplierId": "",
+    "Lines": [
+      {
+        "ProductId": "ca34615cdc1d438789316fa11175348a",
+        "Quantity": 100,
+        "Note": "nh\u1EADp"
+      }
+    ],
+    "Status": "confirmed",
+    "CreatedById": "",
+    "CreatedByEmail": "",
+    "CreatedByRole": "",
+    "CreatedAt": "2026-06-15T03:10:35.3659219+00:00",
+    "ReviewedById": null,
+    "ReviewedByEmail": null,
+    "ReviewedByRole": null,
+    "ReviewedAt": null,
+    "ReviewNote": null,
+    "ConfirmedAt": "2026-06-15T03:10:35.3816257+00:00"
+  },
+  {
+    "Id": "3f03fef40585499eb503a062a9e835fd",
+    "OwnerId": "cb229299cc6f4f80a3a3518a10f2c790",
+    "SupplierId": "",
+    "Lines": [
+      {
+        "ProductId": "ca34615cdc1d438789316fa11175348a",
+        "Quantity": 100,
+        "Note": "nh\u1EADp"
+      }
+    ],
+    "Status": "confirmed",
+    "CreatedById": "",
+    "CreatedByEmail": "",
+    "CreatedByRole": "",
+    "CreatedAt": "2026-06-15T03:10:35.7164441+00:00",
+    "ReviewedById": null,
+    "ReviewedByEmail": null,
+    "ReviewedByRole": null,
+    "ReviewedAt": null,
+    "ReviewNote": null,
+    "ConfirmedAt": "2026-06-15T03:10:35.7531259+00:00"
+  },
+  {
+    "Id": "4b960f3778f7426196f358ac158bc174",
+    "OwnerId": "cb229299cc6f4f80a3a3518a10f2c790",
+    "SupplierId": "",
+    "Lines": [
+      {
+        "ProductId": "ca34615cdc1d438789316fa11175348a",
+        "Quantity": 100,
+        "Note": "nh\u1EADp"
+      }
+    ],
+    "Status": "confirmed",
+    "CreatedById": "",
+    "CreatedByEmail": "",
+    "CreatedByRole": "",
+    "CreatedAt": "2026-06-15T03:10:35.9036933+00:00",
+    "ReviewedById": null,
+    "ReviewedByEmail": null,
+    "ReviewedByRole": null,
+    "ReviewedAt": null,
+    "ReviewNote": null,
+    "ConfirmedAt": "2026-06-15T03:10:35.9179857+00:00"
+  },
+  {
+    "Id": "2980588dc4314eb792bcb35287abeabe",
+    "OwnerId": "cb229299cc6f4f80a3a3518a10f2c790",
+    "SupplierId": "",
+    "Lines": [
+      {
+        "ProductId": "ca34615cdc1d438789316fa11175348a",
+        "Quantity": 100,
+        "Note": "nh\u1EADp"
+      }
+    ],
+    "Status": "confirmed",
+    "CreatedById": "",
+    "CreatedByEmail": "",
+    "CreatedByRole": "",
+    "CreatedAt": "2026-06-15T03:10:36.0930075+00:00",
+    "ReviewedById": null,
+    "ReviewedByEmail": null,
+    "ReviewedByRole": null,
+    "ReviewedAt": null,
+    "ReviewNote": null,
+    "ConfirmedAt": "2026-06-15T03:10:36.1091658+00:00"
+  },
+  {
+    "Id": "db9b479111f34128a01029016b89215b",
+    "OwnerId": "cb229299cc6f4f80a3a3518a10f2c790",
+    "SupplierId": "",
+    "Lines": [
+      {
+        "ProductId": "ca34615cdc1d438789316fa11175348a",
+        "Quantity": 100,
+        "Note": "nh\u1EADp"
+      }
+    ],
+    "Status": "confirmed",
+    "CreatedById": "",
+    "CreatedByEmail": "",
+    "CreatedByRole": "",
+    "CreatedAt": "2026-06-15T03:10:38.6369811+00:00",
+    "ReviewedById": null,
+    "ReviewedByEmail": null,
+    "ReviewedByRole": null,
+    "ReviewedAt": null,
+    "ReviewNote": null,
+    "ConfirmedAt": "2026-06-15T03:10:38.6839827+00:00"
+  },
+  {
+    "Id": "454c2ca57a41433bab79e289c56966e4",
+    "OwnerId": "cb229299cc6f4f80a3a3518a10f2c790",
+    "SupplierId": "",
+    "Lines": [
+      {
+        "ProductId": "ca34615cdc1d438789316fa11175348a",
+        "Quantity": 100,
+        "Note": "nh\u1EADp"
+      }
+    ],
+    "Status": "confirmed",
+    "CreatedById": "",
+    "CreatedByEmail": "",
+    "CreatedByRole": "",
+    "CreatedAt": "2026-06-15T03:10:38.8094709+00:00",
+    "ReviewedById": null,
+    "ReviewedByEmail": null,
+    "ReviewedByRole": null,
+    "ReviewedAt": null,
+    "ReviewNote": null,
+    "ConfirmedAt": "2026-06-15T03:10:38.826633+00:00"
+  },
+  {
+    "Id": "b0dde60b3b0648ed8f7a39baed6bfeb1",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "SupplierId": "",
+    "Lines": [
+      {
+        "ProductId": "ca34615cdc1d438789316fa11175348a",
+        "Quantity": 3,
+        "Note": "test rec"
+      }
+    ],
+    "Status": "approved",
+    "CreatedById": "f3f62797f01f41b29aecc68e74314018",
+    "CreatedByEmail": "warehouse.user@khopro.local",
+    "CreatedByRole": "Warehouse",
+    "CreatedAt": "2026-06-18T20:29:20.4570271+00:00",
+    "ReviewedById": "8d37123aef954db189db9ade52ba2712",
+    "ReviewedByEmail": "admin.user@khopro.local",
+    "ReviewedByRole": "admin-user",
+    "ReviewedAt": "2026-06-18T20:29:20.5503517+00:00",
+    "ReviewNote": "test receipt",
+    "ConfirmedAt": "2026-06-18T20:29:20.5503517+00:00"
+  }
+]

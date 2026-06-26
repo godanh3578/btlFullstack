@@ -1,0 +1,24 @@
+[
+  {
+    "Id": "1d7cfaec1e2849668e0db02289d709d6",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "Name": "Nguy\u1EC5n Quang",
+    "Phone": "0344811615",
+    "Email": "nguyenthang24062005a@gmail.com",
+    "Address": "Ng\u00F5 69 c\u1ED5 b\u1EA3n",
+    "Note": "",
+    "CreatedAt": "2026-06-04T17:18:13.2011697+00:00",
+    "UpdatedAt": "2026-06-18T21:05:36.2643264+00:00"
+  },
+  {
+    "Id": "8d9c465479004708bc10caa1ff77b3f7",
+    "OwnerId": "8dba7569391344928ed74174e799372e",
+    "Name": "Nguy\u1EC5n Quang Th\u1EAFng",
+    "Phone": "0344811615",
+    "Email": "nguyenthang24062005a@gmail.com",
+    "Address": "X\u00F3m Thanh Nam",
+    "Note": "",
+    "CreatedAt": "2026-06-04T17:21:25.8612034+00:00",
+    "UpdatedAt": null
+  }
+]

@@ -1,0 +1,441 @@
+[
+  {
+    "Id": "fbdb5259416e49d083d200a8ba8c6ced",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "Type": "stock.updated",
+    "Payload": {
+      "Id": "04f3fa9d3e824cc1b6623fbdc3c45e34",
+      "Name": "Cafe",
+      "stock": "30"
+    },
+    "CreatedAt": "2026-06-04T16:00:19.6520971+00:00"
+  },
+  {
+    "Id": "17bbd17ce61b43e7a63310b907ab731a",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "Type": "stock.updated",
+    "Payload": {
+      "Id": "04f3fa9d3e824cc1b6623fbdc3c45e34",
+      "Name": "Cafe",
+      "stock": "30"
+    },
+    "CreatedAt": "2026-06-04T16:01:04.1190178+00:00"
+  },
+  {
+    "Id": "2ccd1f49fabe49fc98b08c9fbb52b35e",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "Type": "stock.updated",
+    "Payload": {
+      "Id": "04f3fa9d3e824cc1b6623fbdc3c45e34",
+      "Name": "Cafe",
+      "stock": "30"
+    },
+    "CreatedAt": "2026-06-04T16:08:54.5595606+00:00"
+  },
+  {
+    "Id": "9199a360458b4d42b420f9ac0552763e",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "Type": "stock.updated",
+    "Payload": {
+      "Id": "04f3fa9d3e824cc1b6623fbdc3c45e34",
+      "Name": "Cafe",
+      "stock": "30"
+    },
+    "CreatedAt": "2026-06-04T16:10:02.8918056+00:00"
+  },
+  {
+    "Id": "65543a685abf4dea97e1916eb8fd7e3b",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "Type": "stock.updated",
+    "Payload": {
+      "Id": "04f3fa9d3e824cc1b6623fbdc3c45e34",
+      "Name": "Cafe",
+      "stock": "30"
+    },
+    "CreatedAt": "2026-06-04T16:11:04.1944057+00:00"
+  },
+  {
+    "Id": "d9e62766aa444537880cf2c3b3852c6d",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "Type": "stock.updated",
+    "Payload": {
+      "Id": "3939974d20ab4df0a2bd4734edabac2f",
+      "Name": "c\u00F3c",
+      "stock": "20"
+    },
+    "CreatedAt": "2026-06-05T00:34:25.1247931+00:00"
+  },
+  {
+    "Id": "a69e70f8c3334a76bad5b956d07bb857",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "Type": "stock.updated",
+    "Payload": {
+      "Id": "3939974d20ab4df0a2bd4734edabac2f",
+      "Name": "c\u00F3c",
+      "stock": "10"
+    },
+    "CreatedAt": "2026-06-05T00:34:25.9420255+00:00"
+  },
+  {
+    "Id": "db3727614be14ac78cf85f186946d212",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "Type": "stock.updated",
+    "Payload": {
+      "Id": "3939974d20ab4df0a2bd4734edabac2f",
+      "Name": "c\u00F3c",
+      "stock": "0"
+    },
+    "CreatedAt": "2026-06-05T00:34:26.0906483+00:00"
+  },
+  {
+    "Id": "98ad59c207844ae187f95dc372b21b60",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "Type": "stock.updated",
+    "Payload": {
+      "Id": "3939974d20ab4df0a2bd4734edabac2f",
+      "Name": "c\u00F3c",
+      "stock": "0"
+    },
+    "CreatedAt": "2026-06-05T00:34:26.2448245+00:00"
+  },
+  {
+    "Id": "68d9d42777d143e18f26f4e7f7b805ca",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "Type": "stock.updated",
+    "Payload": {
+      "Id": "3939974d20ab4df0a2bd4734edabac2f",
+      "Name": "c\u00F3c",
+      "stock": "0"
+    },
+    "CreatedAt": "2026-06-05T00:34:26.3877994+00:00"
+  },
+  {
+    "Id": "289657e07d41484bbfd67c42d2ac7d84",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "Type": "stock.updated",
+    "Payload": {
+      "Id": "3939974d20ab4df0a2bd4734edabac2f",
+      "Name": "c\u00F3c",
+      "stock": "0"
+    },
+    "CreatedAt": "2026-06-05T00:34:26.5500757+00:00"
+  },
+  {
+    "Id": "1f5937c791a147d8bf908d39c38143a5",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "Type": "stock.updated",
+    "Payload": {
+      "Id": "3939974d20ab4df0a2bd4734edabac2f",
+      "Name": "c\u00F3c",
+      "stock": "0"
+    },
+    "CreatedAt": "2026-06-05T00:34:26.7554+00:00"
+  },
+  {
+    "Id": "caebd217ef7b486c914079567f04811a",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "Type": "stock.updated",
+    "Payload": {
+      "Id": "3939974d20ab4df0a2bd4734edabac2f",
+      "Name": "c\u00F3c",
+      "stock": "0"
+    },
+    "CreatedAt": "2026-06-05T00:34:26.9812553+00:00"
+  },
+  {
+    "Id": "b487d84fd57447dfab5f81d14390385d",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "Type": "stock.updated",
+    "Payload": {
+      "Id": "3939974d20ab4df0a2bd4734edabac2f",
+      "Name": "c\u00F3c",
+      "stock": "2"
+    },
+    "CreatedAt": "2026-06-05T01:04:34.8913622+00:00"
+  },
+  {
+    "Id": "ce9270bf2b84420aa07e20214d083aae",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "Type": "stock.updated",
+    "Payload": {
+      "Id": "3939974d20ab4df0a2bd4734edabac2f",
+      "Name": "c\u00F3c",
+      "stock": "4"
+    },
+    "CreatedAt": "2026-06-05T01:04:35.5694871+00:00"
+  },
+  {
+    "Id": "728408322875489ba22eb978adf31a30",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "Type": "stock.updated",
+    "Payload": {
+      "Id": "3939974d20ab4df0a2bd4734edabac2f",
+      "Name": "c\u00F3c",
+      "stock": "6"
+    },
+    "CreatedAt": "2026-06-05T01:04:35.6977787+00:00"
+  },
+  {
+    "Id": "7e9c80d2dfec4870a20efae934d8877d",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "Type": "stock.updated",
+    "Payload": {
+      "Id": "3939974d20ab4df0a2bd4734edabac2f",
+      "Name": "c\u00F3c",
+      "stock": "8"
+    },
+    "CreatedAt": "2026-06-05T01:04:35.8661873+00:00"
+  },
+  {
+    "Id": "a8da2b18dc204d4d8fa01f7c8aa197b5",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "Type": "stock.updated",
+    "Payload": {
+      "Id": "3939974d20ab4df0a2bd4734edabac2f",
+      "Name": "c\u00F3c",
+      "stock": "10"
+    },
+    "CreatedAt": "2026-06-05T01:04:36.152777+00:00"
+  },
+  {
+    "Id": "a5504cce4d364de89aa03df72501021e",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "Type": "stock.updated",
+    "Payload": {
+      "Id": "3939974d20ab4df0a2bd4734edabac2f",
+      "Name": "c\u00F3c",
+      "stock": "30"
+    },
+    "CreatedAt": "2026-06-05T01:13:38.7197657+00:00"
+  },
+  {
+    "Id": "82dfa39cad144055b8f2739e0a3a4518",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "Type": "stock.updated",
+    "Payload": {
+      "Id": "3939974d20ab4df0a2bd4734edabac2f",
+      "Name": "c\u00F3c",
+      "stock": "20"
+    },
+    "CreatedAt": "2026-06-05T01:13:39.6598847+00:00"
+  },
+  {
+    "Id": "c6f1712308604ae0a39427f039682906",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "Type": "stock.updated",
+    "Payload": {
+      "Id": "3939974d20ab4df0a2bd4734edabac2f",
+      "Name": "c\u00F3c",
+      "stock": "10"
+    },
+    "CreatedAt": "2026-06-05T01:13:39.8714707+00:00"
+  },
+  {
+    "Id": "4e6ffe51d1634b05a9bb99a74d2c012d",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "Type": "stock.updated",
+    "Payload": {
+      "Id": "3939974d20ab4df0a2bd4734edabac2f",
+      "Name": "c\u00F3c",
+      "stock": "0"
+    },
+    "CreatedAt": "2026-06-05T01:13:55.3732265+00:00"
+  },
+  {
+    "Id": "c474aaab8f114fb5a8b144bfabae76b7",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "Type": "stock.updated",
+    "Payload": {
+      "Id": "3939974d20ab4df0a2bd4734edabac2f",
+      "Name": "c\u00F3c",
+      "stock": "0"
+    },
+    "CreatedAt": "2026-06-05T01:13:55.5938062+00:00"
+  },
+  {
+    "Id": "3afd0e960c2343ad91cf587a9e71d003",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "Type": "stock.updated",
+    "Payload": {
+      "Id": "3939974d20ab4df0a2bd4734edabac2f",
+      "Name": "c\u00F3c",
+      "stock": "0"
+    },
+    "CreatedAt": "2026-06-05T01:14:20.7274157+00:00"
+  },
+  {
+    "Id": "f0e455ff0e7b497ea0382ddfd9dbe9d2",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "Type": "stock.updated",
+    "Payload": {
+      "Id": "3939974d20ab4df0a2bd4734edabac2f",
+      "Name": "c\u00F3c",
+      "stock": "38"
+    },
+    "CreatedAt": "2026-06-05T02:22:32.4621764+00:00"
+  },
+  {
+    "Id": "2bc61049eefd46b2920e039f0658844b",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "Type": "stock.updated",
+    "Payload": {
+      "Id": "313d84dc975c48efa4fd3cec7de014a3",
+      "Name": "Test Product UI Fix",
+      "stock": "5"
+    },
+    "CreatedAt": "2026-06-05T02:35:21.0211096+00:00"
+  },
+  {
+    "Id": "54d97384d39b4bbfb0207f26e713e165",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "Type": "stock.updated",
+    "Payload": {
+      "Id": "04f3fa9d3e824cc1b6623fbdc3c45e34",
+      "Name": "Cafe",
+      "stock": "10"
+    },
+    "CreatedAt": "2026-06-05T02:36:04.7407533+00:00"
+  },
+  {
+    "Id": "775b00954e3947b6a81088751245830f",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "Type": "stock.updated",
+    "Payload": {
+      "Id": "ec9734ab0e9e4006b831638cd8ffd50d",
+      "Name": "n\u01B0\u1EDBc",
+      "stock": "130"
+    },
+    "CreatedAt": "2026-06-08T00:43:22.5327684+00:00"
+  },
+  {
+    "Id": "65b13752a3d2452facadee29192442eb",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "Type": "stock.updated",
+    "Payload": {
+      "Id": "ec9734ab0e9e4006b831638cd8ffd50d",
+      "Name": "n\u01B0\u1EDBc",
+      "stock": "10"
+    },
+    "CreatedAt": "2026-06-08T00:44:23.2494578+00:00"
+  },
+  {
+    "Id": "c32707bdd8714983b8ae8f41878967e7",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "Type": "stock.updated",
+    "Payload": {
+      "Id": "ec9734ab0e9e4006b831638cd8ffd50d",
+      "Name": "n\u01B0\u1EDBc",
+      "stock": "3010"
+    },
+    "CreatedAt": "2026-06-08T00:51:55.5991262+00:00"
+  },
+  {
+    "Id": "83d4040a777f4020a12a574b61ffd1b8",
+    "OwnerId": "cb229299cc6f4f80a3a3518a10f2c790",
+    "Type": "stock.updated",
+    "Payload": {
+      "Id": "d2b94345a3bf48eeb3380048e5a70b6a",
+      "Name": "\u1ED5i",
+      "stock": "110"
+    },
+    "CreatedAt": "2026-06-08T02:40:01.7553583+00:00"
+  },
+  {
+    "Id": "af8667db61e9446a926677249f1d6b18",
+    "OwnerId": "8dba7569391344928ed74174e799372e",
+    "Type": "stock.updated",
+    "Payload": {
+      "Id": "d2b94345a3bf48eeb3380048e5a70b6a",
+      "Name": "\u1ED5i",
+      "stock": "88"
+    },
+    "CreatedAt": "2026-06-08T03:23:50.5234916+00:00"
+  },
+  {
+    "Id": "fd17ea27fb264058b595a14551968496",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "Type": "stock.updated",
+    "Payload": {
+      "Id": "ec9734ab0e9e4006b831638cd8ffd50d",
+      "Name": "n\u01B0\u1EDBc",
+      "stock": "2010"
+    },
+    "CreatedAt": "2026-06-10T03:25:48.8443439+00:00"
+  },
+  {
+    "Id": "b55e93db687a4c719094b46b862ddadf",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "Type": "inventory.reserved",
+    "Payload": {
+      "Id": "de9126b635db408d9cbde6385e442854",
+      "OrderId": "14b6aab0-0b73-44d9-8117-a5e042775737",
+      "ExpiresAt": "2026-06-10T04:54:45.2564334\u002B00:00"
+    },
+    "CreatedAt": "2026-06-10T04:44:45.2840516+00:00"
+  },
+  {
+    "Id": "3346741546434af09866573a703967f0",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "Type": "inventory.reserved",
+    "Payload": {
+      "Id": "fd42a19d18f842d495ef26d4f1292fad",
+      "OrderId": "5326bbc8-2d57-48b5-9e12-f3c0009ce4c9",
+      "ExpiresAt": "2026-06-10T04:55:23.7492636\u002B00:00"
+    },
+    "CreatedAt": "2026-06-10T04:45:23.7695267+00:00"
+  },
+  {
+    "Id": "3742693154a547bdbb522c74944b919e",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "Type": "inventory.reservation.confirmed",
+    "Payload": {
+      "Id": "de9126b635db408d9cbde6385e442854",
+      "OrderId": "14b6aab0-0b73-44d9-8117-a5e042775737"
+    },
+    "CreatedAt": "2026-06-10T04:46:43.0037739+00:00"
+  },
+  {
+    "Id": "d00e87a8b02d49f18d4dc62d98261dee",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "Type": "inventory.reservation.released",
+    "Payload": {
+      "Id": "fd42a19d18f842d495ef26d4f1292fad",
+      "OrderId": "5326bbc8-2d57-48b5-9e12-f3c0009ce4c9",
+      "status": "cancelled"
+    },
+    "CreatedAt": "2026-06-10T04:46:50.5992503+00:00"
+  },
+  {
+    "Id": "8b38ec5bf8df4a46950c753c08b04bf1",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "Type": "stock.updated",
+    "Payload": {
+      "Id": "d2b94345a3bf48eeb3380048e5a70b6a",
+      "Name": "\u1ED5i",
+      "stock": "75"
+    },
+    "CreatedAt": "2026-06-10T09:50:10.4441184+00:00"
+  },
+  {
+    "Id": "646c6eb7b8384f248173c8f0bf3fcb2d",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "Type": "stock.updated",
+    "Payload": {
+      "Id": "ca34615cdc1d438789316fa11175348a",
+      "Name": "n\u01B0\u1EDBc cam",
+      "stock": "999"
+    },
+    "CreatedAt": "2026-06-10T15:19:29.9506809+00:00"
+  },
+  {
+    "Id": "35ae5b37ef374da1af2b17ef68cbd2d3",
+    "OwnerId": "8d37123aef954db189db9ade52ba2712",
+    "Type": "stock.updated",
+    "Payload": {
+      "Id": "d2b94345a3bf48eeb3380048e5a70b6a",
+      "Name": "\u1ED5i",
+      "stock": "64"
+    },
+    "CreatedAt": "2026-06-15T01:00:36.2830108+00:00"
+  }
+]

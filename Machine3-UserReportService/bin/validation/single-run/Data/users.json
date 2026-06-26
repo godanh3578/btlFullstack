@@ -1,0 +1,38 @@
+[
+  {
+    "id": "8d37123aef954db189db9ade52ba2712",
+    "email": "admin.user@khopro.local",
+    "name": "Admin User",
+    "storeName": "KhoPro",
+    "province": "",
+    "phone": "",
+    "birthday": "",
+    "gender": "",
+    "role": "admin-user",
+    "passwordHash": "2fsc7u\u002Bbiqyrx/X3iivhQg==.LnsDlo2xAECQoapVQ7KoxgWe3MULh5ZLya0QSi5F3gk=",
+    "isActive": true,
+    "isOnline": true,
+    "createdAt": "2026-05-30T15:22:16.7978519+00:00",
+    "updatedAt": "2026-06-08T02:09:33.5200116+00:00",
+    "lastLoginAt": "2026-06-08T01:56:33.4916154+00:00",
+    "lastSeenAt": "2026-06-08T02:09:33.5200114+00:00"
+  },
+  {
+    "id": "8dba7569391344928ed74174e799372e",
+    "email": "nguyenthang24062005a@gmail.com",
+    "name": "Nguy\u1EC5n Quang Th\u1EAFng",
+    "storeName": "KhoPro1x",
+    "province": "Nam \u0110\u1ECBnh \u2014 Nam Dinh Province",
+    "phone": "0344811615",
+    "birthday": "",
+    "gender": "",
+    "role": "Sales",
+    "passwordHash": "/p8xhWTPHiDGiXhCDBwB1g==.FohWFUxrkidh7k4GuDI0WDdn4i5dbiRHbb23ChDErAM=",
+    "isActive": true,
+    "isOnline": true,
+    "createdAt": "2026-06-04T17:20:41.6342494+00:00",
+    "updatedAt": "2026-06-08T02:09:12.3380022+00:00",
+    "lastLoginAt": "2026-06-08T01:54:01.5406254+00:00",
+    "lastSeenAt": "2026-06-08T02:09:12.3380017+00:00"
+  }
+]

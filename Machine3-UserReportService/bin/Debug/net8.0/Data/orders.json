@@ -1,0 +1,632 @@
+[
+  {
+    "orderId": "cf8a8bfd4b4640788f6622e3e60d3af5",
+    "orderCode": "WEB713172138",
+    "customerId": "15",
+    "customerName": "qu\u1ED1c anh \u0111\u1ED7",
+    "email": "quocanhjk71238@gmail.com",
+    "phone": "0822517537",
+    "address": "Huy\u1EC7n v\u1EE5 B\u1EA3n",
+    "items": [
+      {
+        "productId": "1",
+        "productName": "n\u01B0\u1EDBc cam",
+        "categoryName": "",
+        "quantity": 1,
+        "unitPrice": 17000,
+        "subTotal": 17000
+      }
+    ],
+    "totalAmount": 17000,
+    "discountAmount": 0,
+    "finalAmount": 17000,
+    "paidAmount": 0,
+    "debtAmount": 17000,
+    "paymentMethod": "Cash",
+    "paymentStatus": "Unpaid",
+    "orderStatus": "Pending",
+    "source": "Web 5173",
+    "orderDate": "2026-06-17T16:19:32.1380668+00:00",
+    "updatedAt": "2026-06-17T16:19:32.1380668+00:00"
+  },
+  {
+    "orderId": "6f0ed7fb5bc04190926abbce5f885a42",
+    "orderCode": "WEB718392307",
+    "customerId": "15",
+    "customerName": "qu\u1ED1c anh \u0111\u1ED7",
+    "email": "quocanhjk738@gmail.com",
+    "phone": "0822517237",
+    "address": "Huy\u1EC7n v\u1EE5 B\u1EA3n",
+    "items": [
+      {
+        "productId": "1",
+        "productName": "n\u01B0\u1EDBc cam",
+        "categoryName": "",
+        "quantity": 2,
+        "unitPrice": 17000,
+        "subTotal": 34000
+      }
+    ],
+    "totalAmount": 34000,
+    "discountAmount": 3400,
+    "finalAmount": 30600,
+    "paidAmount": 5100,
+    "debtAmount": 25500,
+    "paymentMethod": "Deposit",
+    "paymentStatus": "Partial",
+    "orderStatus": "Pending",
+    "source": "Web 5173",
+    "orderDate": "2026-06-17T17:46:32.3077171+00:00",
+    "updatedAt": "2026-06-17T17:46:32.3077171+00:00"
+  },
+  {
+    "orderId": "f0ebde839fdf418684678481b1a3878e",
+    "orderCode": "WEB750330053",
+    "customerId": "15",
+    "customerName": "qu\u1ED1c anh \u0111\u1ED7",
+    "email": "quocanhjk738@gmail.com",
+    "phone": "0822517237",
+    "address": "Huy\u1EC7n v\u1EE5 B\u1EA3n",
+    "items": [
+      {
+        "productId": "3",
+        "productName": "n\u01B0\u1EDBc",
+        "categoryName": "",
+        "quantity": 1,
+        "unitPrice": 5000,
+        "subTotal": 5000
+      }
+    ],
+    "totalAmount": 5000,
+    "discountAmount": 500,
+    "finalAmount": 4500,
+    "paidAmount": 4500,
+    "debtAmount": 0,
+    "paymentMethod": "Deposit",
+    "paymentStatus": "Paid",
+    "orderStatus": "Pending",
+    "source": "Web 5173",
+    "orderDate": "2026-06-18T02:38:50.053952+00:00",
+    "updatedAt": "2026-06-18T02:38:50.053952+00:00"
+  },
+  {
+    "orderId": "1a523bdfe69f44d7944cca2a830190fb",
+    "orderCode": "WEB750953971",
+    "customerId": "15",
+    "customerName": "qu\u1ED1c anh \u0111\u1ED7",
+    "email": "quocanhjk738@gmail.com",
+    "phone": "0822517237",
+    "address": "Huy\u1EC7n v\u1EE5 B\u1EA3n",
+    "items": [
+      {
+        "productId": "1",
+        "productName": "n\u01B0\u1EDBc cam",
+        "categoryName": "",
+        "quantity": 2,
+        "unitPrice": 17000,
+        "subTotal": 34000
+      }
+    ],
+    "totalAmount": 34000,
+    "discountAmount": 0,
+    "finalAmount": 34000,
+    "paidAmount": 34000,
+    "debtAmount": 0,
+    "paymentMethod": "BankTransfer",
+    "paymentStatus": "Paid",
+    "orderStatus": "Pending",
+    "source": "Web 5173",
+    "orderDate": "2026-06-18T02:49:13.971362+00:00",
+    "updatedAt": "2026-06-18T02:49:13.971362+00:00"
+  },
+  {
+    "orderId": "18bcd621675b4145803e5df849ad169f",
+    "orderCode": "WEB760200375",
+    "customerId": "15",
+    "customerName": "qu\u1ED1c anh \u0111\u1ED7",
+    "email": "quocanhjk738@gmail.com",
+    "phone": "0822517237",
+    "address": "Huy\u1EC7n v\u1EE5 B\u1EA3n",
+    "items": [
+      {
+        "productId": "5",
+        "productName": "Cafe",
+        "categoryName": "",
+        "quantity": 1,
+        "unitPrice": 50000,
+        "subTotal": 50000
+      }
+    ],
+    "totalAmount": 50000,
+    "discountAmount": 5000,
+    "finalAmount": 45000,
+    "paidAmount": 0,
+    "debtAmount": 45000,
+    "paymentMethod": "BankTransfer",
+    "paymentStatus": "Unpaid",
+    "orderStatus": "Pending",
+    "source": "Web 5173",
+    "orderDate": "2026-06-18T05:23:20.375984+00:00",
+    "updatedAt": "2026-06-18T05:23:20.375984+00:00"
+  },
+  {
+    "orderId": "44d7169fa2c54712a6465eaa8ff3e46e",
+    "orderCode": "WEB768699560",
+    "customerId": "15",
+    "customerName": "qu\u1ED1c anh \u0111\u1ED7",
+    "email": "quocanhjk738@gmail.com",
+    "phone": "0822517237",
+    "address": "Huy\u1EC7n v\u1EE5 B\u1EA3n",
+    "items": [
+      {
+        "productId": "1",
+        "productName": "n\u01B0\u1EDBc cam",
+        "categoryName": "",
+        "quantity": 1,
+        "unitPrice": 17000,
+        "subTotal": 17000
+      }
+    ],
+    "totalAmount": 17000,
+    "discountAmount": 1700,
+    "finalAmount": 15300,
+    "paidAmount": 15300,
+    "debtAmount": 0,
+    "paymentMethod": "Deposit",
+    "paymentStatus": "Paid",
+    "orderStatus": "Pending",
+    "source": "Web 5173",
+    "orderDate": "2026-06-18T07:44:59.5601848+00:00",
+    "updatedAt": "2026-06-18T07:44:59.5601848+00:00"
+  },
+  {
+    "orderId": "6b3cf8b7bdf04454a83ddf3a83c7473c",
+    "orderCode": "WEB768921293",
+    "customerId": "15",
+    "customerName": "qu\u1ED1c anh \u0111\u1ED7",
+    "email": "quocanhjk738@gmail.com",
+    "phone": "0822517237",
+    "address": "Huy\u1EC7n v\u1EE5 B\u1EA3n",
+    "items": [
+      {
+        "productId": "5",
+        "productName": "Cafe",
+        "categoryName": "",
+        "quantity": 1,
+        "unitPrice": 50000,
+        "subTotal": 50000
+      }
+    ],
+    "totalAmount": 50000,
+    "discountAmount": 0,
+    "finalAmount": 50000,
+    "paidAmount": 0,
+    "debtAmount": 50000,
+    "paymentMethod": "Cash",
+    "paymentStatus": "Unpaid",
+    "orderStatus": "Pending",
+    "source": "Web 5173",
+    "orderDate": "2026-06-18T07:48:41.2935399+00:00",
+    "updatedAt": "2026-06-18T07:48:41.2935399+00:00"
+  },
+  {
+    "orderId": "38d764027f964e3bac7cc4b89f4c5aa4",
+    "orderCode": "WEB769099750",
+    "customerId": "15",
+    "customerName": "qu\u1ED1c anh \u0111\u1ED7",
+    "email": "quocanhjk738@gmail.com",
+    "phone": "0822517237",
+    "address": "Huy\u1EC7n v\u1EE5 B\u1EA3n",
+    "items": [
+      {
+        "productId": "5",
+        "productName": "Cafe",
+        "categoryName": "",
+        "quantity": 1,
+        "unitPrice": 50000,
+        "subTotal": 50000
+      }
+    ],
+    "totalAmount": 50000,
+    "discountAmount": 0,
+    "finalAmount": 50000,
+    "paidAmount": 0,
+    "debtAmount": 50000,
+    "paymentMethod": "BankTransfer",
+    "paymentStatus": "Unpaid",
+    "orderStatus": "Pending",
+    "source": "Web 5173",
+    "orderDate": "2026-06-18T07:51:39.7502544+00:00",
+    "updatedAt": "2026-06-18T07:51:39.7502544+00:00"
+  },
+  {
+    "orderId": "aac243f248fd4934b51f7ddd04a2713c",
+    "orderCode": "WEB769142325",
+    "customerId": "15",
+    "customerName": "qu\u1ED1c anh \u0111\u1ED7",
+    "email": "quocanhjk738@gmail.com",
+    "phone": "0822517237",
+    "address": "Huy\u1EC7n v\u1EE5 B\u1EA3n",
+    "items": [
+      {
+        "productId": "3",
+        "productName": "n\u01B0\u1EDBc",
+        "categoryName": "",
+        "quantity": 1,
+        "unitPrice": 5000,
+        "subTotal": 5000
+      }
+    ],
+    "totalAmount": 5000,
+    "discountAmount": 500,
+    "finalAmount": 4500,
+    "paidAmount": 0,
+    "debtAmount": 4500,
+    "paymentMethod": "Cash",
+    "paymentStatus": "Unpaid",
+    "orderStatus": "Pending",
+    "source": "Web 5173",
+    "orderDate": "2026-06-18T07:52:22.3252646+00:00",
+    "updatedAt": "2026-06-18T07:52:22.3252646+00:00"
+  },
+  {
+    "orderId": "0e24b66f511849b9a36495aaf1d39b7c",
+    "orderCode": "WEB769253618",
+    "customerId": "15",
+    "customerName": "qu\u1ED1c anh \u0111\u1ED7",
+    "email": "quocanhjk738@gmail.com",
+    "phone": "0822517237",
+    "address": "Huy\u1EC7n v\u1EE5 B\u1EA3n",
+    "items": [
+      {
+        "productId": "1",
+        "productName": "n\u01B0\u1EDBc cam",
+        "categoryName": "",
+        "quantity": 1,
+        "unitPrice": 17000,
+        "subTotal": 17000
+      }
+    ],
+    "totalAmount": 17000,
+    "discountAmount": 0,
+    "finalAmount": 17000,
+    "paidAmount": 0,
+    "debtAmount": 17000,
+    "paymentMethod": "Cash",
+    "paymentStatus": "Unpaid",
+    "orderStatus": "Pending",
+    "source": "Web 5173",
+    "orderDate": "2026-06-18T07:54:13.6188308+00:00",
+    "updatedAt": "2026-06-18T07:54:13.6188308+00:00"
+  },
+  {
+    "orderId": "9a007a5660f241769a2ddce424246d1b",
+    "orderCode": "WEB769263267",
+    "customerId": "15",
+    "customerName": "qu\u1ED1c anh \u0111\u1ED7",
+    "email": "quocanhjk738@gmail.com",
+    "phone": "0822517237",
+    "address": "Huy\u1EC7n v\u1EE5 B\u1EA3n",
+    "items": [
+      {
+        "productId": "1",
+        "productName": "n\u01B0\u1EDBc cam",
+        "categoryName": "",
+        "quantity": 1,
+        "unitPrice": 17000,
+        "subTotal": 17000
+      }
+    ],
+    "totalAmount": 17000,
+    "discountAmount": 0,
+    "finalAmount": 17000,
+    "paidAmount": 0,
+    "debtAmount": 17000,
+    "paymentMethod": "Cash",
+    "paymentStatus": "Unpaid",
+    "orderStatus": "Pending",
+    "source": "Web 5173",
+    "orderDate": "2026-06-18T07:54:23.2679044+00:00",
+    "updatedAt": "2026-06-18T07:54:23.2679044+00:00"
+  },
+  {
+    "orderId": "964e216a2d954b11acdbccae7be90c7c",
+    "orderCode": "WEB769303090",
+    "customerId": "15",
+    "customerName": "qu\u1ED1c anh \u0111\u1ED7",
+    "email": "quocanhjk738@gmail.com",
+    "phone": "0822517237",
+    "address": "Huy\u1EC7n v\u1EE5 B\u1EA3n",
+    "items": [
+      {
+        "productId": "1",
+        "productName": "n\u01B0\u1EDBc cam",
+        "categoryName": "",
+        "quantity": 1,
+        "unitPrice": 17000,
+        "subTotal": 17000
+      }
+    ],
+    "totalAmount": 17000,
+    "discountAmount": 0,
+    "finalAmount": 17000,
+    "paidAmount": 0,
+    "debtAmount": 17000,
+    "paymentMethod": "Cash",
+    "paymentStatus": "Unpaid",
+    "orderStatus": "Pending",
+    "source": "Web 5173",
+    "orderDate": "2026-06-18T07:55:03.0905206+00:00",
+    "updatedAt": "2026-06-18T07:55:03.0905206+00:00"
+  },
+  {
+    "orderId": "067252fbc48e4546a1db548fd597966a",
+    "orderCode": "WEB769376323",
+    "customerId": "15",
+    "customerName": "qu\u1ED1c anh \u0111\u1ED7",
+    "email": "quocanhjk738@gmail.com",
+    "phone": "0822517237",
+    "address": "Huy\u1EC7n v\u1EE5 B\u1EA3n",
+    "items": [
+      {
+        "productId": "5",
+        "productName": "Cafe",
+        "categoryName": "",
+        "quantity": 1,
+        "unitPrice": 50000,
+        "subTotal": 50000
+      }
+    ],
+    "totalAmount": 50000,
+    "discountAmount": 0,
+    "finalAmount": 50000,
+    "paidAmount": 0,
+    "debtAmount": 50000,
+    "paymentMethod": "Cash",
+    "paymentStatus": "Unpaid",
+    "orderStatus": "Pending",
+    "source": "Web 5173",
+    "orderDate": "2026-06-18T07:56:16.3236299+00:00",
+    "updatedAt": "2026-06-18T07:56:16.3236299+00:00"
+  },
+  {
+    "orderId": "9ba004908169437b871b7a9055145bf4",
+    "orderCode": "WEB769685635",
+    "customerId": "15",
+    "customerName": "qu\u1ED1c anh \u0111\u1ED7",
+    "email": "quocanhjk738@gmail.com",
+    "phone": "0822517237",
+    "address": "Huy\u1EC7n v\u1EE5 B\u1EA3n",
+    "items": [
+      {
+        "productId": "1",
+        "productName": "n\u01B0\u1EDBc cam",
+        "categoryName": "",
+        "quantity": 1,
+        "unitPrice": 17000,
+        "subTotal": 17000
+      }
+    ],
+    "totalAmount": 17000,
+    "discountAmount": 0,
+    "finalAmount": 17000,
+    "paidAmount": 0,
+    "debtAmount": 17000,
+    "paymentMethod": "Cash",
+    "paymentStatus": "Unpaid",
+    "orderStatus": "Pending",
+    "source": "Web 5173",
+    "orderDate": "2026-06-18T08:01:25.6356527+00:00",
+    "updatedAt": "2026-06-18T08:01:25.6356527+00:00"
+  },
+  {
+    "orderId": "e61c76eebd904c42ba5c633d8fc10247",
+    "orderCode": "WEB779725053",
+    "customerId": "1",
+    "customerName": "qu\u1ED1c anh \u0111\u1ED7",
+    "email": "quocanhjk78@gmail.com",
+    "phone": "0822517537",
+    "address": "Huy\u1EC7n v\u1EE5 B\u1EA3n",
+    "items": [
+      {
+        "productId": "1",
+        "productName": "n\u01B0\u1EDBc cam",
+        "categoryName": "",
+        "quantity": 2,
+        "unitPrice": 17000,
+        "subTotal": 34000
+      }
+    ],
+    "totalAmount": 34000,
+    "discountAmount": 3400,
+    "finalAmount": 30600,
+    "paidAmount": 0,
+    "debtAmount": 30600,
+    "paymentMethod": "Cash",
+    "paymentStatus": "Unpaid",
+    "orderStatus": "Pending",
+    "source": "Web 5173",
+    "orderDate": "2026-06-18T10:48:45.053743+00:00",
+    "updatedAt": "2026-06-18T10:48:45.053743+00:00"
+  },
+  {
+    "orderId": "bae19bca3d744c638ee736143b8c7c4e",
+    "orderCode": "WEB780528852",
+    "customerId": "1",
+    "customerName": "qu\u1ED1c anh \u0111\u1ED7",
+    "email": "quocanhjk78@gmail.com",
+    "phone": "0822517537",
+    "address": "Huy\u1EC7n v\u1EE5 B\u1EA3n",
+    "items": [
+      {
+        "productId": "5",
+        "productName": "Cafe",
+        "categoryName": "",
+        "quantity": 1,
+        "unitPrice": 50000,
+        "subTotal": 50000
+      }
+    ],
+    "totalAmount": 50000,
+    "discountAmount": 0,
+    "finalAmount": 50000,
+    "paidAmount": 0,
+    "debtAmount": 50000,
+    "paymentMethod": "Cash",
+    "paymentStatus": "Unpaid",
+    "orderStatus": "Pending",
+    "source": "Web 5173",
+    "orderDate": "2026-06-18T11:02:08.8526686+00:00",
+    "updatedAt": "2026-06-18T11:02:08.8526686+00:00"
+  },
+  {
+    "orderId": "8911b1aac69a46a7bfd435db9368df61",
+    "orderCode": "WEB781259271",
+    "customerId": "1",
+    "customerName": "qu\u1ED1c anh \u0111\u1ED7",
+    "email": "quocanhjk78@gmail.com",
+    "phone": "0822517537",
+    "address": "Huy\u1EC7n v\u1EE5 B\u1EA3n",
+    "items": [
+      {
+        "productId": "5",
+        "productName": "Cafe",
+        "categoryName": "",
+        "quantity": 1,
+        "unitPrice": 50000,
+        "subTotal": 50000
+      }
+    ],
+    "totalAmount": 50000,
+    "discountAmount": 0,
+    "finalAmount": 50000,
+    "paidAmount": 0,
+    "debtAmount": 50000,
+    "paymentMethod": "Cash",
+    "paymentStatus": "Unpaid",
+    "orderStatus": "Pending",
+    "source": "Web 5173",
+    "orderDate": "2026-06-18T11:14:19.2713074+00:00",
+    "updatedAt": "2026-06-18T11:14:19.2713074+00:00"
+  },
+  {
+    "orderId": "f8ce002a5c994204b1acfc531749393a",
+    "orderCode": "WEB781273862",
+    "customerId": "1",
+    "customerName": "qu\u1ED1c anh \u0111\u1ED7",
+    "email": "quocanhjk78@gmail.com",
+    "phone": "0822517537",
+    "address": "Huy\u1EC7n v\u1EE5 B\u1EA3n",
+    "items": [
+      {
+        "productId": "1",
+        "productName": "n\u01B0\u1EDBc cam",
+        "categoryName": "",
+        "quantity": 1,
+        "unitPrice": 17000,
+        "subTotal": 17000
+      }
+    ],
+    "totalAmount": 17000,
+    "discountAmount": 0,
+    "finalAmount": 17000,
+    "paidAmount": 0,
+    "debtAmount": 17000,
+    "paymentMethod": "Cash",
+    "paymentStatus": "Unpaid",
+    "orderStatus": "Pending",
+    "source": "Web 5173",
+    "orderDate": "2026-06-18T11:14:33.8622308+00:00",
+    "updatedAt": "2026-06-18T11:14:33.8622308+00:00"
+  },
+  {
+    "orderId": "172a847d70534c21a1f45bda1df63575",
+    "orderCode": "WEB794619180",
+    "customerId": "1",
+    "customerName": "qu\u1ED1c anh \u0111\u1ED7",
+    "email": "quocanhjk78@gmail.com",
+    "phone": "0822517537",
+    "address": "Huy\u1EC7n v\u1EE5 B\u1EA3n",
+    "items": [
+      {
+        "productId": "2",
+        "productName": "\u1ED5i",
+        "categoryName": "",
+        "quantity": 5,
+        "unitPrice": 12000,
+        "subTotal": 60000
+      }
+    ],
+    "totalAmount": 60000,
+    "discountAmount": 0,
+    "finalAmount": 60000,
+    "paidAmount": 0,
+    "debtAmount": 60000,
+    "paymentMethod": "Cash",
+    "paymentStatus": "Unpaid",
+    "orderStatus": "Pending",
+    "source": "Web 5173",
+    "orderDate": "2026-06-18T14:56:59.180101+00:00",
+    "updatedAt": "2026-06-18T14:56:59.180101+00:00"
+  },
+  {
+    "orderId": "3680765cf9834ab6b2a62f11239f3e2d",
+    "orderCode": "WEB795472008",
+    "customerId": "1",
+    "customerName": "qu\u1ED1c anh \u0111\u1ED7",
+    "email": "quocanhjk78@gmail.com",
+    "phone": "0822517537",
+    "address": "Huy\u1EC7n v\u1EE5 B\u1EA3n",
+    "items": [
+      {
+        "productId": "5",
+        "productName": "Cafe",
+        "categoryName": "",
+        "quantity": 1,
+        "unitPrice": 50000,
+        "subTotal": 50000
+      }
+    ],
+    "totalAmount": 50000,
+    "discountAmount": 0,
+    "finalAmount": 50000,
+    "paidAmount": 0,
+    "debtAmount": 50000,
+    "paymentMethod": "Cash",
+    "paymentStatus": "Unpaid",
+    "orderStatus": "Pending",
+    "source": "Web 5173",
+    "orderDate": "2026-06-18T15:11:12.0087252+00:00",
+    "updatedAt": "2026-06-18T15:11:12.0087252+00:00"
+  },
+  {
+    "orderId": "aae202fc64e24dda9d8dc52f8c779682",
+    "orderCode": "WEB795881419",
+    "customerId": "1",
+    "customerName": "qu\u1ED1c anh \u0111\u1ED7",
+    "email": "quocanhjk78@gmail.com",
+    "phone": "0822517537",
+    "address": "Huy\u1EC7n v\u1EE5 B\u1EA3n",
+    "items": [
+      {
+        "productId": "5",
+        "productName": "Cafe",
+        "categoryName": "",
+        "quantity": 29,
+        "unitPrice": 50000,
+        "subTotal": 1450000
+      }
+    ],
+    "totalAmount": 1450000,
+    "discountAmount": 0,
+    "finalAmount": 1450000,
+    "paidAmount": 0,
+    "debtAmount": 1450000,
+    "paymentMethod": "Cash",
+    "paymentStatus": "Unpaid",
+    "orderStatus": "Pending",
+    "source": "Web 5173",
+    "orderDate": "2026-06-18T15:18:01.4197819+00:00",
+    "updatedAt": "2026-06-18T15:18:01.4197819+00:00"
+  }
+]
