@@ -1,9 +1,13 @@
 const API_HOST = window.location.hostname || "localhost";
-const GATEWAY_API = `http://${API_HOST}:7000/gateway`;
+const GATEWAY_API = (window.__GATEWAY_URL__ && window.__GATEWAY_URL__ !== '__GATEWAY_URL__')
+  ? window.__GATEWAY_URL__
+  : `http://${API_HOST}:7000/gateway`;
 const USER_API = `${GATEWAY_API}/user/api`;
 const PRODUCT_API = `${GATEWAY_API}/product/api`;
 const ORDER_API = `${GATEWAY_API}/order/api`;
-const USER_SERVICE_API = `http://${API_HOST}:8083/api`;
+const USER_SERVICE_API = (window.__USER_SERVICE_URL__ && window.__USER_SERVICE_URL__ !== '__USER_SERVICE_URL__')
+  ? window.__USER_SERVICE_URL__
+  : `http://${API_HOST}:8083/api`;
 
 const state = {
   token: localStorage.getItem("khopro_token") || "",

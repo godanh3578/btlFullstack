@@ -1,0 +1,2 @@
+window.__GATEWAY_URL__ = '__GATEWAY_URL__';
+window.__USER_SERVICE_URL__ = '__USER_SERVICE_URL__';
