@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\Machine3-UserReportService.props" />
-</Project>

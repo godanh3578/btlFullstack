@@ -1,0 +1,31 @@
+# Build outputs
+bin/
+obj/
+publish/
+build-check/
+dist/
+_buildcheck*/
+
+# Logs
+*.log
+*.err.log
+*.out.log
+
+# Node
+node_modules/
+
+# Deploy artifacts
+*.zip
+
+# Environment
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.user
+
+# OS
+Thumbs.db
+.DS_Store
