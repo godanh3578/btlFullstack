@@ -112,6 +112,14 @@ app.MapPost("/api/auth/reset-password", (ResetPasswordRequest request, UserStore
         : Results.NotFound(new { message = "Không tìm thấy email đã đăng ký." });
 });
 
+app.MapGet("/api/auth/check-active", (string email, UserStore users) =>
+{
+    var all = users.GetAll();
+    var user = all.FirstOrDefault(u => u.Email.Equals(email.Trim(), StringComparison.OrdinalIgnoreCase));
+    if (user is null) return Results.Ok(new { isActive = true }); // chưa có tài khoản → không chặn
+    return Results.Ok(new { isActive = user.IsActive });
+});
+
 app.MapGet("/api/users/me", (HttpRequest request, UserStore users, JwtTokenService tokens) =>
 {
     var currentUser = GetCurrentUser(request, users, tokens);

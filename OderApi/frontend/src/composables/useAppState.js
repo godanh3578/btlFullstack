@@ -1,5 +1,5 @@
 import { computed, nextTick, ref } from 'vue'
-import api, { API_BASE, getStaffToken, setStaffToken } from '../api/client'
+import api, { API_BASE, getStaffToken, set401Handler, setStaffToken } from '../api/client'
 import {
   loadCustomerCart,
   loadCustomerUser,
@@ -1232,7 +1232,6 @@ export function logoutCustomer() {
   myOrders.value = []; customerPurchaseHistory.value = []; customerDebts.value = []
   recentlyViewed.value = []; writeJsonStorage(RECENTLY_VIEWED_KEY, [])
   resetCheckoutShipping()
-  showNotice('Dang nhap thanh cong.')
   if (['myOrders', 'account'].includes(activePage.value)) openPage('shop')
 }
 
@@ -1888,6 +1887,12 @@ export function logoutStaff() {
   staffData.value = { orders: [], customers: [], suppliers: [], payments: [], debts: [], outbox: [], auditLogs: [] }
   if (isStaffPage.value) openPage('shop')
 }
+
+set401Handler(() => {
+  const hadStaff = !!staffUser.value
+  logoutStaff()
+  if (hadStaff) showNotice('Tài khoản của bạn đã bị khóa hoặc phiên hết hạn. Vui lòng đăng nhập lại.', 'bad')
+})
 
 async function safeList(path) {
   try { const res = await api.get(path); return Array.isArray(res.data) ? res.data : [] } catch { return [] }

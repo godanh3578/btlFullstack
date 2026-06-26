@@ -31,4 +31,18 @@ api.interceptors.request.use((config) => {
   }
   return config
 })
+
+let _on401Handler = null
+export function set401Handler(fn) { _on401Handler = fn }
+
+api.interceptors.response.use(
+  res => res,
+  err => {
+    if (err.response?.status === 401 && staffToken && _on401Handler) {
+      _on401Handler()
+    }
+    return Promise.reject(err)
+  }
+)
+
 export default api

@@ -1,5 +1,5 @@
 <script setup>
-import { watch, onMounted } from 'vue'
+import { watch, onMounted, onUnmounted } from 'vue'
 import api, { getStaffToken, setStaffToken } from './api/client'
 
 import AppTopbar from './components/AppTopbar.vue'
@@ -63,6 +63,25 @@ onMounted(async () => {
   await loadProducts()
   if (currentUser.value) await loadMyOrders()
   if (activePage.value === 'orderDetail' && staffUser.value) await loadStaffData()
+
+  // Heartbeat: kiểm tra tài khoản có bị khóa không mỗi 60 giây
+  const checkAccountActive = async () => {
+    const email = currentUser.value?.email
+    if (!email || currentUser.value?.isLocalOnly) return
+    try {
+      const res = await fetch(`/api/auth/check-active?email=${encodeURIComponent(email)}`)
+      if (res.ok) {
+        const data = await res.json()
+        if (!data.isActive) {
+          logoutCustomer()
+          showNotice('Tài khoản của bạn đã bị khóa. Vui lòng liên hệ hỗ trợ.', 'bad')
+        }
+      }
+    } catch { /* bỏ qua nếu Machine3 offline */ }
+  }
+
+  const heartbeatTimer = setInterval(checkAccountActive, 60_000)
+  onUnmounted(() => clearInterval(heartbeatTimer))
 })
 </script>
 
