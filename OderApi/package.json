@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "api": "dotnet run --project OrderApi/OrderApi.csproj --urls http://0.0.0.0:5022",
+    "dev": "npm run dev --prefix frontend",
+    "frontend": "npm run dev --prefix frontend",
+    "build": "npm run build --prefix frontend",
+    "serve": "npm run serve --prefix frontend"
+  },
+  "dependencies": {
+    "axios": "^1.16.1"
+  }
+}
+

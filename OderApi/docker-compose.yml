@@ -1,0 +1,134 @@
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: orderapi-sql
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "YourStrong@Passw0rd"
+    ports:
+      - "1433:1433"
+    volumes:
+      - orderdb-data:/var/opt/mssql
+    healthcheck:
+      test: /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P "YourStrong@Passw0rd" -C -Q "SELECT 1" || exit 1
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: orderapi-rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    healthcheck:
+      test: rabbitmq-diagnostics -q ping
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  api-gateway:
+    build:
+      context: ./ApiGateway
+      dockerfile: Dockerfile
+    container_name: microservices-api-gateway
+    ports:
+      - "5000:5000"
+      - "7000:5000"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      Jwt__Key: "CHANGE_THIS_SECRET_ON_MACHINE_3_MINIMUM_32_CHARS"
+      Jwt__Issuer: "KhoPro.UserReportService"
+      Jwt__Audience: "KhoPro.Frontend"
+      # Route 0: /gateway/user → N3 (host)
+      Routes__0__DownstreamHostAndPorts__0__Host: host.docker.internal
+      # Route 1: /gateway/product/suppliers → N1 (host)
+      Routes__1__DownstreamHostAndPorts__0__Host: host.docker.internal
+      # Route 2: /gateway/product → N1 (host)
+      Routes__2__DownstreamHostAndPorts__0__Host: host.docker.internal
+      # Route 3-7: /gateway/order, /api/Sales, /api/Orders, /api/Customers, /api/Suppliers → N2 (docker)
+      Routes__3__DownstreamHostAndPorts__0__Host: orderapi
+      Routes__4__DownstreamHostAndPorts__0__Host: orderapi
+      Routes__5__DownstreamHostAndPorts__0__Host: orderapi
+      Routes__6__DownstreamHostAndPorts__0__Host: orderapi
+      Routes__7__DownstreamHostAndPorts__0__Host: orderapi
+      # Route 8-12: /api/Payments, /api/Debts, /api/ProductStockCaches, /api/OrderHealth, /api/OutboxMessages → N2 (docker)
+      Routes__8__DownstreamHostAndPorts__0__Host: orderapi
+      Routes__9__DownstreamHostAndPorts__0__Host: orderapi
+      Routes__10__DownstreamHostAndPorts__0__Host: orderapi
+      Routes__11__DownstreamHostAndPorts__0__Host: orderapi
+      Routes__12__DownstreamHostAndPorts__0__Host: orderapi
+      # Route 13-15: /api/products, /api/inventory, /api/categories → N1 (host)
+      Routes__13__DownstreamHostAndPorts__0__Host: host.docker.internal
+      Routes__14__DownstreamHostAndPorts__0__Host: host.docker.internal
+      Routes__15__DownstreamHostAndPorts__0__Host: host.docker.internal
+      # Route 16-17: /api/auth, /api/reports → N3 (host)
+      Routes__16__DownstreamHostAndPorts__0__Host: host.docker.internal
+      Routes__17__DownstreamHostAndPorts__0__Host: host.docker.internal
+      # Route 18: /api/{everything} catch-all → N2 (docker)
+      Routes__18__DownstreamHostAndPorts__0__Host: orderapi
+    depends_on:
+      orderapi:
+        condition: service_healthy
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://localhost:5000/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: orderapi-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      PUBLIC_HOST: "160.250.132.117"
+      API_TARGET: "http://api-gateway:5000"
+      ORDER_API_TARGET: "http://orderapi:5022"
+    depends_on:
+      api-gateway:
+        condition: service_healthy
+
+  orderapi:
+    build:
+      context: ./OrderApi
+      dockerfile: Dockerfile
+    container_name: orderapi-service
+    ports:
+      - "5022:5022"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__DefaultConnection: "Server=sqlserver;Database=OrderDB;User Id=sa;Password=YourStrong@Passw0rd;TrustServerCertificate=True"
+      RabbitMQ__Host: rabbitmq
+      RabbitMQ__Username: guest
+      RabbitMQ__Password: guest
+      RabbitMQ__OrderExchange: order.exchange
+      ProductIntegration__GatewayBaseUrl: "http://api-gateway:5000"
+      ProductIntegration__UseGatewayLookup: "true"
+      ProductIntegration__AllowCacheFallback: "true"
+      UserReportIntegration__BaseUrl: "http://host.docker.internal:8083"
+      Jwt__Key: "CHANGE_THIS_SECRET_ON_MACHINE_3_MINIMUM_32_CHARS"
+      Jwt__Issuer: "KhoPro.UserReportService"
+      Jwt__Audience: "KhoPro.Frontend"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://localhost:5022/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 40s
+
+volumes:
+  orderdb-data:

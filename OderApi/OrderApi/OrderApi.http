@@ -1,0 +1,7 @@
+@OrderApi_HostAddress = http://160.250.132.117:5022
+
+GET {{OrderApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
